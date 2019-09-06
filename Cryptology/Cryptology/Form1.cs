@@ -13,5 +13,17 @@ namespace Cryptology {
         public Form1() {
             InitializeComponent();
         }
+
+        private void aboutProgramToolStripMenuItem_Click( object sender, EventArgs e ) {
+
+            MessageBox.Show( "This is cryptographic software.", "About program" );
+        }
+
+        private void aboutToolStripMenuItem1_Click( object sender, EventArgs e ) {
+
+            AboutAuthorForm aboutAuthorForm = new AboutAuthorForm();
+
+            aboutAuthorForm.Show();
+        }
     }
 }
