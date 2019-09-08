@@ -37,5 +37,42 @@ namespace Cryptology {
                 richTextBox1.Text = streamReader.ReadToEnd();
             }
         }
+
+        private void QuantifyButton1_Click( object sender, EventArgs e ) {
+
+            string allText = richTextBox1.Text.ToLower();
+
+            var unnecessaryChars = new char[] { ' ', ',', '.', '"', '!', '?', '\n', '(', ')', '-', ':', '7',
+                                                '1', '2', '3', '4', '5', '6', '\'', '8', '9', '0', ':', '—', ';' };
+
+            var words = allText.Split( unnecessaryChars, StringSplitOptions.RemoveEmptyEntries );
+
+            List<char> symbols = new List<char>();
+
+            foreach (var word in words) {
+
+                symbols.AddRange( word.ToCharArray() );
+            }
+
+            Dictionary<char, int> frequencyTable = new Dictionary<char, int>();
+
+            foreach (var symbol in symbols) {
+
+                if (frequencyTable.ContainsKey( symbol )) {
+
+                    frequencyTable[symbol] += 1;
+                } else {
+
+                    frequencyTable.Add( symbol, 1 );
+                }
+            }
+
+            dataGridView1.Rows.Clear();
+
+            foreach (var keyValue in frequencyTable) {
+
+                dataGridView1.Rows.Add( keyValue.Key, $"{((double)keyValue.Value / symbols.Count):f4}" );
+            }
+        }
     }
 }

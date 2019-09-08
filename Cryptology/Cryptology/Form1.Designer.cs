@@ -61,7 +61,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(870, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -116,7 +116,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 422);
+            this.tabControl1.Size = new System.Drawing.Size(870, 422);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -128,7 +128,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 393);
+            this.tabPage1.Size = new System.Drawing.Size(862, 393);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "#1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -242,6 +242,7 @@
             this.QuantifyButton1.TabIndex = 2;
             this.QuantifyButton1.Text = "Quantify";
             this.QuantifyButton1.UseVisualStyleBackColor = true;
+            this.QuantifyButton1.Click += new System.EventHandler(this.QuantifyButton1_Click);
             // 
             // dataGridView1
             // 
@@ -250,10 +251,10 @@
             this.Symbols,
             this.Frequency});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dataGridView1.Location = new System.Drawing.Point(545, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(556, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(244, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(303, 387);
             this.dataGridView1.TabIndex = 3;
             // 
             // Symbols
@@ -272,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(870, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
