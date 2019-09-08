@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,16 @@ namespace Cryptology {
             AboutAuthorForm aboutAuthorForm = new AboutAuthorForm();
 
             aboutAuthorForm.Show();
+        }
+
+        private void FromFileButton1_Click( object sender, EventArgs e ) {
+
+            string path = @"C:\Users\Ростик\Desktop\Homework-University\Cryptology\Cryptology\StandardText.txt";
+
+            using (StreamReader streamReader = new StreamReader( path )) {
+
+                richTextBox1.Text = streamReader.ReadToEnd();
+            }
         }
     }
 }

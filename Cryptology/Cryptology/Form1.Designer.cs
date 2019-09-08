@@ -232,6 +232,7 @@
             this.FromFileButton1.TabIndex = 1;
             this.FromFileButton1.Text = "Load from file";
             this.FromFileButton1.UseVisualStyleBackColor = true;
+            this.FromFileButton1.Click += new System.EventHandler(this.FromFileButton1_Click);
             // 
             // QuantifyButton1
             // 
