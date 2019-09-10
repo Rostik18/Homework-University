@@ -31,6 +31,12 @@
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Symbols = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Frequency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantifyButton1 = new System.Windows.Forms.Button();
+            this.FromFileButton1 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -40,12 +46,6 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.FromFileButton1 = new System.Windows.Forms.Button();
-            this.QuantifyButton1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Symbols = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Frequency = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -89,14 +89,14 @@
             // aboutProgramToolStripMenuItem
             // 
             this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
-            this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.aboutProgramToolStripMenuItem.Text = "About program";
             this.aboutProgramToolStripMenuItem.Click += new System.EventHandler(this.aboutProgramToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(187, 26);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
             this.aboutToolStripMenuItem1.Text = "About author";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -133,117 +133,6 @@
             this.tabPage1.Text = "#1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 393);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "#2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(792, 393);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "#3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(792, 393);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "#4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(792, 393);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "#5";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(792, 393);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "#6";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(792, 393);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "#7";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(792, 393);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "#8";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Location = new System.Drawing.Point(4, 25);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(792, 393);
-            this.tabPage9.TabIndex = 8;
-            this.tabPage9.Text = "#9";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 25);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(792, 393);
-            this.tabPage10.TabIndex = 9;
-            this.tabPage10.Text = "#10";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(330, 387);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            // 
-            // FromFileButton1
-            // 
-            this.FromFileButton1.Location = new System.Drawing.Point(376, 85);
-            this.FromFileButton1.Name = "FromFileButton1";
-            this.FromFileButton1.Size = new System.Drawing.Size(122, 29);
-            this.FromFileButton1.TabIndex = 1;
-            this.FromFileButton1.Text = "Load from file";
-            this.FromFileButton1.UseVisualStyleBackColor = true;
-            this.FromFileButton1.Click += new System.EventHandler(this.FromFileButton1_Click);
-            // 
-            // QuantifyButton1
-            // 
-            this.QuantifyButton1.Location = new System.Drawing.Point(385, 204);
-            this.QuantifyButton1.Name = "QuantifyButton1";
-            this.QuantifyButton1.Size = new System.Drawing.Size(98, 32);
-            this.QuantifyButton1.TabIndex = 2;
-            this.QuantifyButton1.Text = "Quantify";
-            this.QuantifyButton1.UseVisualStyleBackColor = true;
-            this.QuantifyButton1.Click += new System.EventHandler(this.QuantifyButton1_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -268,6 +157,121 @@
             this.Frequency.HeaderText = "Frequency";
             this.Frequency.Name = "Frequency";
             this.Frequency.ReadOnly = true;
+            // 
+            // QuantifyButton1
+            // 
+            this.QuantifyButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.QuantifyButton1.Location = new System.Drawing.Point(385, 204);
+            this.QuantifyButton1.Name = "QuantifyButton1";
+            this.QuantifyButton1.Size = new System.Drawing.Size(98, 32);
+            this.QuantifyButton1.TabIndex = 2;
+            this.QuantifyButton1.Text = "Quantify";
+            this.QuantifyButton1.UseVisualStyleBackColor = true;
+            this.QuantifyButton1.Click += new System.EventHandler(this.QuantifyButton1_Click);
+            // 
+            // FromFileButton1
+            // 
+            this.FromFileButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.FromFileButton1.Location = new System.Drawing.Point(376, 85);
+            this.FromFileButton1.Name = "FromFileButton1";
+            this.FromFileButton1.Size = new System.Drawing.Size(122, 29);
+            this.FromFileButton1.TabIndex = 1;
+            this.FromFileButton1.Text = "Load from file";
+            this.FromFileButton1.UseVisualStyleBackColor = true;
+            this.FromFileButton1.Click += new System.EventHandler(this.FromFileButton1_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.Location = new System.Drawing.Point(3, 4);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(330, 387);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(862, 393);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "#2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(862, 393);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "#3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(862, 393);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "#4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(862, 393);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "#5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(862, 393);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "#6";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(862, 393);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "#7";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(862, 393);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "#8";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(862, 393);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "#9";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(862, 393);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "#10";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
