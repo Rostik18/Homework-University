@@ -114,6 +114,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\BankAccountEntity.cs" />
+    <Compile Include="Entities\CreditCard.cs" />
+    <Compile Include="Entities\CreditType.cs" />
+    <Compile Include="Entities\DepositType.cs" />
+    <Compile Include="Entities\IBaseEntity.cs" />
+    <Compile Include="Entities\UserCredit.cs" />
+    <Compile Include="Entities\UserEntity.cs" />
+    <Compile Include="Enumerations\CardType.cs" />
+    <Compile Include="Enumerations\Currency.cs" />
+    <Compile Include="Enumerations\PercentType.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
