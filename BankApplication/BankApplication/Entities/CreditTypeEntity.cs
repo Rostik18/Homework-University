@@ -3,7 +3,7 @@ using BankApplication.Enumerations;
 
 namespace BankApplication.Entities {
 
-    class CreditType : IBaseEntity {
+    class CreditTypeEntity : IBaseEntity {
 
         public int Id { get; set; }
         public string CreditTitle { get; set; }

@@ -4,7 +4,7 @@ using System;
 
 namespace BankApplication.Entities {
 
-    class CreditCard : IBaseEntity {
+    class CreditCardEntity : IBaseEntity {
 
         public int Id { get; set; }
         public int BankAccountId { get; set; }
