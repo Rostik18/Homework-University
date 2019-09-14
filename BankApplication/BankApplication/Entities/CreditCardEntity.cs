@@ -11,5 +11,7 @@ namespace BankApplication.Entities {
         public CardType CardType { get; set; }
         public string PIN { get; set; }
         public DateTimeOffset ExpirationDate { get; set; }
+
+        public BankAccountEntity BankAccount { get; set; }
     }
 }
