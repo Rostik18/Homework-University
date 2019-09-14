@@ -151,9 +151,9 @@
     <Compile Include="Migrations\20190914133635_InitializeDbMigration.designer.cs">
       <DependentUpon>20190914133635_InitializeDbMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20190914145120_AddAllTables.cs" />
-    <Compile Include="Migrations\20190914145120_AddAllTables.designer.cs">
-      <DependentUpon>20190914145120_AddAllTables.cs</DependentUpon>
+    <Compile Include="Migrations\20190914184208_AddTablesAndConfigurations.cs" />
+    <Compile Include="Migrations\20190914184208_AddTablesAndConfigurations.designer.cs">
+      <DependentUpon>20190914184208_AddTablesAndConfigurations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\BankDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

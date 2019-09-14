@@ -35,6 +35,8 @@ namespace BankApplication.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("BankAccounts");
                 });
 
@@ -50,9 +52,13 @@ namespace BankApplication.Migrations
 
                     b.Property<DateTimeOffset>("ExpirationDate");
 
-                    b.Property<string>("PIN");
+                    b.Property<string>("PIN")
+                        .IsRequired()
+                        .HasMaxLength(4);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BankAccountId");
 
                     b.ToTable("CreditCards");
                 });
@@ -63,7 +69,9 @@ namespace BankApplication.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CreditTitle");
+                    b.Property<string>("CreditTitle")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.Property<double>("InterestRate");
 
@@ -82,7 +90,9 @@ namespace BankApplication.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("DepositTitle");
+                    b.Property<string>("DepositTitle")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.Property<double>("InterestRate");
 
@@ -109,11 +119,17 @@ namespace BankApplication.Migrations
 
                     b.Property<DateTimeOffset>("FinishDate");
 
-                    b.Property<DateTimeOffset>("StartDate");
+                    b.Property<DateTimeOffset>("StartDate")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getutcdate()");
 
                     b.Property<decimal>("StartSum");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BankAccountId");
+
+                    b.HasIndex("CreditTypeId");
 
                     b.ToTable("UserCredits");
                 });
@@ -132,11 +148,17 @@ namespace BankApplication.Migrations
 
                     b.Property<DateTimeOffset>("FinishDate");
 
-                    b.Property<DateTimeOffset>("StartDate");
+                    b.Property<DateTimeOffset>("StartDate")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getutcdate()");
 
                     b.Property<decimal>("StartSum");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BankAccountId");
+
+                    b.HasIndex("DepositTypeId");
 
                     b.ToTable("UserDeposits");
                 });
@@ -149,21 +171,75 @@ namespace BankApplication.Migrations
 
                     b.Property<DateTimeOffset>("BirthdayDate");
 
-                    b.Property<string>("EmailAdress");
+                    b.Property<string>("EmailAdress")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
-                    b.Property<string>("Password");
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
-                    b.Property<string>("PhoneNumber");
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(13);
 
-                    b.Property<DateTimeOffset>("RegistrationDate");
+                    b.Property<DateTimeOffset>("RegistrationDate")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getutcdate()");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("BankApplication.Entities.BankAccountEntity", b =>
+                {
+                    b.HasOne("BankApplication.Entities.UserEntity", "User")
+                        .WithMany("BankAccounts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BankApplication.Entities.CreditCardEntity", b =>
+                {
+                    b.HasOne("BankApplication.Entities.BankAccountEntity", "BankAccount")
+                        .WithMany("CreditCards")
+                        .HasForeignKey("BankAccountId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BankApplication.Entities.UserCreditEntity", b =>
+                {
+                    b.HasOne("BankApplication.Entities.BankAccountEntity", "BankAccount")
+                        .WithMany("UserCredits")
+                        .HasForeignKey("BankAccountId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("BankApplication.Entities.CreditTypeEntity", "CreditType")
+                        .WithMany("UserCredits")
+                        .HasForeignKey("CreditTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BankApplication.Entities.UserDepositEntity", b =>
+                {
+                    b.HasOne("BankApplication.Entities.BankAccountEntity", "BankAccount")
+                        .WithMany("UserDeposits")
+                        .HasForeignKey("BankAccountId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("BankApplication.Entities.DepositTypeEntity", "DepositType")
+                        .WithMany("UserDeposits")
+                        .HasForeignKey("DepositTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
