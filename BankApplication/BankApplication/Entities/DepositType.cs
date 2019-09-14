@@ -1,4 +1,5 @@
-﻿using BankApplication.Enumerations;
+﻿using BankApplication.Entities.Base;
+using BankApplication.Enumerations;
 
 namespace BankApplication.Entities {
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankApplication.Entities.Base;
+using System;
 
 namespace BankApplication.Entities {
     class UserEntity : IBaseEntity {

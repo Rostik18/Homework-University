@@ -1,5 +1,5 @@
 ﻿
-namespace BankApplication.Entities {
+namespace BankApplication.Entities.Base {
 
     interface IBaseEntity {
 
