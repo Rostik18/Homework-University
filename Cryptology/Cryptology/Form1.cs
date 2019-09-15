@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Cryptology {
     public partial class Form1 : Form {
+
+        Dictionary<char, double> _etalonFrequencyTable = new Dictionary<char, double>();
+
         public Form1() {
 
             InitializeComponent();
@@ -71,7 +74,25 @@ namespace Cryptology {
 
             foreach (var keyValue in frequencyTable) {
 
+                _etalonFrequencyTable.Add( keyValue.Key, (double)keyValue.Value / symbols.Count );
                 dataGridView1.Rows.Add( keyValue.Key, $"{((double)keyValue.Value / symbols.Count):f4}" );
+            }
+        }
+
+        //Зберегти еталонну таблицю.
+        private void button1_Click( object sender, EventArgs e ) {
+
+            if (_etalonFrequencyTable.Count == 0) {
+                return;
+            }
+
+            string path = @"C:\Users\Ростик\Desktop\Homework-University\Cryptology\Cryptology\EtalonFrequencyTable.txt";
+
+            using (StreamWriter streamWriter = new StreamWriter( path )) {
+
+                foreach (var keyValue in _etalonFrequencyTable) {
+                    streamWriter.WriteLine( keyValue.Key + " " + keyValue.Value );
+                }
             }
         }
     }
