@@ -71,6 +71,7 @@ namespace Cryptology {
             }
 
             dataGridView1.Rows.Clear();
+            _etalonFrequencyTable.Clear();
 
             foreach (var keyValue in frequencyTable) {
 
