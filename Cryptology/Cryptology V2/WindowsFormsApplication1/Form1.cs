@@ -14,8 +14,8 @@ namespace WindowsFormsApplication1 {
 
         TextHandler th = new TextHandler();
         int k;
-        List<char> list1 = new List<char>();
-        List<char> list2 = new List<char>();
+        List<char> list1 = new List<char>();       //Таблиця ключі.
+        List<char> list2 = new List<char>();       //Таблиця значення.
 
         public Form1() {
 
@@ -105,8 +105,8 @@ namespace WindowsFormsApplication1 {
         void Data() {
             k = Convert.ToInt32( textBox1.Text );
             dataGridView2.Rows.Clear();
-            List<char> list11 = new List<char>();
-            List<char> list22 = new List<char>();
+            List<char> list11 = new List<char>();        //Таблиця ключі.
+            List<char> list22 = new List<char>();        //Таблиця значення.
             th.set_lang( lang_list2.SelectedIndex );
             list11.AddRange( th.Latter_mas );
             list22.AddRange( th.Latter_mas );
@@ -286,6 +286,28 @@ namespace WindowsFormsApplication1 {
             }
             richTextBox2.Clear();
             richTextBox2.Text = str2;
+        }
+
+        private void button2_Click_1( object sender, EventArgs e ) {
+
+            SaveFileDialog savedialog = new SaveFileDialog();
+            if (savedialog.ShowDialog() == DialogResult.OK) {
+                StringBuilder dataGrid = new StringBuilder();
+
+                File.WriteAllText( savedialog.FileName, richTextBox2.Text );
+            }
+        }
+
+        private void  button3_Click_1( object sender, EventArgs e ) {
+
+            OpenFileDialog filedialog = new OpenFileDialog();
+            filedialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (filedialog.ShowDialog() == DialogResult.OK) {
+                StreamReader file = new StreamReader( filedialog.FileName );
+
+                richTextBox2.Text =  file.ReadToEnd();
+            }
         }
     }
 }

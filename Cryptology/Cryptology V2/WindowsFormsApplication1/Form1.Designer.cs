@@ -60,6 +60,8 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -240,6 +242,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.Load_data);
@@ -287,7 +291,7 @@
             this.Load_data.Location = new System.Drawing.Point(257, 351);
             this.Load_data.Margin = new System.Windows.Forms.Padding(4);
             this.Load_data.Name = "Load_data";
-            this.Load_data.Size = new System.Drawing.Size(174, 28);
+            this.Load_data.Size = new System.Drawing.Size(184, 28);
             this.Load_data.TabIndex = 22;
             this.Load_data.Text = "Завантажити таблицю";
             this.Load_data.UseVisualStyleBackColor = true;
@@ -376,7 +380,7 @@
             this.button_Load.Location = new System.Drawing.Point(271, 315);
             this.button_Load.Margin = new System.Windows.Forms.Padding(4);
             this.button_Load.Name = "button_Load";
-            this.button_Load.Size = new System.Drawing.Size(160, 28);
+            this.button_Load.Size = new System.Drawing.Size(170, 28);
             this.button_Load.TabIndex = 16;
             this.button_Load.Text = "Завантажити текст";
             this.button_Load.UseVisualStyleBackColor = true;
@@ -478,6 +482,27 @@
             this.tabPage10.Text = "#10";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button2.Location = new System.Drawing.Point(55, 387);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(194, 28);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "Зберегти криптотекст";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(257, 387);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(184, 27);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Завантажити криптотекст";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -542,6 +567,8 @@
         private System.Windows.Forms.Button button_Load;
         private System.Windows.Forms.Button button_Decode;
         private System.Windows.Forms.Button button_Encode;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 
