@@ -8,6 +8,9 @@ parent(myron, bohdan).
 parent(ganna, mariya1).
 parent(myhailo, mariya1).
 
+parent(kateryna, myron).
+parent(pavlo, myron).
+
 parent(mariya2, yaryna).
 parent(igor, yaryna).
 
@@ -22,6 +25,17 @@ age(mariya1, 55).
 age(myron, 58).
 
 man(rostik).
+man(myron).
+man(igor).
+man(bohdan).
+man(myhailo).
+man(pavlo).
 
+woman(mariya1).
+woman(mariya2).
+woman(mariya3).
+woman(ganna).
+woman(kateryna).
 
 ageDiff(A, B, Rez):- age(A, Age1), age(B, Age2), Rez is Age2 - Age1.
+married(A, B):- parent(A, X), parent(B, X).
