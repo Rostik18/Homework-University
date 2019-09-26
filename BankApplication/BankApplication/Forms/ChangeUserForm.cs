@@ -19,8 +19,9 @@ namespace BankApplication.Forms {
 
         private void AddUserButton_Click( object sender, EventArgs e ) {
 
+            AddUserForm addUserForm = new AddUserForm();
 
-
+            addUserForm.ShowDialog();
         }
 
         private void ChangeUserForm_Load( object sender, EventArgs e ) {

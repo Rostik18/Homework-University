@@ -37,7 +37,7 @@
             this.confirmNewPasswordLabel = new System.Windows.Forms.Label();
             this.newPasswordTextBox = new System.Windows.Forms.TextBox();
             this.newPasswordLabel = new System.Windows.Forms.Label();
-            this.RegisterButton = new System.Windows.Forms.Button();
+            this.registerButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -153,14 +153,15 @@
             this.newPasswordLabel.TabIndex = 13;
             this.newPasswordLabel.Text = "Password";
             // 
-            // RegisterButton
+            // registerButton
             // 
-            this.RegisterButton.Location = new System.Drawing.Point(12, 333);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(200, 25);
-            this.RegisterButton.TabIndex = 18;
-            this.RegisterButton.Text = "Register";
-            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.registerButton.Location = new System.Drawing.Point(12, 333);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(200, 25);
+            this.registerButton.TabIndex = 18;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // errorLabel
             // 
@@ -176,7 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(227, 393);
             this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.RegisterButton);
+            this.Controls.Add(this.registerButton);
             this.Controls.Add(this.confirmNewPasswordTextBox);
             this.Controls.Add(this.confirmNewPasswordLabel);
             this.Controls.Add(this.newPasswordTextBox);
@@ -191,6 +192,7 @@
             this.Controls.Add(this.lNameLabel);
             this.Controls.Add(this.fNameTextBox);
             this.Controls.Add(this.fNameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddUserForm";
@@ -217,7 +219,7 @@
         private System.Windows.Forms.Label confirmNewPasswordLabel;
         private System.Windows.Forms.TextBox newPasswordTextBox;
         private System.Windows.Forms.Label newPasswordLabel;
-        private System.Windows.Forms.Button RegisterButton;
+        private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label errorLabel;
     }
 }

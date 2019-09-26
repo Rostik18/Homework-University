@@ -104,8 +104,7 @@
             // 
             // ChangeUserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(482, 383);
             this.Controls.Add(this.addUserButton);
             this.Controls.Add(this.loginButton);
@@ -115,6 +114,7 @@
             this.Controls.Add(this.loginEmailOrPhoneTextBox);
             this.Controls.Add(this.emailOrPhoneLabel);
             this.Controls.Add(this.UsersDataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChangeUserForm";

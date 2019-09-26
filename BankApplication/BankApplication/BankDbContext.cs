@@ -7,18 +7,18 @@ namespace BankApplication {
 
         public BankDbContext() {
 
-           // Database.EnsureCreated();
+            // Database.EnsureCreated();
         }
 
-        DbSet<UserEntity> Users { get; set; }
-        DbSet<BankAccountEntity> BankAccounts { get; set; }
-        DbSet<CreditCardEntity> CreditCards { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
+        public DbSet<BankAccountEntity> BankAccounts { get; set; }
+        public DbSet<CreditCardEntity> CreditCards { get; set; }
 
-        DbSet<CreditTypeEntity> CreditTypes { get; set; }
-        DbSet<DepositTypeEntity> DepositTypes { get; set; }
+        public DbSet<CreditTypeEntity> CreditTypes { get; set; }
+        public DbSet<DepositTypeEntity> DepositTypes { get; set; }
 
-        DbSet<UserCreditEntity> UserCredits { get; set; }
-        DbSet<UserDepositEntity> UserDeposits { get; set; }
+        public DbSet<UserCreditEntity> UserCredits { get; set; }
+        public DbSet<UserDepositEntity> UserDeposits { get; set; }
 
         protected override void OnConfiguring( DbContextOptionsBuilder optionsBuilder ) {
 
