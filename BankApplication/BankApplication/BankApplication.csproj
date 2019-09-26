@@ -141,11 +141,11 @@
     <Compile Include="Enumerations\CardType.cs" />
     <Compile Include="Enumerations\Currency.cs" />
     <Compile Include="Enumerations\PercentType.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\ManeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\ManeForm.Designer.cs">
+      <DependentUpon>ManeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\20190914133635_InitializeDbMigration.cs" />
     <Compile Include="Migrations\20190914133635_InitializeDbMigration.designer.cs">
@@ -158,6 +158,9 @@
     <Compile Include="Migrations\BankDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ManeForm.resx">
+      <DependentUpon>ManeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -181,6 +184,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

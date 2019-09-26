@@ -8,10 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BankApplication {
-    public partial class Form1 : Form {
-        public Form1() {
+namespace BankApplication.Forms {
+    public partial class ManeForm : Form {
+        public ManeForm() {
             InitializeComponent();
+        }
+
+        private void ManeForm_Load( object sender, EventArgs e ) {
+
         }
     }
 }
