@@ -38,39 +38,39 @@ namespace InterpolationPolynomial_1 {
             h1 = (b - a) / n;
             h2 = (b - a) / m;
 
-            double[] x = new double[n];
-            double[] t = new double[m];
-            double[] x_ch = new double[n - 1];
-            double[] y = new double[n];
-            double[] accurate_y = new double[m];
-            double[] y_ch = new double[n - 1];
+            double[] x = new double[n + 1];
+            double[] t = new double[m + 1];
+            double[] x_ch = new double[n + 1];
+            double[] y = new double[n + 1];
+            double[] accurate_y = new double[m + 1];
+            double[] y_ch = new double[n + 1];
 
-            for (int k = 0; k < n; k++) {
+            for (int k = 0; k < n + 1; k++) {
 
                 x[k] = a + k * h1;
                 y[k] = _function.F( x[k] );
             }
-            for (int k = 0; k < m; k++) {
+            for (int k = 0; k < m + 1; k++) {
 
                 t[k] = a + k * h2;
                 accurate_y[k] = _function.F( t[k] );
             }
-            for (int k = 0; k < n - 1; k++) {
+            for (int k = 0; k < n + 1; k++) {
 
-                x_ch[k] = ((a + b) / 2) + ((b - a) / 2) * Math.Cos( ((double)(2 * k + 1) / (double)(2 * n)) * Math.PI );
+                x_ch[k] = ((a + b) / 2) + ((b - a) / 2) * Math.Cos( ((double)(2 * k + 1) / (double)(2 * (n + 1))) * Math.PI );
                 y_ch[k] = _function.F( x_ch[k] );
             }
 
-            double[] p = new double[m];
-            double[] p_ch = new double[m];
+            double[] p = new double[m + 1];
+            double[] p_ch = new double[m + 1];
 
-            for (int k = 0; k < m-1; k++) {
+            for (int k = 0; k < m + 1; k++) {
 
-                p[k] = _polynomialForm.CalcPolynomial( n, x, y, t[k] );
+                p[k] = _polynomialForm.CalcPolynomial( n + 1, x, y, t[k] );
             }
-            for (int k = 0; k < m; k++) {
+            for (int k = 0; k < m + 1; k++) {
 
-                p_ch[k] = _polynomialForm.CalcPolynomial( n - 1, x_ch, y_ch, t[k] );
+                p_ch[k] = _polynomialForm.CalcPolynomial( n + 1, x_ch, y_ch, t[k] );
             }
 
             mainChart.Series.Clear();
@@ -81,7 +81,7 @@ namespace InterpolationPolynomial_1 {
 
             double polynomialError = Math.Abs( _function.F( faultX ) - _polynomialForm.CalcPolynomial( n, x, y, faultX ) );
 
-            funcErrorLabel.Text = String.Format("Error: \n{0:f13}", polynomialError);
+            funcErrorLabel.Text = String.Format( "Error: \n{0:f13}", polynomialError );
         }
 
         private void DrawGraph( double[] y, double[] x, int m, string seriesName, Color color ) {
@@ -94,7 +94,7 @@ namespace InterpolationPolynomial_1 {
                 ChartType = SeriesChartType.Line
             };
 
-            for (int i = 0; i < m; i++) {
+            for (int i = 0; i < m + 1; i++) {
 
                 series.Points.AddXY( x[i], y[i] );
             }
