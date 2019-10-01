@@ -204,9 +204,9 @@
             this.funcErrorLabel.AutoSize = true;
             this.funcErrorLabel.Location = new System.Drawing.Point(12, 322);
             this.funcErrorLabel.Name = "funcErrorLabel";
-            this.funcErrorLabel.Size = new System.Drawing.Size(44, 17);
+            this.funcErrorLabel.Size = new System.Drawing.Size(57, 17);
             this.funcErrorLabel.TabIndex = 15;
-            this.funcErrorLabel.Text = "Error:";
+            this.funcErrorLabel.Text = "epsilon:";
             // 
             // Form1
             // 

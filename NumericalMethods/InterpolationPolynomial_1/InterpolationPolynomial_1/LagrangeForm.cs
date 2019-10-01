@@ -28,5 +28,10 @@ namespace InterpolationPolynomial_1 {
 
             return rez;
         }
+
+        public override string ToString() {
+
+            return "Lagrange form";
+        }
     }
 }

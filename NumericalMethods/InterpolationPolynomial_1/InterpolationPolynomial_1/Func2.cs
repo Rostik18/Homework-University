@@ -8,5 +8,10 @@ namespace InterpolationPolynomial_1 {
 
             return Math.Log( x + 2 );
         }
+
+        public override string ToString() {
+
+            return "ln( x + 2 )";
+        }
     }
 }

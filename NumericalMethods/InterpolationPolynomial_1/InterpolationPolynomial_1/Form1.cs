@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -13,6 +14,9 @@ namespace InterpolationPolynomial_1 {
         public Form1() {
 
             InitializeComponent();
+
+            funcComboBox.DataSource = new List<IFunction> { new Func1(), new Func2() };
+            methodComboBox.DataSource = new List<IPolynomialForm> { new NewtonForm(), new LagrangeForm() };
         }
 
         private void runButton_Click( object sender, EventArgs e ) {
@@ -100,8 +104,6 @@ namespace InterpolationPolynomial_1 {
             }
 
             mainChart.Series.Add( series );
-
-            // mainChart.Invalidate();
         }
 
         private bool IsFildsValid() {
@@ -128,32 +130,14 @@ namespace InterpolationPolynomial_1 {
 
             errorLabel.Text = "";
 
-            if (funcComboBox.SelectedIndex == 0) {
-
-                _function = new Func1();
-            } else if (funcComboBox.SelectedIndex == 1) {
-
-                _function = new Func2();
-            } else {
-
-                errorLabel.Text = "Incorrect function";
-            }
+            _function = funcComboBox.SelectedItem as IFunction;
         }
 
         private void methodComboBox_SelectedIndexChanged( object sender, EventArgs e ) {
 
             errorLabel.Text = "";
 
-            if (methodComboBox.SelectedIndex == 0) {
-
-                _polynomialForm = new NewtonForm();
-            } else if (methodComboBox.SelectedIndex == 1) {
-
-                _polynomialForm = new LagrangeForm();
-            } else {
-
-                errorLabel.Text = "Incorrect method";
-            }
+            _polynomialForm = methodComboBox.SelectedItem as IPolynomialForm;
         }
 
         private void clearChartButton_Click( object sender, EventArgs e ) {
