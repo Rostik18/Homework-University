@@ -1,7 +1,7 @@
 ﻿
 namespace BankApplication.Enumerations {
 
-    enum CardType {
+    public enum CardType {
 
         ForPayment = 1,
         Universal = 2,

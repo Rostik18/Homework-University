@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 
 namespace BankApplication.Entities {
-    class UserEntity : IBaseEntity {
+
+    public class UserEntity : IBaseEntity {
 
         public int Id { get; set; }
         public string FirstName { get; set; }

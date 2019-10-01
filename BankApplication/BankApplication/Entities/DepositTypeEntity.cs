@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BankApplication.Entities {
 
-    class DepositTypeEntity : IBaseEntity {
+    public class DepositTypeEntity : IBaseEntity {
 
         public int Id { get; set; }
         public string DepositTitle { get; set; }

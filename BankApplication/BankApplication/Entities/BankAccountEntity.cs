@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BankApplication.Entities {
 
-    class BankAccountEntity : IBaseEntity {
+    public class BankAccountEntity : IBaseEntity {
 
         public int Id { get; set; }
         public int UserId { get; set; }

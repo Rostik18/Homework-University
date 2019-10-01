@@ -25,13 +25,13 @@
         private void InitializeComponent() {
             this.maneMenuStrip = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentUserLable = new System.Windows.Forms.Label();
             this.accountsDataGridView = new System.Windows.Forms.DataGridView();
             this.addAccountButton = new System.Windows.Forms.Button();
             this.freezeButton = new System.Windows.Forms.Button();
-            this.changeUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maneMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,13 @@
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // changeUserToolStripMenuItem
+            // 
+            this.changeUserToolStripMenuItem.Name = "changeUserToolStripMenuItem";
+            this.changeUserToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.changeUserToolStripMenuItem.Text = "Change User";
+            this.changeUserToolStripMenuItem.Click += new System.EventHandler(this.ChangeUserToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -98,6 +105,7 @@
             this.addAccountButton.TabIndex = 3;
             this.addAccountButton.Text = "Add Account";
             this.addAccountButton.UseVisualStyleBackColor = true;
+            this.addAccountButton.Click += new System.EventHandler(this.addAccountButton_Click);
             // 
             // freezeButton
             // 
@@ -108,13 +116,6 @@
             this.freezeButton.TabIndex = 4;
             this.freezeButton.Text = "Freeze Account";
             this.freezeButton.UseVisualStyleBackColor = true;
-            // 
-            // changeUserToolStripMenuItem
-            // 
-            this.changeUserToolStripMenuItem.Name = "changeUserToolStripMenuItem";
-            this.changeUserToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.changeUserToolStripMenuItem.Text = "Change User";
-            this.changeUserToolStripMenuItem.Click += new System.EventHandler(this.ChangeUserToolStripMenuItem_Click);
             // 
             // ManeForm
             // 

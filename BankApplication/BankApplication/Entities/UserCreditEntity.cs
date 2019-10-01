@@ -3,7 +3,7 @@ using System;
 
 namespace BankApplication.Entities {
 
-    class UserCreditEntity : IBaseEntity {
+    public class UserCreditEntity : IBaseEntity {
 
         public int Id { get; set; }
         public int BankAccountId { get; set; }
