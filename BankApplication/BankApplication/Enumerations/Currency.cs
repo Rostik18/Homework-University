@@ -6,6 +6,7 @@ namespace BankApplication.Enumerations {
         UAH = 1,
         USD = 2,
         PLN = 3,
-        RUB = 4
+        RUB = 4,
+        EUR = 5
     }
 }

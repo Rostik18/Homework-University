@@ -21,9 +21,7 @@ namespace BankApplication.Forms {
 
             ChangeUserToolStripMenuItem_Click( sender, e );
 
-
-            var accounts = dbContext.BankAccounts.Select( acc => acc.UserId == CurrentUser.Id );
-            accountsDataGridView.DataSource = accounts.ToList();
+            accountsDataGridView.DataSource = CurrentUser.BankAccounts.ToList();
         }
 
         private void ChangeUserToolStripMenuItem_Click( object sender, EventArgs e ) {
@@ -39,8 +37,11 @@ namespace BankApplication.Forms {
             currentUserLable.Text += " " + CurrentUser.FirstName + " " + CurrentUser.LastName;
         }
 
-        private void addAccountButton_Click( object sender, EventArgs e ) {
+        private void AddAccountButton_Click( object sender, EventArgs e ) {
 
+            var addAccountForm = new AddAccountForm( CurrentUser );
+
+            addAccountForm.ShowDialog();
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using BankApplication.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Data;
 using System.Linq;
@@ -36,8 +37,13 @@ namespace BankApplication.Forms {
 
             loginErrorLabel.Text = String.Empty;
 
-            var currentUser = dbContext.Users.Where( user => user.EmailAdress == loginEmailOrPhoneTextBox.Text ||
-                                                             user.PhoneNumber == loginEmailOrPhoneTextBox.Text ).SingleOrDefault();
+            var currentUser = dbContext.Users.AsNoTracking()
+                .Include(user => user.BankAccounts )
+                .ThenInclude( account => account.UserCredits )
+                .Include( user => user.BankAccounts )
+                .ThenInclude( account => account.UserDeposits )
+                .SingleOrDefault( user => user.EmailAdress == loginEmailOrPhoneTextBox.Text ||
+                                          user.PhoneNumber == loginEmailOrPhoneTextBox.Text );
 
             if (currentUser == null) {
 

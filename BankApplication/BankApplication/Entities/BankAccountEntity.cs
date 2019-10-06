@@ -1,4 +1,4 @@
-﻿using BankApplication.Entities.Base;
+using BankApplication.Entities.Base;
 using BankApplication.Enumerations;
 using System.Collections.Generic;
 

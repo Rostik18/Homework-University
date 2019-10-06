@@ -60,7 +60,7 @@
             // changeUserToolStripMenuItem
             // 
             this.changeUserToolStripMenuItem.Name = "changeUserToolStripMenuItem";
-            this.changeUserToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.changeUserToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.changeUserToolStripMenuItem.Text = "Change User";
             this.changeUserToolStripMenuItem.Click += new System.EventHandler(this.ChangeUserToolStripMenuItem_Click);
             // 
@@ -105,7 +105,7 @@
             this.addAccountButton.TabIndex = 3;
             this.addAccountButton.Text = "Add Account";
             this.addAccountButton.UseVisualStyleBackColor = true;
-            this.addAccountButton.Click += new System.EventHandler(this.addAccountButton_Click);
+            this.addAccountButton.Click += new System.EventHandler(this.AddAccountButton_Click);
             // 
             // freezeButton
             // 
