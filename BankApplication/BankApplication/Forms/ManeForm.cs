@@ -44,5 +44,12 @@ namespace BankApplication.Forms {
             addAccountForm.ShowDialog();
 
         }
+
+        private void AddCreditTypeToolStripMenuItem_Click( object sender, EventArgs e ) {
+
+            AddCreditTypeForm addCreditTypeForm = new AddCreditTypeForm();
+
+            addCreditTypeForm.ShowDialog();
+        }
     }
 }

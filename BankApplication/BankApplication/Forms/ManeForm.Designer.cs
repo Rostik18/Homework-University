@@ -32,6 +32,7 @@
             this.accountsDataGridView = new System.Windows.Forms.DataGridView();
             this.addAccountButton = new System.Windows.Forms.Button();
             this.freezeButton = new System.Windows.Forms.Button();
+            this.addCreditTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maneMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,8 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeUserToolStripMenuItem});
+            this.changeUserToolStripMenuItem,
+            this.addCreditTypeToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -117,6 +119,13 @@
             this.freezeButton.Text = "Freeze Account";
             this.freezeButton.UseVisualStyleBackColor = true;
             // 
+            // addCreditTypeToolStripMenuItem
+            // 
+            this.addCreditTypeToolStripMenuItem.Name = "addCreditTypeToolStripMenuItem";
+            this.addCreditTypeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.addCreditTypeToolStripMenuItem.Text = "Add credit type";
+            this.addCreditTypeToolStripMenuItem.Click += new System.EventHandler(this.AddCreditTypeToolStripMenuItem_Click);
+            // 
             // ManeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -150,6 +159,7 @@
         private System.Windows.Forms.Button addAccountButton;
         private System.Windows.Forms.Button freezeButton;
         private System.Windows.Forms.ToolStripMenuItem changeUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCreditTypeToolStripMenuItem;
     }
 }
 

@@ -10,7 +10,7 @@ namespace BankApplication.Entities {
         public string CreditTitle { get; set; }
         public PercentType PercentType { get; set; }
         public double InterestRate { get; set; }
-        //In months.
+        //In days.
         public int PayoutPeriod { get; set; }
 
         public List<UserCreditEntity> UserCredits { get; set; }
