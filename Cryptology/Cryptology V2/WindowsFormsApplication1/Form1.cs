@@ -309,5 +309,12 @@ namespace WindowsFormsApplication1 {
                 richTextBox2.Text =  file.ReadToEnd();
             }
         }
+
+        private void button4_Click( object sender, EventArgs e ) {
+
+            Task3 task = new Task3();
+
+            task.ShowDialog();
+        }
     }
 }
