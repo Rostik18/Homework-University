@@ -55,6 +55,7 @@
             this.button_Decode = new System.Windows.Forms.Button();
             this.button_Encode = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -62,7 +63,8 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -70,6 +72,8 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // calc_btn
@@ -443,8 +447,19 @@
             this.tabPage3.Text = "#3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(383, 167);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(245, 79);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Частотний аналіз";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1060, 492);
@@ -463,6 +478,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.button6);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(1060, 492);
@@ -506,15 +522,25 @@
             this.tabPage10.Text = "#10";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button5
             // 
-            this.button4.Location = new System.Drawing.Point(383, 167);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(245, 79);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Decod";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button5.Location = new System.Drawing.Point(352, 181);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(346, 75);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Таблиця змін";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(300, 179);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(399, 93);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "Бінарне піднесення та алгоритм евкліда";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
@@ -537,6 +563,8 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,6 +612,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 

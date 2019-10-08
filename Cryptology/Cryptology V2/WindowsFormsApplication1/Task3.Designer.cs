@@ -39,11 +39,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -104,10 +104,10 @@
             // 
             // button_frequency2
             // 
-            this.button_frequency2.Location = new System.Drawing.Point(464, 10);
+            this.button_frequency2.Location = new System.Drawing.Point(477, 10);
             this.button_frequency2.Margin = new System.Windows.Forms.Padding(4);
             this.button_frequency2.Name = "button_frequency2";
-            this.button_frequency2.Size = new System.Drawing.Size(145, 31);
+            this.button_frequency2.Size = new System.Drawing.Size(132, 31);
             this.button_frequency2.TabIndex = 5;
             this.button_frequency2.Text = "Його частота";
             this.button_frequency2.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             this.button1.Location = new System.Drawing.Point(267, 10);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 31);
+            this.button1.Size = new System.Drawing.Size(202, 31);
             this.button1.TabIndex = 7;
             this.button1.Text = "Завантажити криптотекст";
             this.button1.UseVisualStyleBackColor = true;
@@ -150,6 +150,16 @@
             this.dataGridView3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellEndEdit);
             this.dataGridView3.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellValueChanged);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "decod letter";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "crupto letter";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
             // richTextBox3
             // 
             this.richTextBox3.Location = new System.Drawing.Point(1017, 50);
@@ -177,16 +187,6 @@
             this.button5.Text = "Завантажити частотну таблицю";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "decod letter";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "crupto letter";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // Task3
             // 

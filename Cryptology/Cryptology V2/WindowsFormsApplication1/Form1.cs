@@ -316,5 +316,19 @@ namespace WindowsFormsApplication1 {
 
             task.ShowDialog();
         }
+
+        private void button5_Click( object sender, EventArgs e ) {
+
+            Task4 task = new Task4();
+
+            task.ShowDialog();
+        }
+
+        private void button6_Click( object sender, EventArgs e ) {
+
+            BinaryExaltation task = new BinaryExaltation();
+
+            task.ShowDialog();
+        }
     }
 }

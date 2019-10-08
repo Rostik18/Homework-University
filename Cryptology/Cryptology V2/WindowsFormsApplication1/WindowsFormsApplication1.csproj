@@ -54,6 +54,12 @@
     <Compile Include="AboutAuthorForm.Designer.cs">
       <DependentUpon>AboutAuthorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BinaryExaltation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BinaryExaltation.Designer.cs">
+      <DependentUpon>BinaryExaltation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     <Compile Include="TextHandler.cs" />
     <EmbeddedResource Include="AboutAuthorForm.resx">
       <DependentUpon>AboutAuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BinaryExaltation.resx">
+      <DependentUpon>BinaryExaltation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

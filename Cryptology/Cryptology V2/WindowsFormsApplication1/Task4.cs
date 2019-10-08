@@ -24,6 +24,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             comboBox2.SelectedItem = "Англійська";
+
+            th.set_lang( 0 );
         }
 
         private void button1_Click(object sender, EventArgs e)
