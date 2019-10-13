@@ -16,5 +16,9 @@ namespace BankApplication.Entities {
         public List<CreditCardEntity> CreditCards { get; set; }
         public List<UserCreditEntity> UserCredits { get; set; }
         public List<UserDepositEntity> UserDeposits { get; set; }
+
+        public override string ToString() {
+            return Currency.ToString() + " " + MoneyCount +  (IsFrozen ? " Frozen" : " Not Frozen");
+        }
     }
 }

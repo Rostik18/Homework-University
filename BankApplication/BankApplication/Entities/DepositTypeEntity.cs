@@ -14,5 +14,9 @@ namespace BankApplication.Entities {
         public int PayoutPeriod { get; set; }
 
         public List<UserDepositEntity> UserDeposits { get; set; }
+
+        public override string ToString() {
+            return DepositTitle;
+        }
     }
 }

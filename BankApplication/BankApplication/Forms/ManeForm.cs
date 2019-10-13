@@ -63,5 +63,21 @@ namespace BankApplication.Forms {
 
             openCreditButton.Enabled = true;
         }
+
+        private void OpenCreditButton_Click( object sender, EventArgs e ) {
+
+            BankAccountEntity bankAccount;
+            try {
+
+                bankAccount = accountsDataGridView.SelectedRows[0].DataBoundItem as BankAccountEntity;
+            } catch {
+
+                return;
+            }
+
+            var openUserCreditForm = new OpenUserCreditForm( bankAccount );
+
+            openUserCreditForm.ShowDialog();
+        }
     }
 }

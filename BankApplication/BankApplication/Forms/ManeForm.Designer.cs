@@ -105,6 +105,7 @@
             this.accountsDataGridView.Location = new System.Drawing.Point(30, 100);
             this.accountsDataGridView.Name = "accountsDataGridView";
             this.accountsDataGridView.RowTemplate.Height = 24;
+            this.accountsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.accountsDataGridView.Size = new System.Drawing.Size(290, 280);
             this.accountsDataGridView.TabIndex = 2;
             this.accountsDataGridView.SelectionChanged += new System.EventHandler(this.AccountsDataGridView_SelectionChanged);
@@ -142,10 +143,11 @@
             this.openCreditButton.Enabled = false;
             this.openCreditButton.Location = new System.Drawing.Point(326, 100);
             this.openCreditButton.Name = "openCreditButton";
-            this.openCreditButton.Size = new System.Drawing.Size(120, 25);
+            this.openCreditButton.Size = new System.Drawing.Size(120, 29);
             this.openCreditButton.TabIndex = 5;
             this.openCreditButton.Text = "Open credit";
             this.openCreditButton.UseVisualStyleBackColor = true;
+            this.openCreditButton.Click += new System.EventHandler(this.OpenCreditButton_Click);
             // 
             // ManeForm
             // 

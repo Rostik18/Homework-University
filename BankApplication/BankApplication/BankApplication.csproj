@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BankDbContext.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Entities\BankAccountEntity.cs" />
     <Compile Include="Entities\CreditCardEntity.cs" />
     <Compile Include="Entities\CreditTypeEntity.cs" />
@@ -177,6 +178,12 @@
     <Compile Include="Forms\ManeForm.Designer.cs">
       <DependentUpon>ManeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OpenUserCreditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenUserCreditForm.Designer.cs">
+      <DependentUpon>OpenUserCreditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20190914133635_InitializeDbMigration.cs" />
     <Compile Include="Migrations\20190914133635_InitializeDbMigration.designer.cs">
       <DependentUpon>20190914133635_InitializeDbMigration.cs</DependentUpon>
@@ -205,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManeForm.resx">
       <DependentUpon>ManeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OpenUserCreditForm.resx">
+      <DependentUpon>OpenUserCreditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
