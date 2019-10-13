@@ -26,13 +26,15 @@
             this.maneMenuStrip = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCreditTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentUserLable = new System.Windows.Forms.Label();
             this.accountsDataGridView = new System.Windows.Forms.DataGridView();
             this.addAccountButton = new System.Windows.Forms.Button();
             this.freezeButton = new System.Windows.Forms.Button();
-            this.addCreditTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDepositTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openCreditButton = new System.Windows.Forms.Button();
             this.maneMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +56,8 @@
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeUserToolStripMenuItem,
-            this.addCreditTypeToolStripMenuItem});
+            this.addCreditTypeToolStripMenuItem,
+            this.addDepositTypeToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -65,6 +68,13 @@
             this.changeUserToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.changeUserToolStripMenuItem.Text = "Change User";
             this.changeUserToolStripMenuItem.Click += new System.EventHandler(this.ChangeUserToolStripMenuItem_Click);
+            // 
+            // addCreditTypeToolStripMenuItem
+            // 
+            this.addCreditTypeToolStripMenuItem.Name = "addCreditTypeToolStripMenuItem";
+            this.addCreditTypeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.addCreditTypeToolStripMenuItem.Text = "Add credit type";
+            this.addCreditTypeToolStripMenuItem.Click += new System.EventHandler(this.AddCreditTypeToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -97,6 +107,7 @@
             this.accountsDataGridView.RowTemplate.Height = 24;
             this.accountsDataGridView.Size = new System.Drawing.Size(290, 280);
             this.accountsDataGridView.TabIndex = 2;
+            this.accountsDataGridView.SelectionChanged += new System.EventHandler(this.AccountsDataGridView_SelectionChanged);
             // 
             // addAccountButton
             // 
@@ -119,18 +130,29 @@
             this.freezeButton.Text = "Freeze Account";
             this.freezeButton.UseVisualStyleBackColor = true;
             // 
-            // addCreditTypeToolStripMenuItem
+            // addDepositTypeToolStripMenuItem
             // 
-            this.addCreditTypeToolStripMenuItem.Name = "addCreditTypeToolStripMenuItem";
-            this.addCreditTypeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.addCreditTypeToolStripMenuItem.Text = "Add credit type";
-            this.addCreditTypeToolStripMenuItem.Click += new System.EventHandler(this.AddCreditTypeToolStripMenuItem_Click);
+            this.addDepositTypeToolStripMenuItem.Name = "addDepositTypeToolStripMenuItem";
+            this.addDepositTypeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.addDepositTypeToolStripMenuItem.Text = "Add deposit type";
+            this.addDepositTypeToolStripMenuItem.Click += new System.EventHandler(this.AddDepositTypeToolStripMenuItem_Click);
+            // 
+            // openCreditButton
+            // 
+            this.openCreditButton.Enabled = false;
+            this.openCreditButton.Location = new System.Drawing.Point(326, 100);
+            this.openCreditButton.Name = "openCreditButton";
+            this.openCreditButton.Size = new System.Drawing.Size(120, 25);
+            this.openCreditButton.TabIndex = 5;
+            this.openCreditButton.Text = "Open credit";
+            this.openCreditButton.UseVisualStyleBackColor = true;
             // 
             // ManeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 453);
+            this.Controls.Add(this.openCreditButton);
             this.Controls.Add(this.freezeButton);
             this.Controls.Add(this.addAccountButton);
             this.Controls.Add(this.accountsDataGridView);
@@ -160,6 +182,8 @@
         private System.Windows.Forms.Button freezeButton;
         private System.Windows.Forms.ToolStripMenuItem changeUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addCreditTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addDepositTypeToolStripMenuItem;
+        private System.Windows.Forms.Button openCreditButton;
     }
 }
 

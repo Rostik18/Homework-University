@@ -47,9 +47,21 @@ namespace BankApplication.Forms {
 
         private void AddCreditTypeToolStripMenuItem_Click( object sender, EventArgs e ) {
 
-            AddCreditTypeForm addCreditTypeForm = new AddCreditTypeForm();
+            var addCreditTypeForm = new AddCreditTypeForm();
 
             addCreditTypeForm.ShowDialog();
+        }
+
+        private void AddDepositTypeToolStripMenuItem_Click( object sender, EventArgs e ) {
+
+            var addDepositTypeForm = new AddDepositTypeForm();
+
+            addDepositTypeForm.ShowDialog();
+        }
+
+        private void AccountsDataGridView_SelectionChanged( object sender, EventArgs e ) {
+
+            openCreditButton.Enabled = true;
         }
     }
 }

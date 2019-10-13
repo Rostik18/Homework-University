@@ -153,6 +153,12 @@
     <Compile Include="Forms\AddCreditTypeForm.Designer.cs">
       <DependentUpon>AddCreditTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddDepositTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddDepositTypeForm.Designer.cs">
+      <DependentUpon>AddDepositTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddCreditTypeForm.resx">
       <DependentUpon>AddCreditTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddDepositTypeForm.resx">
+      <DependentUpon>AddDepositTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
