@@ -190,6 +190,12 @@
     <Compile Include="Forms\OpenUserDepositForm.Designer.cs">
       <DependentUpon>OpenUserDepositForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserCreditsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserCreditsForm.Designer.cs">
+      <DependentUpon>UserCreditsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserDepositsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OpenUserDepositForm.resx">
       <DependentUpon>OpenUserDepositForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserCreditsForm.resx">
+      <DependentUpon>UserCreditsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserDepositsForm.resx">
       <DependentUpon>UserDepositsForm.cs</DependentUpon>

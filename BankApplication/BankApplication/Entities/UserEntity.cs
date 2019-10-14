@@ -16,5 +16,9 @@ namespace BankApplication.Entities {
         public string Password { get; set; }
 
         public List<BankAccountEntity> BankAccounts { get; set; }
+
+        public override string ToString() {
+            return $"{FirstName} {LastName}";
+        }
     }
 }

@@ -23,24 +23,24 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.userCreditsDataGridView = new System.Windows.Forms.DataGridView();
+            this.userDepositsDataGridView = new System.Windows.Forms.DataGridView();
             this.currentUserLabel = new System.Windows.Forms.Label();
             this.addSymTextBox = new System.Windows.Forms.TextBox();
             this.putMoneyButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
             this.moneyRetutnButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.userCreditsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDepositsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // userCreditsDataGridView
+            // userDepositsDataGridView
             // 
-            this.userCreditsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userCreditsDataGridView.Location = new System.Drawing.Point(15, 39);
-            this.userCreditsDataGridView.Name = "userCreditsDataGridView";
-            this.userCreditsDataGridView.RowTemplate.Height = 24;
-            this.userCreditsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.userCreditsDataGridView.Size = new System.Drawing.Size(400, 200);
-            this.userCreditsDataGridView.TabIndex = 0;
+            this.userDepositsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userDepositsDataGridView.Location = new System.Drawing.Point(15, 39);
+            this.userDepositsDataGridView.Name = "userDepositsDataGridView";
+            this.userDepositsDataGridView.RowTemplate.Height = 24;
+            this.userDepositsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.userDepositsDataGridView.Size = new System.Drawing.Size(400, 200);
+            this.userDepositsDataGridView.TabIndex = 0;
             // 
             // currentUserLabel
             // 
@@ -96,11 +96,11 @@
             this.Controls.Add(this.putMoneyButton);
             this.Controls.Add(this.addSymTextBox);
             this.Controls.Add(this.currentUserLabel);
-            this.Controls.Add(this.userCreditsDataGridView);
+            this.Controls.Add(this.userDepositsDataGridView);
             this.Name = "UserDepositsForm";
             this.Text = "User Deposits";
             this.Load += new System.EventHandler(this.UserDepositsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.userCreditsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDepositsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,7 +108,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView userCreditsDataGridView;
+        private System.Windows.Forms.DataGridView userDepositsDataGridView;
         private System.Windows.Forms.Label currentUserLabel;
         private System.Windows.Forms.TextBox addSymTextBox;
         private System.Windows.Forms.Button putMoneyButton;

@@ -25,7 +25,7 @@ namespace BankApplication.Forms {
             dbContext = new BankDbContext();
             userDeposits = new List<UserDepositEntity>();
 
-            currentUserLabel.Text += " " + currentUser.FirstName + " " + currentUser.LastName;
+            currentUserLabel.Text += " " + currentUser.ToString();
 
             var bankAccounts = dbContext.BankAccounts
                 .Include( ba => ba.UserDeposits )
@@ -54,16 +54,17 @@ namespace BankApplication.Forms {
 
                 errorLabel.Text = "You have no open deposits.";
                 putMoneyButton.Enabled = false;
+                moneyRetutnButton.Enabled = false;
             }
 
-            userCreditsDataGridView.DataSource = userDeposits;
+            userDepositsDataGridView.DataSource = userDeposits;
         }
 
         private void PutMoneyOnOpenedDepositButton_Click( object sender, EventArgs e ) {
 
             errorLabel.Text = string.Empty;
 
-            var selectedDeposit = userCreditsDataGridView.SelectedRows[0].DataBoundItem as UserDepositEntity;
+            var selectedDeposit = userDepositsDataGridView.SelectedRows[0].DataBoundItem as UserDepositEntity;
 
             if (selectedDeposit == null) {
 
@@ -109,7 +110,7 @@ namespace BankApplication.Forms {
 
             errorLabel.Text = string.Empty;
 
-            var selectedDeposit = userCreditsDataGridView.SelectedRows[0].DataBoundItem as UserDepositEntity;
+            var selectedDeposit = userDepositsDataGridView.SelectedRows[0].DataBoundItem as UserDepositEntity;
 
             if (selectedDeposit == null) {
 

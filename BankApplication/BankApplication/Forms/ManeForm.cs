@@ -33,7 +33,7 @@ namespace BankApplication.Forms {
 
             CurrentUser = changeUserForm.User;
 
-            currentUserLable.Text += " " + CurrentUser.FirstName + " " + CurrentUser.LastName;
+            currentUserLable.Text += " " + CurrentUser.ToString();
         }
 
         private void AddAccountButton_Click( object sender, EventArgs e ) {
@@ -120,10 +120,12 @@ namespace BankApplication.Forms {
             errorLabel.Text = string.Empty;
 
             BankAccountEntity bankAccount;
+
+            decimal getMoney;
             try {
 
                 bankAccount = accountsDataGridView.SelectedRows[0].DataBoundItem as BankAccountEntity;
-                bankAccount.MoneyCount -= Convert.ToDecimal( getSetMoneyTextBox.Text );
+                getMoney = Convert.ToDecimal( getSetMoneyTextBox.Text );
 
             } catch {
 
@@ -131,11 +133,12 @@ namespace BankApplication.Forms {
                 return;
             }
 
-            if(bankAccount.MoneyCount < 0) {
+            if(bankAccount.MoneyCount < getMoney) {
 
                 errorLabel.Text = "You can't take more money than you have.";
                 return;
             }
+            bankAccount.MoneyCount -= getMoney;
 
             dbContext.BankAccounts.Update( bankAccount );
             dbContext.SaveChanges();
@@ -150,7 +153,9 @@ namespace BankApplication.Forms {
 
         private void OpenedCreditsButton_Click( object sender, EventArgs e ) {
 
+            var userCreditsForm = new UserCreditsForm( CurrentUser );
 
+            userCreditsForm.ShowDialog();
         }
 
         private void OpenedDepositsButton_Click( object sender, EventArgs e ) {
