@@ -41,6 +41,8 @@
             this.getMoneyButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
             this.refreshButton = new System.Windows.Forms.Button();
+            this.openedCreditsButton = new System.Windows.Forms.Button();
+            this.openedDepositsButton = new System.Windows.Forms.Button();
             this.maneMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             this.aboutToolStripMenuItem});
             this.maneMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.maneMenuStrip.Name = "maneMenuStrip";
-            this.maneMenuStrip.Size = new System.Drawing.Size(832, 28);
+            this.maneMenuStrip.Size = new System.Drawing.Size(677, 28);
             this.maneMenuStrip.TabIndex = 0;
             this.maneMenuStrip.Text = "menuStrip1";
             // 
@@ -119,14 +121,14 @@
             this.accountsDataGridView.Name = "accountsDataGridView";
             this.accountsDataGridView.RowTemplate.Height = 24;
             this.accountsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.accountsDataGridView.Size = new System.Drawing.Size(290, 280);
+            this.accountsDataGridView.Size = new System.Drawing.Size(290, 277);
             this.accountsDataGridView.TabIndex = 2;
             this.accountsDataGridView.SelectionChanged += new System.EventHandler(this.AccountsDataGridView_SelectionChanged);
             // 
             // addAccountButton
             // 
             this.addAccountButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addAccountButton.Location = new System.Drawing.Point(30, 400);
+            this.addAccountButton.Location = new System.Drawing.Point(30, 397);
             this.addAccountButton.Name = "addAccountButton";
             this.addAccountButton.Size = new System.Drawing.Size(120, 25);
             this.addAccountButton.TabIndex = 3;
@@ -137,7 +139,7 @@
             // freezeButton
             // 
             this.freezeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.freezeButton.Location = new System.Drawing.Point(157, 400);
+            this.freezeButton.Location = new System.Drawing.Point(157, 397);
             this.freezeButton.Name = "freezeButton";
             this.freezeButton.Size = new System.Drawing.Size(75, 25);
             this.freezeButton.TabIndex = 4;
@@ -204,7 +206,7 @@
             // refreshButton
             // 
             this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.refreshButton.Location = new System.Drawing.Point(238, 400);
+            this.refreshButton.Location = new System.Drawing.Point(238, 397);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(82, 25);
             this.refreshButton.TabIndex = 11;
@@ -212,11 +214,33 @@
             this.refreshButton.UseVisualStyleBackColor = true;
             this.refreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
+            // openedCreditsButton
+            // 
+            this.openedCreditsButton.Location = new System.Drawing.Point(452, 100);
+            this.openedCreditsButton.Name = "openedCreditsButton";
+            this.openedCreditsButton.Size = new System.Drawing.Size(216, 29);
+            this.openedCreditsButton.TabIndex = 12;
+            this.openedCreditsButton.Text = "My opened credits";
+            this.openedCreditsButton.UseVisualStyleBackColor = true;
+            this.openedCreditsButton.Click += new System.EventHandler(this.OpenedCreditsButton_Click);
+            // 
+            // openedDepositsButton
+            // 
+            this.openedDepositsButton.Location = new System.Drawing.Point(452, 135);
+            this.openedDepositsButton.Name = "openedDepositsButton";
+            this.openedDepositsButton.Size = new System.Drawing.Size(216, 29);
+            this.openedDepositsButton.TabIndex = 13;
+            this.openedDepositsButton.Text = "My opened deposits";
+            this.openedDepositsButton.UseVisualStyleBackColor = true;
+            this.openedDepositsButton.Click += new System.EventHandler(this.OpenedDepositsButton_Click);
+            // 
             // ManeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 453);
+            this.ClientSize = new System.Drawing.Size(677, 450);
+            this.Controls.Add(this.openedDepositsButton);
+            this.Controls.Add(this.openedCreditsButton);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.getMoneyButton);
@@ -261,6 +285,8 @@
         private System.Windows.Forms.Button getMoneyButton;
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.Button openedCreditsButton;
+        private System.Windows.Forms.Button openedDepositsButton;
     }
 }
 

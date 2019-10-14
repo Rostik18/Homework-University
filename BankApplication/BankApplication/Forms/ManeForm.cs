@@ -148,6 +148,16 @@ namespace BankApplication.Forms {
             accountsDataGridView.DataSource = CurrentUser.BankAccounts;
         }
 
+        private void OpenedCreditsButton_Click( object sender, EventArgs e ) {
 
+
+        }
+
+        private void OpenedDepositsButton_Click( object sender, EventArgs e ) {
+
+            var userDepositsForm = new UserDepositsForm( CurrentUser );
+
+            userDepositsForm.ShowDialog();
+        }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using BankApplication.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BankApplication.Forms {
@@ -16,6 +16,9 @@ namespace BankApplication.Forms {
         public ChangeUserForm() {
 
             InitializeComponent();
+        }
+
+        private void ChangeUserForm_Load( object sender, EventArgs e ) {
 
             dbContext = new BankDbContext();
 
@@ -29,19 +32,17 @@ namespace BankApplication.Forms {
             addUserForm.ShowDialog();
         }
 
-        private void ChangeUserForm_Load( object sender, EventArgs e ) {
-
-        }
-
-        private void loginButton_Click( object sender, EventArgs e ) {
+        private void LoginButton_Click( object sender, EventArgs e ) {
 
             loginErrorLabel.Text = String.Empty;
 
             var currentUser = dbContext.Users.AsNoTracking()
-                .Include(user => user.BankAccounts )
+                .Include( user => user.BankAccounts )
                 .ThenInclude( account => account.UserCredits )
+                .ThenInclude( userCredit => userCredit.CreditType )
                 .Include( user => user.BankAccounts )
                 .ThenInclude( account => account.UserDeposits )
+                .ThenInclude( userDeposit => userDeposit.DepositType )
                 .SingleOrDefault( user => user.EmailAdress == loginEmailOrPhoneTextBox.Text ||
                                           user.PhoneNumber == loginEmailOrPhoneTextBox.Text );
 

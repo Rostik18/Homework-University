@@ -190,6 +190,12 @@
     <Compile Include="Forms\OpenUserDepositForm.Designer.cs">
       <DependentUpon>OpenUserDepositForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserDepositsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserDepositsForm.Designer.cs">
+      <DependentUpon>UserDepositsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20190914133635_InitializeDbMigration.cs" />
     <Compile Include="Migrations\20190914133635_InitializeDbMigration.designer.cs">
       <DependentUpon>20190914133635_InitializeDbMigration.cs</DependentUpon>
@@ -197,6 +203,10 @@
     <Compile Include="Migrations\20190914184208_AddTablesAndConfigurations.cs" />
     <Compile Include="Migrations\20190914184208_AddTablesAndConfigurations.designer.cs">
       <DependentUpon>20190914184208_AddTablesAndConfigurations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20191014145943_AddIsPaidToUserDepositsAndCreditsTables.cs" />
+    <Compile Include="Migrations\20191014145943_AddIsPaidToUserDepositsAndCreditsTables.designer.cs">
+      <DependentUpon>20191014145943_AddIsPaidToUserDepositsAndCreditsTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\BankDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
@@ -224,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OpenUserDepositForm.resx">
       <DependentUpon>OpenUserDepositForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserDepositsForm.resx">
+      <DependentUpon>UserDepositsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

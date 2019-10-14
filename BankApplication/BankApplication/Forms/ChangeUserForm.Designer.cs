@@ -33,68 +33,68 @@
             this.addUserButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // UsersDataGridView
-            // 
+            //
             this.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsersDataGridView.Location = new System.Drawing.Point(12, 12);
             this.UsersDataGridView.Name = "UsersDataGridView";
             this.UsersDataGridView.RowTemplate.Height = 24;
             this.UsersDataGridView.Size = new System.Drawing.Size(223, 338);
             this.UsersDataGridView.TabIndex = 0;
-            // 
+            //
             // emailOrPhoneLabel
-            // 
+            //
             this.emailOrPhoneLabel.AutoSize = true;
             this.emailOrPhoneLabel.Location = new System.Drawing.Point(265, 25);
             this.emailOrPhoneLabel.Name = "emailOrPhoneLabel";
             this.emailOrPhoneLabel.Size = new System.Drawing.Size(155, 17);
             this.emailOrPhoneLabel.TabIndex = 1;
             this.emailOrPhoneLabel.Text = "Email or phone number";
-            // 
+            //
             // loginEmailOrPhoneTextBox
-            // 
+            //
             this.loginEmailOrPhoneTextBox.Location = new System.Drawing.Point(268, 62);
             this.loginEmailOrPhoneTextBox.Name = "loginEmailOrPhoneTextBox";
             this.loginEmailOrPhoneTextBox.Size = new System.Drawing.Size(200, 22);
             this.loginEmailOrPhoneTextBox.TabIndex = 2;
-            // 
+            //
             // passwordTextBox
-            // 
+            //
             this.passwordTextBox.Location = new System.Drawing.Point(268, 138);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(200, 22);
             this.passwordTextBox.TabIndex = 4;
-            // 
+            //
             // passwordLabel
-            // 
+            //
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Location = new System.Drawing.Point(265, 102);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(69, 17);
             this.passwordLabel.TabIndex = 3;
             this.passwordLabel.Text = "Password";
-            // 
+            //
             // loginErrorLabel
-            // 
+            //
             this.loginErrorLabel.AutoSize = true;
             this.loginErrorLabel.Location = new System.Drawing.Point(12, 357);
             this.loginErrorLabel.Name = "loginErrorLabel";
             this.loginErrorLabel.Size = new System.Drawing.Size(0, 17);
             this.loginErrorLabel.TabIndex = 5;
-            // 
+            //
             // loginButton
-            // 
+            //
             this.loginButton.Location = new System.Drawing.Point(268, 179);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(200, 25);
             this.loginButton.TabIndex = 6;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            //
             // addUserButton
-            // 
+            //
             this.addUserButton.Location = new System.Drawing.Point(268, 226);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.Size = new System.Drawing.Size(200, 25);
@@ -102,9 +102,9 @@
             this.addUserButton.Text = "Register new User";
             this.addUserButton.UseVisualStyleBackColor = true;
             this.addUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
-            // 
+            //
             // ChangeUserForm
-            // 
+            //
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(482, 383);
             this.Controls.Add(this.addUserButton);
