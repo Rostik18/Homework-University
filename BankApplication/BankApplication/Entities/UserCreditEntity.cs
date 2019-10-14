@@ -12,6 +12,7 @@ namespace BankApplication.Entities {
         public DateTimeOffset FinishDate { get; set; }
         public decimal StartSum { get; set; }
         public decimal DebtBalance { get; set; }
+        public bool IsRepaid { get; set; }
 
         public BankAccountEntity BankAccount { get; set; }
         public CreditTypeEntity CreditType { get; set; }

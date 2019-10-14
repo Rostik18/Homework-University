@@ -73,6 +73,7 @@ namespace BankApplication {
             modelBuilder.Entity<UserCreditEntity>().Property( p => p.FinishDate ).IsRequired();
             modelBuilder.Entity<UserCreditEntity>().Property( p => p.StartSum ).IsRequired();
             modelBuilder.Entity<UserCreditEntity>().Property( p => p.DebtBalance ).IsRequired();
+            modelBuilder.Entity<UserCreditEntity>().Property( p => p.IsRepaid ).IsRequired();
             modelBuilder.Entity<UserCreditEntity>().HasOne( uc => uc.BankAccount ).WithMany( ba => ba.UserCredits )
                                                    .HasForeignKey( uc => uc.BankAccountId ).OnDelete( DeleteBehavior.Cascade );
 
@@ -81,6 +82,7 @@ namespace BankApplication {
             modelBuilder.Entity<UserDepositEntity>().Property( p => p.FinishDate ).IsRequired();
             modelBuilder.Entity<UserDepositEntity>().Property( p => p.StartSum ).IsRequired();
             modelBuilder.Entity<UserDepositEntity>().Property( p => p.CurrentBalance ).IsRequired();
+            modelBuilder.Entity<UserDepositEntity>().Property( p => p.IsPaid ).IsRequired();
             modelBuilder.Entity<UserDepositEntity>().HasOne( ud => ud.BankAccount ).WithMany( ba => ba.UserDeposits )
                                                    .HasForeignKey( ud => ud.BankAccountId ).OnDelete( DeleteBehavior.Cascade );
         }
