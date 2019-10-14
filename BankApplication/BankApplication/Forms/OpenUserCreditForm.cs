@@ -1,4 +1,5 @@
 ﻿using BankApplication.Entities;
+using BankApplication.Enumerations;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -47,6 +48,14 @@ namespace BankApplication.Forms {
                 return;
             }
 
+            decimal debtBalance;
+
+            if (selectedCreditType.PercentType == PercentType.Simple) {
+                debtBalance = startSum * (decimal)(1 + ((double)selectedCreditType.PayoutPeriod / Constants.K) * selectedCreditType.InterestRate);
+            } else {
+                debtBalance = startSum * (decimal)Math.Pow( (1 + selectedCreditType.InterestRate), ((double)selectedCreditType.PayoutPeriod / Constants.K) );
+            }
+
             var userCreditEntity = new UserCreditEntity {
 
                 BankAccountId = _currentAccount.Id,
@@ -54,7 +63,7 @@ namespace BankApplication.Forms {
                 StartDate = DateTimeOffset.Now,
                 StartSum = startSum,
                 FinishDate = DateTimeOffset.Now + TimeSpan.FromDays( selectedCreditType.PayoutPeriod ),
-                DebtBalance = startSum * (decimal)(1 + (double)(selectedCreditType.PayoutPeriod / Constants.K) * selectedCreditType.InterestRate)
+                DebtBalance = debtBalance
             };
 
             _currentAccount.MoneyCount += startSum;

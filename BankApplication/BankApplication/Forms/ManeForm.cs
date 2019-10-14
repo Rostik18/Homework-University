@@ -20,8 +20,7 @@ namespace BankApplication.Forms {
         private void ManeForm_Load( object sender, EventArgs e ) {
 
             ChangeUserToolStripMenuItem_Click( sender, e );
-
-            accountsDataGridView.DataSource = CurrentUser.BankAccounts.ToList();
+            RefreshButton_Click( sender, e );
         }
 
         private void ChangeUserToolStripMenuItem_Click( object sender, EventArgs e ) {
@@ -42,7 +41,6 @@ namespace BankApplication.Forms {
             var addAccountForm = new AddAccountForm( CurrentUser );
 
             addAccountForm.ShowDialog();
-
         }
 
         private void AddCreditTypeToolStripMenuItem_Click( object sender, EventArgs e ) {
@@ -62,6 +60,7 @@ namespace BankApplication.Forms {
         private void AccountsDataGridView_SelectionChanged( object sender, EventArgs e ) {
 
             openCreditButton.Enabled = true;
+            openDepositeButton.Enabled = true;
         }
 
         private void OpenCreditButton_Click( object sender, EventArgs e ) {
@@ -79,5 +78,76 @@ namespace BankApplication.Forms {
 
             openUserCreditForm.ShowDialog();
         }
+
+        private void OpenDepositeButton_Click( object sender, EventArgs e ) {
+
+            BankAccountEntity bankAccount;
+            try {
+
+                bankAccount = accountsDataGridView.SelectedRows[0].DataBoundItem as BankAccountEntity;
+            } catch {
+
+                return;
+            }
+
+            var openUserDepositForm = new OpenUserDepositForm( bankAccount );
+
+            openUserDepositForm.ShowDialog();
+        }
+
+        private void PutMoneyButton_Click( object sender, EventArgs e ) {
+
+            errorLabel.Text = string.Empty;
+
+            BankAccountEntity bankAccount;
+            try {
+
+                bankAccount = accountsDataGridView.SelectedRows[0].DataBoundItem as BankAccountEntity;
+                bankAccount.MoneyCount += Convert.ToDecimal( getSetMoneyTextBox.Text );
+
+            } catch {
+
+                errorLabel.Text = "Invalid data.";
+                return;
+            }
+
+            dbContext.BankAccounts.Update( bankAccount );
+            dbContext.SaveChanges();
+        }
+
+        private void GetMoneyButton_Click( object sender, EventArgs e ) {
+
+            errorLabel.Text = string.Empty;
+
+            BankAccountEntity bankAccount;
+            try {
+
+                bankAccount = accountsDataGridView.SelectedRows[0].DataBoundItem as BankAccountEntity;
+                bankAccount.MoneyCount -= Convert.ToDecimal( getSetMoneyTextBox.Text );
+
+            } catch {
+
+                errorLabel.Text = "Invalid data.";
+                return;
+            }
+
+            if(bankAccount.MoneyCount < 0) {
+
+                errorLabel.Text = "You can't take more money than you have.";
+                return;
+            }
+
+            dbContext.BankAccounts.Update( bankAccount );
+            dbContext.SaveChanges();
+        }
+
+        private void RefreshButton_Click( object sender, EventArgs e ) {
+
+            CurrentUser.BankAccounts = dbContext.BankAccounts.Where( ba => ba.UserId == CurrentUser.Id ).ToList();
+
+            accountsDataGridView.DataSource = CurrentUser.BankAccounts;
+        }
+
+
     }
 }

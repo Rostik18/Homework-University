@@ -184,6 +184,12 @@
     <Compile Include="Forms\OpenUserCreditForm.Designer.cs">
       <DependentUpon>OpenUserCreditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OpenUserDepositForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenUserDepositForm.Designer.cs">
+      <DependentUpon>OpenUserDepositForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20190914133635_InitializeDbMigration.cs" />
     <Compile Include="Migrations\20190914133635_InitializeDbMigration.designer.cs">
       <DependentUpon>20190914133635_InitializeDbMigration.cs</DependentUpon>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OpenUserCreditForm.resx">
       <DependentUpon>OpenUserCreditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OpenUserDepositForm.resx">
+      <DependentUpon>OpenUserDepositForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
