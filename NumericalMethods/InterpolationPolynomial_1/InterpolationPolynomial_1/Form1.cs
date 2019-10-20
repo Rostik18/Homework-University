@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace InterpolationPolynomial_1 {
 
@@ -79,31 +78,13 @@ namespace InterpolationPolynomial_1 {
 
             mainChart.Series.Clear();
 
-            DrawGraph( accurate_y, t, m, "accurate", Color.Green );
-            DrawGraph( p, t, m, "simple polynomial", Color.Blue );
-            DrawGraph( p_ch, t, m, "Chebyshev polynomial", Color.Pink );
+            DrawHelper.DrawGraph( mainChart, accurate_y, t, m, "accurate", Color.Green );
+            DrawHelper.DrawGraph( mainChart, p, t, m, "simple polynomial", Color.Blue );
+            DrawHelper.DrawGraph( mainChart, p_ch, t, m, "Chebyshev polynomial", Color.Pink );
 
             double polynomialError = Math.Abs( _function.F( faultX ) - _polynomialForm.CalcPolynomial( n, x, y, faultX ) );
 
             funcErrorLabel.Text = String.Format( "Error: \n{0:f13}", polynomialError );
-        }
-
-        private void DrawGraph( double[] y, double[] x, int m, string seriesName, Color color ) {
-
-            var series = new Series {
-                Name = seriesName,
-                Color = color,
-                IsVisibleInLegend = true,
-                IsXValueIndexed = true,
-                ChartType = SeriesChartType.Line
-            };
-
-            for (int i = 0; i < m + 1; i++) {
-
-                series.Points.AddXY( x[i], y[i] );
-            }
-
-            mainChart.Series.Add( series );
         }
 
         private bool IsFildsValid() {
@@ -143,6 +124,13 @@ namespace InterpolationPolynomial_1 {
         private void clearChartButton_Click( object sender, EventArgs e ) {
 
             mainChart.Series.Clear();
+        }
+
+        private void trigonometricStartButton_Click( object sender, EventArgs e ) {
+
+            var trigonometricPolinomialForm = new TrigonometricPolinomialForm();
+
+            trigonometricPolinomialForm.ShowDialog();
         }
     }
 }

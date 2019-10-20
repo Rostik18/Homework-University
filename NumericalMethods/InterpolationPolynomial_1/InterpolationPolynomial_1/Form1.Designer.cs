@@ -43,6 +43,7 @@
             this.mainChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.clearChartButton = new System.Windows.Forms.Button();
             this.funcErrorLabel = new System.Windows.Forms.Label();
+            this.trigonometricStartButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,7 +186,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.mainChart.Series.Add(series1);
-            this.mainChart.Size = new System.Drawing.Size(647, 426);
+            this.mainChart.Size = new System.Drawing.Size(647, 427);
             this.mainChart.TabIndex = 14;
             this.mainChart.Text = "mainChart";
             // 
@@ -208,11 +209,22 @@
             this.funcErrorLabel.TabIndex = 15;
             this.funcErrorLabel.Text = "epsilon:";
             // 
+            // trigonometricStartButton
+            // 
+            this.trigonometricStartButton.Location = new System.Drawing.Point(16, 408);
+            this.trigonometricStartButton.Name = "trigonometricStartButton";
+            this.trigonometricStartButton.Size = new System.Drawing.Size(118, 31);
+            this.trigonometricStartButton.TabIndex = 16;
+            this.trigonometricStartButton.Text = "Trigonometric";
+            this.trigonometricStartButton.UseVisualStyleBackColor = true;
+            this.trigonometricStartButton.Click += new System.EventHandler(this.trigonometricStartButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.Controls.Add(this.trigonometricStartButton);
             this.Controls.Add(this.funcErrorLabel);
             this.Controls.Add(this.clearChartButton);
             this.Controls.Add(this.mainChart);
@@ -257,6 +269,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart mainChart;
         private System.Windows.Forms.Button clearChartButton;
         private System.Windows.Forms.Label funcErrorLabel;
+        private System.Windows.Forms.Button trigonometricStartButton;
     }
 }
 
