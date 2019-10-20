@@ -24,6 +24,11 @@ age(bohdan, 33).
 age(mariya1, 55).
 age(myron, 58).
 
+age(pavlo, 90).
+
+age(yaryna, 3).
+age(olena, 11).
+
 man(rostik).
 man(myron).
 man(igor).
@@ -36,6 +41,20 @@ woman(mariya2).
 woman(mariya3).
 woman(ganna).
 woman(kateryna).
+woman(yaryna).
+woman(olena).
 
 ageDiff(A, B, Rez):- age(A, Age1), age(B, Age2), Rez is Age2 - Age1.
 married(A, B):- parent(A, X), parent(B, X).
+
+brothers(A, B):- parent(X, A), parent(X, B), man(A), man(B), A \= B.
+sisters(A, B):- parent(X, A), parent(X, B), woman(A), woman(B), A \= B.
+
+grandParent(A, B):- parent(X, B), parent(A, X).
+
+cousin(A, B):- parent(X, A), parent(F, B), parent(T, F), parent(T, F), X \= F.
+
+preParent(A, B):- parent(A, B).
+preParent(A, B):- parent(A, X), preParent(X, B).
+
+diadia(A, B):- parent(X, A), brothers(X, B).
