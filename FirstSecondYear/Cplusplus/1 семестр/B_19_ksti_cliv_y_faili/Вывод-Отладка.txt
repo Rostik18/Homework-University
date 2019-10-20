@@ -1,0 +1,18 @@
+﻿"B_19.exe" (Win32). Загружено "C:\Users\Ростик\source\repos\B_19\Debug\B_19.exe". Символы загружены.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\ntdll.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\kernel32.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\KernelBase.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\msvcp140d.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\vcruntime140d.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\ucrtbased.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\kernel.appcore.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\msvcrt.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\rpcrt4.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\sspicli.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\cryptbase.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\bcryptprimitives.dll". Невозможно найти или открыть PDB-файл.
+"B_19.exe" (Win32). Загружено "C:\Windows\SysWOW64\sechost.dll". Невозможно найти или открыть PDB-файл.
+Поток 0x418 завершился с кодом 0 (0x0).
+Поток 0x2278 завершился с кодом 0 (0x0).
+Поток 0x1244 завершился с кодом 0 (0x0).
+Программа "[13936] B_19.exe" завершилась с кодом 0 (0x0).
