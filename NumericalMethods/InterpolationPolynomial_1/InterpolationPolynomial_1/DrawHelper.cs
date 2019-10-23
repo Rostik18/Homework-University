@@ -15,12 +15,13 @@ namespace InterpolationPolynomial_1 {
                 ChartType = SeriesChartType.Line
             };
 
+            chart.Series.Add( series );
+
             for (int i = 0; i < m + 1; i++) {
 
-                series.Points.AddXY( x[i], y[i] );
+              chart.Series[seriesName].Points.AddXY( x[i], y[i] );
             }
 
-            chart.Series.Add( series );
         }
     }
 }

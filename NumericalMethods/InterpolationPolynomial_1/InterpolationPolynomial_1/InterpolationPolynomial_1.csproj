@@ -56,6 +56,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Func2.cs" />
+    <Compile Include="Func3.cs" />
     <Compile Include="IFunction.cs" />
     <Compile Include="IPolynomialForm.cs" />
     <Compile Include="LagrangeForm.cs" />

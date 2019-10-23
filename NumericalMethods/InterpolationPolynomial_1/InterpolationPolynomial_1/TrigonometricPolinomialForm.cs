@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InterpolationPolynomial_1 {
@@ -18,7 +13,7 @@ namespace InterpolationPolynomial_1 {
 
             InitializeComponent();
 
-            funcComboBox.DataSource = new List<IFunction> { new Func1(), new Func2() };
+            funcComboBox.DataSource = new List<IFunction> { new Func1(), new Func2(), new Func3() };
         }
 
         private void runButton_Click( object sender, EventArgs e ) {
@@ -36,15 +31,26 @@ namespace InterpolationPolynomial_1 {
                 return;
             }
 
-            double[] y = new double[2 * n];
-            double[] t = new double[2 * n];
+            //int m = n;
 
-            double[] a = new double[n + 2];
-            double[] b = new double[n + 1];
+            //double[] accurateY = new double[m + 1];
+            //double[] accurateX = new double[m + 1];
 
-            for (int j = 0; j < 2 * n; j++) {
+            //for (int i = 0; i < m + 1; i++) {
 
-                t[j] = (Math.PI * j) / n;
+            //    accurateX[i] = i * 2 * Math.PI / m;
+            //    accurateY[i] = _function.F( accurateX[i] );
+            //}
+
+            double[] y = new double[2 * n + 1];
+            double[] t = new double[2 * n + 1];
+
+            double[] a = new double[n + 1];
+            double[] b = new double[n];
+
+            for (int j = 0; j < 2 * n + 1; j++) {
+
+                t[j] = (2 * Math.PI * j) / (2 * n + 1);
                 y[j] = _function.F( t[j] );
             }
 
@@ -55,7 +61,7 @@ namespace InterpolationPolynomial_1 {
 
                 for (int j = 0; j < 2 * n; j++) {
 
-                    sum += y[j] * Math.Cos( (2 * Math.PI * j * k) / (2 * n + 1) );
+                    sum += y[j] * Math.Cos( 2 * Math.PI * j * k / (2 * n + 1) );
                 }
 
                 a[k] = (2 * sum) / (2 * n + 1);
@@ -68,30 +74,36 @@ namespace InterpolationPolynomial_1 {
 
                 for (int j = 0; j < 2 * n; j++) {
 
-                    sum += y[j] * Math.Sin( (2 * Math.PI * j * (k + 1)) / (2 * n + 1) );
+                    sum += y[j] * Math.Sin( 2 * Math.PI * j * (k + 1) / (2 * n + 1) );
                 }
 
                 b[k] = (2 * sum) / (2 * n + 1);
             }
 
-            double[] q = new double[2 * n];
+            double[] q = new double[2 * n + 1];
 
-            for (int i = 0; i < 2 * n; i++) {
+            for (int i = 0; i < 2 * n + 1; i++) {
 
-                double sum = 0;
-
-                for (int k = 1; k < n; k++) {
-
-                    sum += a[k] * Math.Cos( k * t[i] ) + b[k - 1] * Math.Sin( k * t[i] );
-                }
-
-                q[i] = (a[0] * sum) / 2;
+                q[i] = Q( t[i], n, a, b );
             }
 
             mainChart.Series.Clear();
+            chart1.Series.Clear();
 
-            DrawHelper.DrawGraph( mainChart, y, t, 2 * n - 1, "accurate", Color.Green );
-            DrawHelper.DrawGraph( mainChart, q, t, 2 * n - 1, "trigonometric polynomial", Color.Blue );
+            DrawHelper.DrawGraph( mainChart, y, t, 2*n, "accurate", Color.Green );
+            DrawHelper.DrawGraph( chart1, q, t, 2 * n, "trigonometric polynomial", Color.Blue );
+        }
+
+        private double Q( double t, int n, double[] _a, double[] _b ) {
+
+            double sum = 0;
+
+            for (int k = 1; k < n + 1; k++) {
+
+                sum += _a[k] * Math.Cos( k * t ) + _b[k - 1] * Math.Sin( k * t );
+            }
+
+            return (_a[0] / 2) + sum;
         }
 
         private bool IsFildsValid() {
