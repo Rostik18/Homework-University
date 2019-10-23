@@ -120,7 +120,6 @@
             this.MinimizeBox = false;
             this.Name = "ChangeUserForm";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.ChangeUserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

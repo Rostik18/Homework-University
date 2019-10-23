@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace BankApplication.Forms {
@@ -16,9 +15,6 @@ namespace BankApplication.Forms {
         public ChangeUserForm() {
 
             InitializeComponent();
-        }
-
-        private void ChangeUserForm_Load( object sender, EventArgs e ) {
 
             dbContext = new BankDbContext();
 

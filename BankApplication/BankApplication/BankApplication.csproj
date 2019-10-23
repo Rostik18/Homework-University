@@ -172,6 +172,12 @@
     <Compile Include="Forms\ChangeUserForm.Designer.cs">
       <DependentUpon>ChangeUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DepositCalculatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DepositCalculatorForm.Designer.cs">
+      <DependentUpon>DepositCalculatorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeUserForm.resx">
       <DependentUpon>ChangeUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DepositCalculatorForm.resx">
+      <DependentUpon>DepositCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManeForm.resx">
       <DependentUpon>ManeForm.cs</DependentUpon>

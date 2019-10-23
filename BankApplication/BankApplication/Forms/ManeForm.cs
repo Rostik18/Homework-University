@@ -164,5 +164,12 @@ namespace BankApplication.Forms {
 
             userDepositsForm.ShowDialog();
         }
+
+        private void openDepositCalculatorButton_Click( object sender, EventArgs e ) {
+
+            var calculatorForm = new DepositCalculatorForm();
+
+            calculatorForm.ShowDialog();
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.refreshButton = new System.Windows.Forms.Button();
             this.openedCreditsButton = new System.Windows.Forms.Button();
             this.openedDepositsButton = new System.Windows.Forms.Button();
+            this.openDepositCalculatorButton = new System.Windows.Forms.Button();
             this.maneMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -234,11 +235,22 @@
             this.openedDepositsButton.UseVisualStyleBackColor = true;
             this.openedDepositsButton.Click += new System.EventHandler(this.OpenedDepositsButton_Click);
             // 
+            // openDepositCalculatorButton
+            // 
+            this.openDepositCalculatorButton.Location = new System.Drawing.Point(452, 397);
+            this.openDepositCalculatorButton.Name = "openDepositCalculatorButton";
+            this.openDepositCalculatorButton.Size = new System.Drawing.Size(216, 25);
+            this.openDepositCalculatorButton.TabIndex = 14;
+            this.openDepositCalculatorButton.Text = "Deposit calculator";
+            this.openDepositCalculatorButton.UseVisualStyleBackColor = true;
+            this.openDepositCalculatorButton.Click += new System.EventHandler(this.openDepositCalculatorButton_Click);
+            // 
             // ManeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 450);
+            this.Controls.Add(this.openDepositCalculatorButton);
             this.Controls.Add(this.openedDepositsButton);
             this.Controls.Add(this.openedCreditsButton);
             this.Controls.Add(this.refreshButton);
@@ -287,6 +299,7 @@
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Button openedCreditsButton;
         private System.Windows.Forms.Button openedDepositsButton;
+        private System.Windows.Forms.Button openDepositCalculatorButton;
     }
 }
 
