@@ -31,7 +31,7 @@ namespace InterpolationPolynomial_1 {
                 return;
             }
 
-            int m = 100;
+            int m = 500;
 
             double[] accurateY = new double[m + 1];
             double[] accurateX = new double[m + 1];
@@ -59,7 +59,7 @@ namespace InterpolationPolynomial_1 {
 
                 double sum = 0;
 
-                for (int j = 0; j < 2 * n; j++) {
+                for (int j = 0; j < 2 * n + 1; j++) {
 
                     sum += y[j] * Math.Cos( 2 * Math.PI * j * k / (2 * n + 1) );
                 }
@@ -72,7 +72,7 @@ namespace InterpolationPolynomial_1 {
 
                 double sum = 0;
 
-                for (int j = 0; j < 2 * n; j++) {
+                for (int j = 0; j < 2 * n + 1; j++) {
 
                     sum += y[j] * Math.Sin( 2 * Math.PI * j * (k + 1) / (2 * n + 1) );
                 }
@@ -80,18 +80,18 @@ namespace InterpolationPolynomial_1 {
                 b[k] = (2 * sum) / (2 * n + 1);
             }
 
-            double[] q = new double[2 * n + 1];
+            double[] q = new double[m + 1];
 
-            for (int i = 0; i < 2 * n + 1; i++) {
+            for (int i = 0; i < m + 1; i++) {
 
-                q[i] = Q( t[i], n, a, b );
+                q[i] = Q( accurateX[i], n, a, b );
             }
 
             mainChart.Series.Clear();
             chart1.Series.Clear();
 
             DrawHelper.DrawGraph( mainChart, accurateY, accurateX, m, "accurate", Color.Green );
-            DrawHelper.DrawGraph( chart1, q, t, 2 * n - 1, "trigonometric", Color.Blue );
+            DrawHelper.DrawGraph( mainChart, q, accurateX, m, "trigonometric", Color.Blue );
         }
 
         private double Q( double t, int n, double[] _a, double[] _b ) {

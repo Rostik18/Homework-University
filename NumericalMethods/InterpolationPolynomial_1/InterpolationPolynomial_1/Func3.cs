@@ -6,7 +6,7 @@ namespace InterpolationPolynomial_1 {
 
         public double F( double x ) {
 
-            return 3 * Math.Sin( x ) + 2 * Math.Cos( x );
+            return 3 * Math.Sin( 10 * x ) + 2 * Math.Cos( x );
         }
     }
 }

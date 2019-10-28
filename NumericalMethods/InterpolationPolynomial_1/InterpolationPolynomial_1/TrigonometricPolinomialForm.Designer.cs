@@ -26,9 +26,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.funcErrorLabel = new System.Windows.Forms.Label();
             this.clearChartButton = new System.Windows.Forms.Button();
             this.mainChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -37,10 +34,8 @@
             this.funcComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.nTextBox = new System.Windows.Forms.TextBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -133,25 +128,6 @@
             this.nTextBox.Size = new System.Drawing.Size(100, 22);
             this.nTextBox.TabIndex = 25;
             // 
-            // chart1
-            // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(137, 3);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(684, 262);
-            this.chart1.TabIndex = 34;
-            this.chart1.Text = "chart1";
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -171,7 +147,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.funcErrorLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.chart1);
             this.splitContainer1.Size = new System.Drawing.Size(824, 544);
             this.splitContainer1.SplitterDistance = 272;
             this.splitContainer1.TabIndex = 35;
@@ -186,7 +161,6 @@
             this.Name = "TrigonometricPolinomialForm";
             this.Text = "TrigonometricPolinomialForm";
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -207,7 +181,6 @@
         private System.Windows.Forms.ComboBox funcComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox nTextBox;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
