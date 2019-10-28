@@ -31,16 +31,16 @@ namespace InterpolationPolynomial_1 {
                 return;
             }
 
-            //int m = n;
+            int m = 100;
 
-            //double[] accurateY = new double[m + 1];
-            //double[] accurateX = new double[m + 1];
+            double[] accurateY = new double[m + 1];
+            double[] accurateX = new double[m + 1];
 
-            //for (int i = 0; i < m + 1; i++) {
+            for (int i = 0; i < m + 1; i++) {
 
-            //    accurateX[i] = i * 2 * Math.PI / m;
-            //    accurateY[i] = _function.F( accurateX[i] );
-            //}
+                accurateX[i] = i * 2 * Math.PI / m;
+                accurateY[i] = _function.F( accurateX[i] );
+            }
 
             double[] y = new double[2 * n + 1];
             double[] t = new double[2 * n + 1];
@@ -90,8 +90,8 @@ namespace InterpolationPolynomial_1 {
             mainChart.Series.Clear();
             chart1.Series.Clear();
 
-            DrawHelper.DrawGraph( mainChart, y, t, 2*n, "accurate", Color.Green );
-            DrawHelper.DrawGraph( chart1, q, t, 2 * n, "trigonometric polynomial", Color.Blue );
+            DrawHelper.DrawGraph( mainChart, accurateY, accurateX, m, "accurate", Color.Green );
+            DrawHelper.DrawGraph( chart1, q, t, 2 * n - 1, "trigonometric", Color.Blue );
         }
 
         private double Q( double t, int n, double[] _a, double[] _b ) {
