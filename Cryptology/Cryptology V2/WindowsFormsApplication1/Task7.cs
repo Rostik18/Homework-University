@@ -16,50 +16,6 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        private void button19_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                textBox_xmodstep.Text = CalculateBinaryPower(Convert.ToInt32(textBox_x.Text), Convert.ToInt32(textBox_d.Text), Convert.ToInt32(textBox_n.Text)).ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-
-        public long CalculateBinaryPower(long x, long d, long n)
-        {
-            textBox_x_d_step.Text = Math.Pow(x, d).ToString();
-            string bin = Convert.ToString(d, 2);
-
-            int len = bin.Length;
-
-            bin = Reverse(bin);
-            bin.ToCharArray();
-            long z = 1;
-
-            for (int i = 2; i <= len + 1; ++i)
-            {
-                if (bin[len - i + 1] == '0')
-                    z = (z * z) % n;
-                else
-                {
-
-                    z = (z * z * x) % n;
-                }
-            }
-            return z;
-        }
-
-        public string Reverse(string input)
-        {
-            char[] chars = input.ToCharArray();
-            Array.Reverse(chars);
-            return new String(chars);
-        }
 
         private void button20_Click_1(object sender, EventArgs e)
         {
@@ -150,13 +106,13 @@ namespace WindowsFormsApplication1
                 }
                 else
                     if (n % 2 == 0)
-                    {
-                        MessageBox.Show("Помилка! N мусить бути непарним !", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        textBox_resyltst.Text = PrimalityTest_SolovayShtrassen(n, k).ToString();
-                    }
+                {
+                    MessageBox.Show("Помилка! N мусить бути непарним !", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    textBox_resyltst.Text = PrimalityTest_SolovayShtrassen(n, k);
+                }
 
 
 
@@ -170,16 +126,17 @@ namespace WindowsFormsApplication1
         {
             Random R = new Random();
             int a = 0;
+
             for (int i = 1; i <= k; ++i)
             {
                 a = R.Next(2, n - 1);
 
-                if (gcd(a, n) > 1) return "n - composite";
+                if (gcd(a, n) > 1) return $"{n} - складене";
 
-                if ((Math.Pow(a, (n - 1) / 2) % n) == (a / n)) return "n - composite";
+                if ((Math.Pow(a, (n - 1) / 2) % n) == (a / n)) return $"{n} - складене";
             }
             double prob = 1 - Math.Pow(2, -k);
-            return "n - prime with probability " + prob;
+            return $"{n} - просте з ймовірністю {prob}";
         }
 
         private int gcd(int a, int b)
@@ -192,7 +149,7 @@ namespace WindowsFormsApplication1
             }
             return a;
         }
-        int I=0,a=0,b=0;
+        int I = 0, a = 0, b = 0;
         public int GCD(int first, int second)
         {
             if (first == 0)

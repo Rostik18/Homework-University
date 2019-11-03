@@ -57,14 +57,15 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -74,6 +75,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // calc_btn
@@ -125,18 +127,23 @@
             this.dataGridView1.Location = new System.Drawing.Point(785, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(275, 372);
             this.dataGridView1.TabIndex = 3;
             // 
             // letter_col
             // 
             this.letter_col.HeaderText = "Symbols";
+            this.letter_col.MinimumWidth = 6;
             this.letter_col.Name = "letter_col";
+            this.letter_col.Width = 125;
             // 
             // percent_col
             // 
             this.percent_col.HeaderText = "Frequency";
+            this.percent_col.MinimumWidth = 6;
             this.percent_col.Name = "percent_col";
+            this.percent_col.Width = 125;
             // 
             // save_btn
             // 
@@ -186,7 +193,6 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1068, 28);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
@@ -194,19 +200,19 @@
             // meToolStripMenuItem
             // 
             this.meToolStripMenuItem.Name = "meToolStripMenuItem";
-            this.meToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.meToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.meToolStripMenuItem.Text = "Menu";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -388,18 +394,23 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(507, 297);
             this.dataGridView2.TabIndex = 17;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "ABC_1";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "ABC_2";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
             // button_Load
             // 
@@ -467,6 +478,16 @@
             this.tabPage4.Text = "#4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(352, 181);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(346, 75);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Таблиця змін";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
@@ -486,8 +507,19 @@
             this.tabPage6.Text = "#6";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(300, 179);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(399, 93);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "Бінарне піднесення та алгоритм евкліда";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.button7);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(1060, 492);
@@ -522,25 +554,15 @@
             this.tabPage10.Text = "#10";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // button7
             // 
-            this.button5.Location = new System.Drawing.Point(352, 181);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(346, 75);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Таблиця змін";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(300, 179);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(399, 93);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Бінарне піднесення та алгоритм евкліда";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button7.Location = new System.Drawing.Point(331, 200);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(399, 93);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "Якобі, групи, простота";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Form1
             // 
@@ -565,6 +587,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,6 +637,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 

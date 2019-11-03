@@ -330,5 +330,12 @@ namespace WindowsFormsApplication1 {
 
             task.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Task7 task = new Task7();
+
+            task.ShowDialog();
+        }
     }
 }
