@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         }
         bool Simple_number(int e)
         {
-            int k=0;
+            int k = 0;
             for (int i = 2; i < e; i++)
             {
                 if (e % i == 0)
@@ -53,9 +53,9 @@ namespace WindowsFormsApplication1
             Random rand = new Random();
             bool t = false;
             int exp = rand.Next(1, Fi_n - 1);
-            while (t==false)
+            while (t == false)
             {
-                if (extended_evklid(Fi_n, exp) == 1 && Simple_number(exp)==true)
+                if (extended_evklid(Fi_n, exp) == 1 && Simple_number(exp) == true)
                 {
                     t = true;
                 }
@@ -66,7 +66,7 @@ namespace WindowsFormsApplication1
             }
             int d = 1;
             bool chek = false;
-            while(chek!=true)
+            while (chek != true)
             {
                 if ((d * exp) % Fi_n == 1)
                 {
@@ -83,18 +83,19 @@ namespace WindowsFormsApplication1
 
         private void button_encode_Click(object sender, EventArgs e)
         {
-            //textBox_encode.Clear();
+            list.Clear();
             int exp = Convert.ToInt32(textBox_open.Text);
             int N = Convert.ToInt32(textBox_N.Text);
             string s = textBox_encode.Text;
-            string s1 = "";
+            string s1 = string.Empty;
+
             for (int i = 0; i < s.Length; i++)
             {
-                int a =(int)BigInteger.ModPow((((int)(char)s[i])), exp, N);
-                //MessageBox.Show(((int)((char)s[i])).ToString());
+                int a = (int)BigInteger.ModPow(((int)s[i]), exp, N);
                 list.Add(a);
-                s1 += a.ToString()+" ";  
+                s1 += a.ToString() + " ";
             }
+
             textBox_encode.Text = s1;
         }
 
@@ -102,14 +103,14 @@ namespace WindowsFormsApplication1
         {
             int d = Convert.ToInt32(textBox_close.Text);
             int N = Convert.ToInt32(textBox_N.Text);
-            string s = "";
+            string s = string.Empty;
+
             for (int i = 0; i < list.Count; i++)
             {
-                int a = (int)BigInteger.ModPow(list[i],d,N);
-                s +=(char)a;
+                s += (char)BigInteger.ModPow(list[i], d, N);
             }
+
             textBox_decode.Text = s;
-            s = "";
         }
     }
 }

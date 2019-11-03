@@ -337,5 +337,12 @@ namespace WindowsFormsApplication1 {
 
             task.ShowDialog();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Task8 task = new Task8();
+
+            task.ShowDialog();
+        }
     }
 }
