@@ -347,7 +347,7 @@ namespace WindowsFormsApplication1 {
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Task9 task = new Task9();
+            DigitalSignatureForm task = new DigitalSignatureForm();
 
             task.ShowDialog();
         }

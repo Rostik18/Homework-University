@@ -60,6 +60,12 @@
     <Compile Include="BinaryExaltation.Designer.cs">
       <DependentUpon>BinaryExaltation.cs</DependentUpon>
     </Compile>
+    <Compile Include="DigitalSignatureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DigitalSignatureForm.Designer.cs">
+      <DependentUpon>DigitalSignatureForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BinaryExaltation.resx">
       <DependentUpon>BinaryExaltation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DigitalSignatureForm.resx">
+      <DependentUpon>DigitalSignatureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
