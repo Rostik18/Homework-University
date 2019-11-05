@@ -344,5 +344,12 @@ namespace WindowsFormsApplication1 {
 
             task.ShowDialog();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Task9 task = new Task9();
+
+            task.ShowDialog();
+        }
     }
 }

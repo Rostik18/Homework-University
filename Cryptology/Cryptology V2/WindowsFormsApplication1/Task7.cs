@@ -25,13 +25,13 @@ namespace WindowsFormsApplication1
 
         public int ChoiceZn(int n)
         {
-            int l = (int)Math.Log(n, 2);
+            int l = (int)Math.Ceiling(Math.Log(n, 2));
             if (l == 0) l = 1;
             Random random = new Random();
             int x;
             do
             {
-                x = random.Next((int)Math.Pow(2, l));
+                x = random.Next((int)Math.Ceiling(Math.Pow(2, l)));
             } while (x >= n);
 
             return x;

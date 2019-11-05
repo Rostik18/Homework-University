@@ -66,7 +66,7 @@ namespace WindowsFormsApplication1
             }
             int d = 1;
             bool chek = false;
-            while (chek != true)
+            while (chek == false)
             {
                 if ((d * exp) % Fi_n == 1)
                 {
