@@ -132,5 +132,12 @@ namespace InterpolationPolynomial_1 {
 
             trigonometricPolinomialForm.ShowDialog();
         }
+
+        private void splineStartButton_Click(object sender, EventArgs e)
+        {
+            SplineForm splineForm = new SplineForm();
+
+            splineForm.ShowDialog();
+        }
     }
 }

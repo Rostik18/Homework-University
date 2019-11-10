@@ -44,6 +44,7 @@
             this.clearChartButton = new System.Windows.Forms.Button();
             this.funcErrorLabel = new System.Windows.Forms.Label();
             this.trigonometricStartButton = new System.Windows.Forms.Button();
+            this.splineStartButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,7 +187,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.mainChart.Series.Add(series1);
-            this.mainChart.Size = new System.Drawing.Size(647, 427);
+            this.mainChart.Size = new System.Drawing.Size(647, 426);
             this.mainChart.TabIndex = 14;
             this.mainChart.Text = "mainChart";
             // 
@@ -219,11 +220,22 @@
             this.trigonometricStartButton.UseVisualStyleBackColor = true;
             this.trigonometricStartButton.Click += new System.EventHandler(this.trigonometricStartButton_Click);
             // 
+            // splineStartButton
+            // 
+            this.splineStartButton.Location = new System.Drawing.Point(15, 373);
+            this.splineStartButton.Name = "splineStartButton";
+            this.splineStartButton.Size = new System.Drawing.Size(119, 29);
+            this.splineStartButton.TabIndex = 17;
+            this.splineStartButton.Text = "Spline";
+            this.splineStartButton.UseVisualStyleBackColor = true;
+            this.splineStartButton.Click += new System.EventHandler(this.splineStartButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.splineStartButton);
             this.Controls.Add(this.trigonometricStartButton);
             this.Controls.Add(this.funcErrorLabel);
             this.Controls.Add(this.clearChartButton);
@@ -270,6 +282,7 @@
         private System.Windows.Forms.Button clearChartButton;
         private System.Windows.Forms.Label funcErrorLabel;
         private System.Windows.Forms.Button trigonometricStartButton;
+        private System.Windows.Forms.Button splineStartButton;
     }
 }
 
