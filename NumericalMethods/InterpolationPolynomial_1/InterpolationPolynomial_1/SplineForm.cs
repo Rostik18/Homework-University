@@ -52,19 +52,18 @@ namespace InterpolationPolynomial_1
             }
 
             mainChart.Series.Clear();
-            chart1.Series.Clear();
 
             for (int k = 0; k < n + 1; k++)
             {
                 var spline = Bk1(x, x[k], h1);
-                DrawHelper.DrawGraph(mainChart, spline, x, n, $"B{k},1", Color.FromArgb(10 * k, 128, 128));
+                DrawHelper.DrawGraph(mainChart, spline, x, n, $"B{k},1", Color.FromArgb((10 * k + 100) % 255, 128, 0));
             }
 
-            for (int k = 0; k < n + 1; k++)
-            {
-                var spline = Bk1(t, x[k], h1);
-                DrawHelper.DrawGraph(chart1, spline, t, p, $"B{k},1", Color.FromArgb(10 * k, 255, 128));
-            }
+            //for (int k = 0; k < n + 1; k++)
+            //{
+            //    var spline = Bk1(t, x[k], h1);
+            //    DrawHelper.DrawGraph(mainChart, spline, t, p, $"B*{k},1", Color.FromArgb((10 * k + 50)%255, 255, 128));
+            //}
 
         }
 
