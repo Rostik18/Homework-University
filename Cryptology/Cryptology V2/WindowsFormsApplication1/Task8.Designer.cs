@@ -43,6 +43,8 @@
             this.button_encode = new System.Windows.Forms.Button();
             this.textBox_decode = new System.Windows.Forms.TextBox();
             this.button_decode = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -88,7 +90,7 @@
             // textBox_p
             // 
             this.textBox_p.Location = new System.Drawing.Point(49, 7);
-            this.textBox_p.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_p.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_p.Name = "textBox_p";
             this.textBox_p.Size = new System.Drawing.Size(45, 22);
             this.textBox_p.TabIndex = 4;
@@ -96,7 +98,7 @@
             // textBox_q
             // 
             this.textBox_q.Location = new System.Drawing.Point(151, 7);
-            this.textBox_q.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_q.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_q.Name = "textBox_q";
             this.textBox_q.Size = new System.Drawing.Size(51, 22);
             this.textBox_q.TabIndex = 5;
@@ -104,7 +106,7 @@
             // textBox_open
             // 
             this.textBox_open.Location = new System.Drawing.Point(151, 52);
-            this.textBox_open.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_open.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_open.Name = "textBox_open";
             this.textBox_open.Size = new System.Drawing.Size(96, 22);
             this.textBox_open.TabIndex = 6;
@@ -112,7 +114,7 @@
             // textBox_close
             // 
             this.textBox_close.Location = new System.Drawing.Point(151, 82);
-            this.textBox_close.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_close.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_close.Name = "textBox_close";
             this.textBox_close.Size = new System.Drawing.Size(96, 22);
             this.textBox_close.TabIndex = 7;
@@ -120,7 +122,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(211, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 8;
@@ -141,7 +143,7 @@
             // textBox_N
             // 
             this.textBox_N.Location = new System.Drawing.Point(368, 7);
-            this.textBox_N.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_N.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_N.Name = "textBox_N";
             this.textBox_N.Size = new System.Drawing.Size(51, 22);
             this.textBox_N.TabIndex = 10;
@@ -149,7 +151,7 @@
             // textBox_encode
             // 
             this.textBox_encode.Location = new System.Drawing.Point(12, 162);
-            this.textBox_encode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_encode.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_encode.Multiline = true;
             this.textBox_encode.Name = "textBox_encode";
             this.textBox_encode.Size = new System.Drawing.Size(223, 194);
@@ -158,7 +160,7 @@
             // button_encode
             // 
             this.button_encode.Location = new System.Drawing.Point(12, 128);
-            this.button_encode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_encode.Margin = new System.Windows.Forms.Padding(4);
             this.button_encode.Name = "button_encode";
             this.button_encode.Size = new System.Drawing.Size(123, 27);
             this.button_encode.TabIndex = 12;
@@ -169,7 +171,7 @@
             // textBox_decode
             // 
             this.textBox_decode.Location = new System.Drawing.Point(252, 162);
-            this.textBox_decode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_decode.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_decode.Multiline = true;
             this.textBox_decode.Name = "textBox_decode";
             this.textBox_decode.Size = new System.Drawing.Size(223, 194);
@@ -178,7 +180,7 @@
             // button_decode
             // 
             this.button_decode.Location = new System.Drawing.Point(252, 128);
-            this.button_decode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_decode.Margin = new System.Windows.Forms.Padding(4);
             this.button_decode.Name = "button_decode";
             this.button_decode.Size = new System.Drawing.Size(120, 27);
             this.button_decode.TabIndex = 14;
@@ -186,11 +188,35 @@
             this.button_decode.UseVisualStyleBackColor = true;
             this.button_decode.Click += new System.EventHandler(this.button_decode_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 364);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(223, 27);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Відкрити текст";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(252, 364);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(223, 27);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Зберегти текст";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Task8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 369);
+            this.ClientSize = new System.Drawing.Size(500, 410);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button_decode);
             this.Controls.Add(this.textBox_decode);
             this.Controls.Add(this.button_encode);
@@ -206,7 +232,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Task8";
             this.Text = "Task8";
             this.ResumeLayout(false);
@@ -231,5 +257,7 @@
         private System.Windows.Forms.Button button_encode;
         private System.Windows.Forms.TextBox textBox_decode;
         private System.Windows.Forms.Button button_decode;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

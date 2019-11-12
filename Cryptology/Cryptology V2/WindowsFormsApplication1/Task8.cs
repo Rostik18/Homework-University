@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -111,6 +112,31 @@ namespace WindowsFormsApplication1
             }
 
             textBox_decode.Text = s;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog filedialog = new OpenFileDialog
+            {
+                Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
+            };
+            if (filedialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox_encode.Clear();
+                string wqe = filedialog.FileName;
+                StreamReader streamReader = new StreamReader(filedialog.FileName);
+                textBox_encode.Text = streamReader.ReadToEnd(); // (filedialog.FileName, RichTextBoxStreamType.PlainText);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog savedialog = new SaveFileDialog();
+
+            if (savedialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(savedialog.FileName, textBox_encode.Text);
+            }
         }
     }
 }

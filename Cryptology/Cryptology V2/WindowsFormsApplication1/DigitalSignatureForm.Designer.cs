@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.controlButton = new System.Windows.Forms.Button();
             this.rezLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -131,7 +132,7 @@
             // 
             this.signDocButton.Location = new System.Drawing.Point(189, 6);
             this.signDocButton.Name = "signDocButton";
-            this.signDocButton.Size = new System.Drawing.Size(326, 33);
+            this.signDocButton.Size = new System.Drawing.Size(156, 33);
             this.signDocButton.TabIndex = 5;
             this.signDocButton.Text = "Підписати документ";
             this.signDocButton.UseVisualStyleBackColor = true;
@@ -171,11 +172,22 @@
             this.rezLabel.Size = new System.Drawing.Size(0, 17);
             this.rezLabel.TabIndex = 14;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(351, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 33);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "відкрити документ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DigitalSignatureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 279);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.rezLabel);
             this.Controls.Add(this.controlButton);
             this.Controls.Add(this.signTextBox);
@@ -215,5 +227,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button controlButton;
         private System.Windows.Forms.Label rezLabel;
+        private System.Windows.Forms.Button button1;
     }
 }

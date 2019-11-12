@@ -251,7 +251,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1060, 492);
+            this.tabPage1.Size = new System.Drawing.Size(1060, 490);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "#1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -546,7 +546,7 @@
             this.tabPage8.Controls.Add(this.button8);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1060, 492);
+            this.tabPage8.Size = new System.Drawing.Size(1060, 490);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "#8";
             this.tabPage8.UseVisualStyleBackColor = true;

@@ -143,5 +143,19 @@ namespace WindowsFormsApplication1
             }
             rezLabel.Text = "підпис вірний.";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog filedialog = new OpenFileDialog
+            {
+                Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
+            };
+            if (filedialog.ShowDialog() == DialogResult.OK)
+            {
+                docRichTextBox.Clear();
+
+                docRichTextBox.LoadFile(filedialog.FileName, RichTextBoxStreamType.PlainText);
+            }
+        }
     }
 }
