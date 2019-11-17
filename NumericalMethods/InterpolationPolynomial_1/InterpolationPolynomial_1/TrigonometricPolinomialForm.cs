@@ -88,7 +88,6 @@ namespace InterpolationPolynomial_1 {
             }
 
             mainChart.Series.Clear();
-           // chart1.Series.Clear();
 
             DrawHelper.DrawGraph( mainChart, accurateY, accurateX, m, "accurate", Color.Green );
             DrawHelper.DrawGraph( mainChart, q, accurateX, m, "trigonometric", Color.Blue );

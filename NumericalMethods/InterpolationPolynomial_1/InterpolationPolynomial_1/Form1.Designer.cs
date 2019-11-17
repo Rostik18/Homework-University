@@ -45,6 +45,7 @@
             this.funcErrorLabel = new System.Windows.Forms.Label();
             this.trigonometricStartButton = new System.Windows.Forms.Button();
             this.splineStartButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -230,11 +231,22 @@
             this.splineStartButton.UseVisualStyleBackColor = true;
             this.splineStartButton.Click += new System.EventHandler(this.splineStartButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 338);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 29);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Spline 2";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.splineStartButton);
             this.Controls.Add(this.trigonometricStartButton);
             this.Controls.Add(this.funcErrorLabel);
@@ -283,6 +295,7 @@
         private System.Windows.Forms.Label funcErrorLabel;
         private System.Windows.Forms.Button trigonometricStartButton;
         private System.Windows.Forms.Button splineStartButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

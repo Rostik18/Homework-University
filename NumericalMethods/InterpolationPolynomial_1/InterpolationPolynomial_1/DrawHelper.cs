@@ -11,7 +11,6 @@ namespace InterpolationPolynomial_1 {
                 Name = seriesName,
                 Color = color,
                 IsVisibleInLegend = true,
-                //IsXValueIndexed = true,
                 ChartType = SeriesChartType.Line
             };
 

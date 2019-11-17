@@ -139,5 +139,12 @@ namespace InterpolationPolynomial_1 {
 
             splineForm.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Spline2Form spline = new Spline2Form();
+
+            spline.ShowDialog();
+        }
     }
 }
