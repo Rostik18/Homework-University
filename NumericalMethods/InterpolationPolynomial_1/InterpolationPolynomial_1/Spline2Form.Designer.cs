@@ -33,7 +33,6 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.runButton = new System.Windows.Forms.Button();
-            this.funcComboBox = new System.Windows.Forms.ComboBox();
             this.nTextBox = new System.Windows.Forms.TextBox();
             this.bTextBox = new System.Windows.Forms.TextBox();
             this.aTextBox = new System.Windows.Forms.TextBox();
@@ -71,18 +70,6 @@
             this.runButton.Text = "Run";
             this.runButton.UseVisualStyleBackColor = true;
             this.runButton.Click += new System.EventHandler(this.runButton_Click);
-            // 
-            // funcComboBox
-            // 
-            this.funcComboBox.FormattingEnabled = true;
-            this.funcComboBox.Items.AddRange(new object[] {
-            "1/(1 + 25x^2)",
-            "ln(x + 2)"});
-            this.funcComboBox.Location = new System.Drawing.Point(16, 98);
-            this.funcComboBox.Name = "funcComboBox";
-            this.funcComboBox.Size = new System.Drawing.Size(119, 24);
-            this.funcComboBox.TabIndex = 25;
-            this.funcComboBox.SelectedIndexChanged += new System.EventHandler(this.funcComboBox_SelectedIndexChanged);
             // 
             // nTextBox
             // 
@@ -139,7 +126,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mainChart);
             this.Controls.Add(this.runButton);
-            this.Controls.Add(this.funcComboBox);
             this.Controls.Add(this.nTextBox);
             this.Controls.Add(this.bTextBox);
             this.Controls.Add(this.aTextBox);
@@ -158,7 +144,6 @@
 
         private System.Windows.Forms.DataVisualization.Charting.Chart mainChart;
         private System.Windows.Forms.Button runButton;
-        private System.Windows.Forms.ComboBox funcComboBox;
         private System.Windows.Forms.TextBox nTextBox;
         private System.Windows.Forms.TextBox bTextBox;
         private System.Windows.Forms.TextBox aTextBox;
