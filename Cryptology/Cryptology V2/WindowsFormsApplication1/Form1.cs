@@ -351,5 +351,12 @@ namespace WindowsFormsApplication1 {
 
             task.ShowDialog();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ShamirForm shamirForm = new ShamirForm();
+
+            shamirForm.ShowDialog();
+        }
     }
 }
