@@ -8,7 +8,7 @@ namespace InterpolationPolynomial_1
 
         public double F(double x)
         {
-            return x * x * x;
+            return x * x * x * x;
         }
     }
 }

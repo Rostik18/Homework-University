@@ -61,7 +61,7 @@ namespace InterpolationPolynomial_1
             }
 
             double[] S1 = new double[n + 1];
-            double[] S3 = new double[n + 1];
+            double[] S3 = new double[m + 1];
 
             for (int i = 0; i < n + 1; i++)
             {
@@ -76,8 +76,8 @@ namespace InterpolationPolynomial_1
             _A[0, 2] = 0.5;
             _A[n + 2, n] = -0.5;
             _A[n + 2, n + 2] = 0.5;
-            _b[0] = h1 * 3 * a * a;
-            _b[n + 2] = h1 * 3 * b * b;
+            _b[0] = h1 * 4 * a * a * a;
+            _b[n + 2] = h1 * 4 * b * b * b;
 
             for (int i = 1; i < n + 2; i++)
             {
@@ -89,16 +89,16 @@ namespace InterpolationPolynomial_1
 
             beta = GaussMethod.Calculate(n + 3, _A, _b);
 
-            for (int i = 0; i < n + 1; i++)
+            for (int i = 0; i < m + 1; i++)
             {
-                S3[i] = SumForS3(n, beta, x[i], x, h1);
+                S3[i] = SumForS3(n, beta, t[i], x, h1);
             }
 
             mainChart.Series.Clear();
 
             DrawHelper.DrawGraph(mainChart, y, t, m - 1, "Exact", Color.Green);
             DrawHelper.DrawGraph(mainChart, S1, x, n, "S1", Color.Indigo);
-            DrawHelper.DrawGraph(mainChart, S3, x, n, "S3", Color.Red);
+            DrawHelper.DrawGraph(mainChart, S3, t, m, "S3", Color.Red);
         }
 
         double SumForS1(int n, double[] alfa, double x, double[] xi, double h)
