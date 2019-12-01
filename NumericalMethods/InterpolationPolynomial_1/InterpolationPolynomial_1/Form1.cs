@@ -146,5 +146,12 @@ namespace InterpolationPolynomial_1 {
 
             spline.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            QuadraticApproximationsForm form = new QuadraticApproximationsForm();
+
+            form.ShowDialog();
+        }
     }
 }
