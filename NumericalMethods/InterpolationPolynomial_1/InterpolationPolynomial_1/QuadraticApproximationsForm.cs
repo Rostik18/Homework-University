@@ -22,19 +22,19 @@ namespace InterpolationPolynomial_1
             CheckIfDataValid(out double[] x, out double[] y);
 
             int n = x.Length;
-            int m = 3;
+            int m = 2;
 
             double[,] matrix = new double[m, m];
             double[] vector = new double[m];
 
-            for (int i = 0; i < m; i++)
+            for (int i = m - 1; i >= 0; i--)
             {
-                for (int j = 0; j < m; j++)
+                for (int j = m - 1; j >= 0; j--)
                 {
-                    matrix[i, j] = RowSumForMatrix(n, x, m + 1 - i - j);
+                    matrix[i, j] = RowSumForMatrix(n, x, i + j);
                 }
 
-                vector[i] = RowSumForVector(n, y, x, m - 1 - i);
+                vector[i] = RowSumForVector(n, y, x, i);
             }
 
             double[] rez = GaussMethod.Calculate(m, matrix, vector);
@@ -62,7 +62,7 @@ namespace InterpolationPolynomial_1
 
             for (int i = 0; i < n; i++)
             {
-                rez += abc[i] * Math.Pow(x, n - 1 - i);
+                rez += abc[i] * Math.Pow(x, i);
             }
 
             return rez;
@@ -108,6 +108,15 @@ namespace InterpolationPolynomial_1
                     return;
                 }
             }
+        }
+
+        private void QuadraticApproximationsForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Add(-3, -4);
+            dataGridView1.Rows.Add(-1, -0.8);
+            dataGridView1.Rows.Add(0, 1.6);
+            dataGridView1.Rows.Add(1, 2.3);
+            dataGridView1.Rows.Add(3, 1.5);
         }
     }
 }
