@@ -20,24 +20,34 @@ namespace NumericalZeidel
         private void calculateButton_Click(object sender, EventArgs e)
         {
             int m, n;
+            double[,] A;
+            double[] b;
 
-            m = Convert.ToInt32(mTextBox.Text);
-            n = Convert.ToInt32(nTextBox.Text);
-
-            string[] matrix = matrixRichTextBox.Text.Split(new char[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            string[] vector = vectorRichTextBox.Text.Split(new char[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
-            double[,] A = new double[m, n];
-            double[] b = new double[m];
-
-            int matrixCounter = 0;
-            for (int i = 0; i < m; i++)
+            try
             {
-                for (int j = 0; j < n; j++)
+                m = Convert.ToInt32(mTextBox.Text);
+                n = Convert.ToInt32(nTextBox.Text);
+
+                string[] matrix = matrixRichTextBox.Text.Split(new char[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] vector = vectorRichTextBox.Text.Split(new char[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+                A = new double[m, n];
+                b = new double[m];
+
+                int matrixCounter = 0;
+                for (int i = 0; i < m; i++)
                 {
-                    A[i, j] = Convert.ToInt32(matrix[matrixCounter++]);
+                    for (int j = 0; j < n; j++)
+                    {
+                        A[i, j] = Convert.ToDouble(matrix[matrixCounter++]);
+                    }
+                    b[i] = Convert.ToDouble(vector[i]);
                 }
-                b[i] = Convert.ToInt32(vector[i]);
+            }
+            catch
+            {
+                MessageBox.Show("Incorrect input.");
+                return;
             }
 
             double[,] At = TransponateMatrix(A, m, n);
@@ -51,7 +61,7 @@ namespace NumericalZeidel
                 {
                     for (int k = 0; k < m; k++)
                     {
-                        AtA[i, j] += At[i, k] * A[k, i];
+                        AtA[i, j] += At[i, k] * A[k, j];
                     }
                     Atb[i] += At[i, j] * b[j];
                 }
@@ -60,13 +70,13 @@ namespace NumericalZeidel
             ZeidelMethod.Calculate(AtA, Atb, out double[] x, out int iterations);
 
             //Норма.
-            double[] AxMinb = new double[n];
+            double[] AxMinb = new double[m];
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < m; i++)
             {
-                for (int k = 0; k < m; k++)
+                for (int k = 0; k < n; k++)
                 {
-                    AxMinb[i] += AtA[i, k] * x[k];
+                    AxMinb[i] += A[i, k] * x[k];
                 }
                 AxMinb[i] -= b[i];
             }
@@ -82,11 +92,11 @@ namespace NumericalZeidel
             resultTextBox.Text = string.Empty;
             foreach (var xi in x)
             {
-                resultTextBox.Text += $"{xi:f5} ";
+                resultTextBox.Text += $"{xi:f4}; ";
             }
 
             iterationsTextBox.Text = iterations.ToString();
-            normaTextBox.Text = norma.ToString();
+            normaTextBox.Text = $"{norma:f10}";
         }
 
         private double[,] TransponateMatrix(double[,] A, int m, int n)
@@ -102,6 +112,13 @@ namespace NumericalZeidel
             }
 
             return At;
+        }
+
+        private void matrixRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            matrixRichTextBox.Text = "3,6 1,8 -4,7 \n2,7 -3,6 1,9 \n1,5 4,5 3,3";
+
+            vectorRichTextBox.Text = "3,8 0,4 -1,6";
         }
     }
 }

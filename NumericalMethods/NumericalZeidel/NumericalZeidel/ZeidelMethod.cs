@@ -8,8 +8,8 @@ namespace NumericalZeidel
         static int iterationNum = 0;
         static double[,] A;
         static double[] b;
-        static double[] xk;
-        static double[] xk1;
+        static double[] x;
+        static double[] p;
         static readonly double epselon = 0.001;
 
         static void ReadData(double[,] Matrix, double[] vector)
@@ -17,53 +17,44 @@ namespace NumericalZeidel
             n = vector.Length;
             A = Matrix;
             b = vector;
-            xk = new double[n];
-            xk1 = new double[n];
-        }
-        static double SubVektors(double[] _xk, double[] _xk1)
-        {
-            double rez = _xk[0] - _xk1[0];
-            for (int i = 1; i < n; i++)
+            x = new double[n];
+            p = new double[n];
+
+            for (int i = 0; i < n; i++)
             {
-                if (_xk[i] - _xk1[i] > rez)
-                    rez = _xk1[i] - _xk[i];
+                x[i] = 1;
             }
-            return rez;
         }
         static void Zeidel_Iterations()
         {
-            for (int i = 0; i < n; i++)
-            {
-                xk[i] = 1;
-            }
-
-            double sub = 2 * epselon;
-            while (sub > epselon)
+            while (!Converge(x, p))
             {
                 for (int i = 0; i < n; i++)
                 {
-                    double d = b[i] / A[i, i];
-                    double sum = 0;
+                    double var = 0;
                     for (int j = 0; j < n; j++)
                     {
-                        double c = -(A[i, j] / A[i, i]);
-                        if (i != j)
-                        {
-                            if (i > j)
-                                sum += c * xk1[j];
-                            else
-                                sum += c * xk[j];
-                        }
+                        if (j != i)
+                            var += (A[i, j] * x[j]);
                     }
-                    xk1[i] = sum + d;
+                    p[i] = x[i];
+                    x[i] = (b[i] - var) / A[i, i];
                 }
-                iterationNum++;
 
-                sub = Math.Abs(SubVektors(xk, xk1));
+                iterationNum++;
+            }
+
+            // Умова завершення
+            bool Converge(double[] xk, double[] xkp)
+            {
                 for (int i = 0; i < n; i++)
                 {
-                    xk[i] = xk1[i];
+                    if (Math.Abs(xk[i] - xkp[i]) > epselon)
+                    {
+                        return false;
+                    }
                 }
+                return true;
             }
         }
 
@@ -72,7 +63,7 @@ namespace NumericalZeidel
             ReadData(Matrix, vector);
             Zeidel_Iterations();
 
-            rez = xk1;
+            rez = x;
             iterationsCount = iterationNum;
         }
     }

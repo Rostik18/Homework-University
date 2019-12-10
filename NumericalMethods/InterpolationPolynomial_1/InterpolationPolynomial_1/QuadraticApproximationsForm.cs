@@ -22,7 +22,7 @@ namespace InterpolationPolynomial_1
             CheckIfDataValid(out double[] x, out double[] y);
 
             int n = x.Length;
-            int m = 2;
+            int m = 3;
 
             double[,] matrix = new double[m, m];
             double[] vector = new double[m];

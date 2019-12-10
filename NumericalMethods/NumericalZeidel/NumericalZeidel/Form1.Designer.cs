@@ -56,22 +56,23 @@
             // 
             this.mTextBox.Location = new System.Drawing.Point(37, 9);
             this.mTextBox.Name = "mTextBox";
-            this.mTextBox.Size = new System.Drawing.Size(141, 22);
+            this.mTextBox.Size = new System.Drawing.Size(171, 22);
             this.mTextBox.TabIndex = 1;
             // 
             // matrixRichTextBox
             // 
             this.matrixRichTextBox.Location = new System.Drawing.Point(15, 65);
             this.matrixRichTextBox.Name = "matrixRichTextBox";
-            this.matrixRichTextBox.Size = new System.Drawing.Size(122, 113);
+            this.matrixRichTextBox.Size = new System.Drawing.Size(144, 113);
             this.matrixRichTextBox.TabIndex = 3;
             this.matrixRichTextBox.Text = "";
+            this.matrixRichTextBox.DoubleClick += new System.EventHandler(this.matrixRichTextBox_TextChanged);
             // 
             // calculateButton
             // 
             this.calculateButton.Location = new System.Drawing.Point(15, 184);
             this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(163, 33);
+            this.calculateButton.Size = new System.Drawing.Size(193, 33);
             this.calculateButton.TabIndex = 5;
             this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
@@ -90,14 +91,14 @@
             // 
             this.nTextBox.Location = new System.Drawing.Point(37, 37);
             this.nTextBox.Name = "nTextBox";
-            this.nTextBox.Size = new System.Drawing.Size(141, 22);
+            this.nTextBox.Size = new System.Drawing.Size(171, 22);
             this.nTextBox.TabIndex = 2;
             // 
             // vectorRichTextBox
             // 
-            this.vectorRichTextBox.Location = new System.Drawing.Point(143, 65);
+            this.vectorRichTextBox.Location = new System.Drawing.Point(165, 65);
             this.vectorRichTextBox.Name = "vectorRichTextBox";
-            this.vectorRichTextBox.Size = new System.Drawing.Size(35, 113);
+            this.vectorRichTextBox.Size = new System.Drawing.Size(43, 113);
             this.vectorRichTextBox.TabIndex = 4;
             this.vectorRichTextBox.Text = "";
             // 
@@ -105,7 +106,7 @@
             // 
             this.resultTextBox.Location = new System.Drawing.Point(15, 247);
             this.resultTextBox.Name = "resultTextBox";
-            this.resultTextBox.Size = new System.Drawing.Size(163, 22);
+            this.resultTextBox.Size = new System.Drawing.Size(193, 22);
             this.resultTextBox.TabIndex = 7;
             // 
             // label3
@@ -130,7 +131,7 @@
             // 
             this.iterationsTextBox.Location = new System.Drawing.Point(15, 293);
             this.iterationsTextBox.Name = "iterationsTextBox";
-            this.iterationsTextBox.Size = new System.Drawing.Size(163, 22);
+            this.iterationsTextBox.Size = new System.Drawing.Size(193, 22);
             this.iterationsTextBox.TabIndex = 9;
             // 
             // label5
@@ -146,14 +147,14 @@
             // 
             this.normaTextBox.Location = new System.Drawing.Point(15, 341);
             this.normaTextBox.Name = "normaTextBox";
-            this.normaTextBox.Size = new System.Drawing.Size(163, 22);
+            this.normaTextBox.Size = new System.Drawing.Size(193, 22);
             this.normaTextBox.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(188, 384);
+            this.ClientSize = new System.Drawing.Size(231, 377);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.normaTextBox);
             this.Controls.Add(this.label4);
