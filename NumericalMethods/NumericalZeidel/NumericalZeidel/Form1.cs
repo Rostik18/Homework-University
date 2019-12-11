@@ -63,6 +63,12 @@ namespace NumericalZeidel
                     {
                         AtA[i, j] += At[i, k] * A[k, j];
                     }
+                }
+            }
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
                     Atb[i] += At[i, j] * b[j];
                 }
             }

@@ -5,7 +5,7 @@ namespace NumericalZeidel
     static class ZeidelMethod
     {
         static int n;
-        static int iterationNum = 0;
+        static int iterationNum;
         static double[,] A;
         static double[] b;
         static double[] x;
@@ -27,6 +27,7 @@ namespace NumericalZeidel
         }
         static void Zeidel_Iterations()
         {
+            iterationNum = 0;
             while (!Converge(x, p))
             {
                 for (int i = 0; i < n; i++)
