@@ -1,0 +1,60 @@
+LNU
+address_LNU
+	3
+	Andiy
+	Docent
+	100500
+	Petia
+	Asustent
+	8000
+	Vasul
+	Professor
+	10200
+
+	5
+	Stud_1
+	PMP11
+	PM
+	Stud_2
+	PMP11
+	PM
+	Stud_3
+	MMP21
+	MM
+	Stud_4
+	PMA11
+	PM
+	Stud_5
+	PMI11
+	PM
+
+
+NULP
+address_NULP
+	3
+	Andiy
+	Docent
+	100500
+	Petia
+	Asustent
+	8000
+	Vasul
+	Professor
+	10200
+
+	5
+	Stud_1
+	PMP11
+	PM
+	Stud_2
+	PMP11
+	PM
+	Stud_3
+	MMP21
+	MM
+	Stud_4
+	PMA11
+	PM
+	Stud_5
+	PMI11
+	PM
