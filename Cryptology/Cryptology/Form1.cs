@@ -96,5 +96,19 @@ namespace Cryptology {
                 }
             }
         }
+
+        private void button2_Click( object sender, EventArgs e ) {
+
+            var vigenerCeipherForm = new VigenerCeipherForm();
+
+            vigenerCeipherForm.ShowDialog();
+        }
+
+        private void button3_Click( object sender, EventArgs e ) {
+
+            XORCipherForm xORCipherForm = new XORCipherForm();
+
+            xORCipherForm.ShowDialog();
+        }
     }
 }
