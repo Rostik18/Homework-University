@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список користувачів</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <a href="/users/create">Створити користувача</a>
+    <h1>Список користувачів</h1>
+    <table>
+        <tr><th>Ім'я</th><th>Вік</th></tr>
+        {{#each users}}
+            <tr>
+                <td>{{this.name}}</td><td>{{this.age}}</td>
+                <td><a href="/users/update/{{this.id}}">Оновити</a></td>
+                <td><a href="/users/delete">Видалити</a></td>
+                <td> id: {{this.id}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</body>
+<html>
