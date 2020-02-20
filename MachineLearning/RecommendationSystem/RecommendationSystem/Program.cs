@@ -57,7 +57,7 @@ namespace RecommendationSystem
                 product += point[i] * point[i];
             }
 
-            return product;
+            return Math.Sqrt(product);
         }
 
         public override string ToString()
