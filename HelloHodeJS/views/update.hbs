@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оновлення користувача</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Оновлення користувача</h1>
+     <form action="putUser"  method="POST">
+        <label>Ім'я</label>
+        <input name="name" /><br><br>
+        <label>Вік</label>
+        <input name="age" type="number" min="1" max="110" /><br><br>
+        <label>id</label>
+        <input name="id" value="{{userId}}" /><br><br>
+        <input type="submit" value="Оновити" />
+     </form>
+     <a href="/users">Повернутись до списку</a>
+</body>
+<html>

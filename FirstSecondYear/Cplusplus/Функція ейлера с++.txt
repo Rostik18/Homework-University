@@ -1,0 +1,12 @@
+int phi(int n) {
+	int ret = 1;
+	for(int i = 2; i * i <= n; ++i) {
+		int p = 1;
+		while(n % i == 0) {
+			p *= i;
+			n /= i;
+		}
+		if((p /= i) >= 1) ret *= p * (i - 1);
+	}
+	return --n ? n * ret : ret;
+}

@@ -1,0 +1,30 @@
+Con1 B.D.
+PMs 12
+5 4 5 3 1
+Govard2 g.t.
+PMs 11
+5 4 1 3 4
+Adolf3 M.d.
+PMs 12
+5 3 1 3 4
+Kosak4 B.D.
+PMs 11
+5 4 5 3 1
+Boch5 g.t.
+PMs 11
+5 4 1 3 4
+Foch6 M.d.
+PMs 12
+5 3 1 3 4
+NoyName7 B.D.
+PMs 11
+5 4 5 3 1
+Stalin8 g.t.
+PMs 11
+5 4 1 3 4
+Gerald9 M.d.
+PMs 12
+5 3 1 3 4
+Gost10 B.D.
+PMs 11
+5 4 5 3 1
