@@ -21,7 +21,7 @@ namespace NumericalMethods2.Task1
         {
             InitializeComponent();
 
-            Func_ComboBox.DataSource = new List<IFunсtion>() { new Function1(), new Function2() };
+            Func_ComboBox.DataSource = new List<IFunсtion>() { new Function1(), new Function2(), new Function3() };
         }
 
         private void button1_Click(object sender, EventArgs eventArgs)
@@ -43,7 +43,7 @@ namespace NumericalMethods2.Task1
             n *= 2;
             double I2n = Qmh(a, b, n); //  наближене значення інтегралу
 
-            while (((I2n - In) / In) > e)
+            while (Math.Abs((I2n - In) / In) > e)
             {
                 In = I2n;
                 n *= 2;
@@ -52,7 +52,7 @@ namespace NumericalMethods2.Task1
 
             approxRez_TextBox.Text = I2n.ToString(); //вивести результат інтегрування
             n_TextBox.Text = n.ToString();  //вивести кількість розбиттів
-            error_TextBox.Text = (I - I2n).ToString(); // похибка
+            error_TextBox.Text = Math.Abs(Math.Abs(I) - Math.Abs(I2n)).ToString(); // похибка
         }
 
         private double Qmh(double a, double b, int n)

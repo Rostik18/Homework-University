@@ -1,21 +1,22 @@
-﻿
+﻿using System;
+
 namespace NumericalMethods2.Functions
 {
-    public class Function1 : IFunсtion
+    class Function3 : IFunсtion
     {
         public double F(double x)
         {
-            return x * x;
+            return Math.Sin(x);
         }
 
         public double PrimitiveF(double x)
         {
-            return (x * x * x) / 3;
+            return -Math.Cos(x);
         }
 
         public override string ToString()
         {
-            return "x^2";
+            return "sin(x)";
         }
     }
 }

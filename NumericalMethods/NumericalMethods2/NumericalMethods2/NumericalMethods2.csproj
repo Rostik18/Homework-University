@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Functions\Function1.cs" />
     <Compile Include="Functions\Function2.cs" />
+    <Compile Include="Functions\Function3.cs" />
     <Compile Include="Functions\IFunсtion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
