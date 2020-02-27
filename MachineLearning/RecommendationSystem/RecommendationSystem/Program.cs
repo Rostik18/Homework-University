@@ -157,7 +157,7 @@ namespace RecommendationSystem
 
             Console.WriteLine("\nSimilar to my Item:");
 
-            for (int i = similarItems.Count - 1; i > 0; i--)
+            for (int i = similarItems.Count - 1; i >= 0; i--)
             {
                 Console.WriteLine($"\nPair {i + 1}:\n{similarItems[i].v2}\n{similarItems[i].v1}\nCosA = {similarItems[i].cosA}");
             }
