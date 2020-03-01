@@ -46,45 +46,15 @@ namespace ReliabilityTheory
                 F4[i] = (i + 0.7) / (n + 0.4);
             }
 
-            PrintResult(F1, t, "F1");
-            PrintResult(F2, t, "F2");
-            PrintResult(F3, t, "F3");
-            PrintResult(F4, t, "F4");
+            DrawingHelper.PrintFunction(richTextBox1, F1, t, "F1", "");
+            DrawingHelper.PrintFunction(richTextBox1, F2, t, "F2", "");
+            DrawingHelper.PrintFunction(richTextBox1, F3, t, "F3", "");
+            DrawingHelper.PrintFunction(richTextBox1, F4, t, "F4", "");
 
-            DrawGraph(chart1, F1, t, n, "F1 Частотна", Color.Red);
-            DrawGraph(chart1, F2, t, n, "F2 Модна", Color.Green);
-            DrawGraph(chart1, F3, t, n, "F3 Сподівана", Color.Blue);
-            DrawGraph(chart1, F4, t, n, "F4 Медіанна", Color.Yellow);
-
-        }
-
-        public void PrintResult(double[] F, double[] x, string name)
-        {
-            for (int i = 0; i < F.Length; i++)
-            {
-                richTextBox1.Text += $"{name}({x[i]}) = {F[i]:f4}\n";
-            }
-            richTextBox1.Text += "-----------------\n";
-        }
-
-        public void DrawGraph(Chart chart, double[] y, double[] x, int m, string seriesName, Color color)
-        {
-
-            var series = new Series
-            {
-                Name = seriesName,
-                Color = color,
-                IsVisibleInLegend = true,
-                ChartType = SeriesChartType.Line
-            };
-
-            for (int i = 0; i < m; i++)
-            {
-
-                series.Points.AddXY(x[i], y[i]);
-            }
-
-            chart.Series.Add(series);
+            DrawingHelper.DrawGraph(chart1, F1, t, n, "F1 Частотна", Color.Red);
+            DrawingHelper.DrawGraph(chart1, F2, t, n, "F2 Модна", Color.Green);
+            DrawingHelper.DrawGraph(chart1, F3, t, n, "F3 Сподівана", Color.Blue);
+            DrawingHelper.DrawGraph(chart1, F4, t, n, "F4 Медіанна", Color.Yellow);
         }
     }
 }

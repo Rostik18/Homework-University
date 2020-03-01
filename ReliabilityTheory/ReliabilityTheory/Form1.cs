@@ -23,5 +23,12 @@ namespace ReliabilityTheory
 
             form.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new TaskTwoForm();
+
+            form.ShowDialog();
+        }
     }
 }
