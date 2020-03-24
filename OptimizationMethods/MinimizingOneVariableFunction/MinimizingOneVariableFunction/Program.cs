@@ -89,71 +89,34 @@ namespace MinimizingOneVariableFunction
             return (a + b) / 2;
         }
 
-        //static void DCK()
-        //{
-        //    double x0 = 0;
-        //    double h = 1;
+        static void DCK(out double a, out double b)
+        {
+            double x = 0;
+            double h = 1;
 
-        //    double f0 = F(x0);
+            if (F(x) < F(x + h))
+            {
+                h = -h;
+            }
 
-        //    double x = x0 + h;
-        //    double fx = F(x);
+            while (F(x) >= F(x + h))
+            {
+                x = x + h;
+                h = 2 * h;
+            }
 
-        //    if (fx <= f0)
-        //    {
-        //        x0 = x;
-        //        f1 = fx;
-        //    }
-        //    x = x0 - h;
-        //    fx = F(x);
-
-        //    if (fx <= f0)
-        //    {
-        //        h = -h;
-        //        x1 = x;
-        //        f1 = fx;
-        //    }
-
-        //    h = h / 2;
-
-        //    x2 = x1 + h;
-        //    f2 = F(x2);
-
-        //    if (f2 <= f1)
-        //    {
-        //        x0 = x1;
-        //        f0 = f1;
-        //        x1 = x2;
-        //        f1 = f2;
-        //    }
-
-        //    if (h > 0)
-        //    {
-        //        a = x0;
-        //        b = x2;
-        //        fa = f0;
-        //        fb = f2;
-        //    }
-        //    else
-        //    {
-        //        a = x2;
-        //        b = x0;
-        //        fa = f2;
-        //        fb = f0;
-        //    }
-
-
-        //}
+            a = x - h;
+            b = (x + h) - (h / 2);
+        }
 
         static void Main(string[] args)
         {
-            double a = 0;
-            double b = 10;
+            DCK(out double a, out double b);
+
+            Console.WriteLine($"Local interval [{a} - {b}]\n");
 
             Console.WriteLine($"DichotomyMethod: {DichotomyMethod(a, b)}\n");
             Console.WriteLine($"FibonacciMethod: {FibonacciMethod(a, b)}\n");
-
-
 
             Console.ReadKey();
         }
