@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace MinimizingOneVariableFunction
@@ -102,16 +102,23 @@ namespace MinimizingOneVariableFunction
             while (F(x) >= F(x + h))
             {
                 x = x + h;
-                h = 2 * h;
+                h = 2.0 * h;
             }
 
             a = x - h;
-            b = (x + h) - (h / 2);
+            b = (x + h) - (h / 2.0);
         }
 
         static void Main(string[] args)
         {
             DCK(out double a, out double b);
+
+            if (a > b)
+            {
+                double swapTmp = a;
+                a = b;
+                b = swapTmp;
+            }
 
             Console.WriteLine($"Local interval [{a} - {b}]\n");
 
