@@ -2,6 +2,7 @@
 
 namespace CauchyProblem
 {
+    // Розв'язування одновимірних задач Коші.
     class CauchyProgram
     {
         double a, b, h;
@@ -11,10 +12,6 @@ namespace CauchyProblem
         {
             return Math.Cos(y - x);
         }
-        //double F(double x, double y)
-        //{
-        //    return y + (1 + x) * y * y;
-        //}
 
         public CauchyProgram(double a, double b, int n)
         {
@@ -27,6 +24,7 @@ namespace CauchyProblem
         public void EulerMethod(double x, double y, double h)
         {
             double exectY = x + 2 * Math.Atan(1 / x);
+            Console.WriteLine($"Exact solution y* = {exectY} for x = {x}");
 
             for (int i = 0; i < 10; i++)
             {
@@ -35,7 +33,23 @@ namespace CauchyProblem
             }
 
             Console.WriteLine($"Euler method\ny = {y}");
-            Console.WriteLine($"Exact solution y* = {exectY}");
+        }
+
+        public void HeineMethod(double x, double y, double h)
+        {
+            double exectY = x + 2 * Math.Atan(1 / x);
+            Console.WriteLine($"Exact solution y* = {exectY} for x = {x}");
+
+            for (int i = 0; i < 10; i++)
+            {
+                x = x + i * h;
+
+                var _y = y + h * F(x, y);
+                y = y + (h / 2) * (F(x, y) + F(x, _y));
+
+            }
+
+            Console.WriteLine($"Heine method\ny = {y}");           
         }
     }
 
@@ -46,7 +60,7 @@ namespace CauchyProblem
             CauchyProgram cauchyProgram = new CauchyProgram(a: 0, b: 1, n: 10);
 
             cauchyProgram.EulerMethod(1, 2.57, 0.1);
-            //cauchyProgram.EulerMethod(1, -1, 0.1);
+            cauchyProgram.HeineMethod(1, 2.57, 0.1);
         }
     }
 }
