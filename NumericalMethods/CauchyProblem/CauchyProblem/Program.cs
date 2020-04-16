@@ -45,11 +45,60 @@ namespace CauchyProblem
                 x = x + i * h;
 
                 var _y = y + h * F(x, y);
-                y = y + (h / 2) * (F(x, y) + F(x, _y));
+                y = y + (h / 2) * (F(x, y) + F(x + h, _y));
 
             }
 
-            Console.WriteLine($"Heine method\ny = {y}");           
+            Console.WriteLine($"Heine method\ny = {y}");
+        }
+    }
+
+    // Розв'язування систем задач Коші.
+    class CauchySystemProgram
+    {
+        double[] Fg(double x, double y, double z)
+        {
+            return new double[] {
+               2 * y + z,
+               3 * y + 4 * z
+            };
+        }
+
+        public void EulerMethod(double x, double y, double z, double h)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                x = x + i * h;
+
+                var fg = Fg(x, y, z);
+
+                y = y + h * fg[0];
+                z = z + h * fg[1];
+            }
+
+            Console.WriteLine($"System Euler method\ny = {y}\nz = {z}");
+        }
+
+        public void HeineMethod(double x, double y, double z, double h)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                x = x + i * h;
+
+                var fg = Fg(x, y, z);
+
+                var _y = y + h * fg[0];
+                var _z = z + h * fg[1];
+
+                var fPlusF = Fg(x, y, z)[0] + Fg(x + h, _y, _z)[0];
+                var gPlusG = Fg(x, y, z)[1] + Fg(x + h, _y, _z)[1];
+
+                y = y + (h / 2) * fPlusF;
+                z = z + (h / 2) * gPlusG;
+
+            }
+
+            Console.WriteLine($"System Heine method\ny = {y}\nz = {z}");
         }
     }
 
@@ -61,6 +110,11 @@ namespace CauchyProblem
 
             cauchyProgram.EulerMethod(1, 2.57, 0.1);
             cauchyProgram.HeineMethod(1, 2.57, 0.1);
+
+            CauchySystemProgram cauchySystemProgram = new CauchySystemProgram();
+
+            cauchySystemProgram.EulerMethod(0, 0, 4, 0.01);
+            cauchySystemProgram.HeineMethod(0, 0, 4, 0.01);
         }
     }
 }
