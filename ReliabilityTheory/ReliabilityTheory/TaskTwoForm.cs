@@ -51,8 +51,8 @@ namespace ReliabilityTheory
             }
 
             //c) намалювати F(J)
-            DrawingHelper.DrawGraph(chart1, F4, lifeTimes.Select(lt => (double)lt.lifeTime).ToArray(), fCount, "F медіанна", Color.Red);
-            DrawingHelper.PrintFunction(richTextBox1, F4, lifeTimes.Select(lt => (double)lt.lifeTime).ToArray(), "F4", "Медіанна функція");
+            DrawingHelper.DrawGraph(chart1, F4, lifeTimes.Where(lt => lt.ForS == "F").Select(lt => (double)lt.lifeTime).ToArray(), fCount, "F медіанна", Color.Red);//тут бага
+            DrawingHelper.PrintFunction(richTextBox1, F4, lifeTimes.Where(lt => lt.ForS == "F").Select(lt => (double)lt.lifeTime).ToArray(), "F4", "Медіанна функція");
 
             //d) втрачені спостереження
             double lCount = 12.0;
@@ -72,8 +72,8 @@ namespace ReliabilityTheory
             }
 
             //d) c) намалювати F(J)
-            DrawingHelper.DrawGraph(chart1, lF4, lifeTimes.Select(lt => (double)lt.lifeTime).ToArray(), fCount, "F медіанна з втраченими", Color.Green);
-            DrawingHelper.PrintFunction(richTextBox1, lF4, lifeTimes.Select(lt => (double)lt.lifeTime).ToArray(), "F4", "Медіанна функція з втраченими");
+            DrawingHelper.DrawGraph(chart1, lF4, lifeTimes.Where(lt => lt.ForS == "F").Select(lt => (double)lt.lifeTime).ToArray(), fCount, "F медіанна з втраченими", Color.Green);
+            DrawingHelper.PrintFunction(richTextBox1, lF4, lifeTimes.Where(lt => lt.ForS == "F").Select(lt => (double)lt.lifeTime).ToArray(), "F4", "Медіанна функція з втраченими");
 
             //e) погруповано
             int groupCount = 5;
@@ -129,9 +129,10 @@ namespace ReliabilityTheory
             }
 
             //e) c) намалювати F(J) для груп
-            double[] groupt = new double[] { 1000, 2500, 3500, 4500, 5500 };
-            DrawingHelper.DrawGraph(chart1, gF4, groupt, groupCount, "F медіанна для груп", Color.Blue);
-            DrawingHelper.PrintFunction(richTextBox1, gF4, groupt, "F4", "Медіанна функція для груп");
+            double[] gF4ToShow = new double[] { gF4[0], gF4[0], gF4[1], gF4[1], gF4[2], gF4[2], gF4[3], gF4[3], gF4[4], gF4[4] };
+            double[] groupt    = new double[] { 0,      2000,   2000,   3000,   3000,   4000,   4000,   5000,   5000,   6000   };
+            DrawingHelper.DrawGraph(chart1, gF4ToShow, groupt, gF4ToShow.Length, "F медіанна для груп", Color.Blue);
+            DrawingHelper.PrintFunction(richTextBox1, gF4ToShow, groupt, "F4", "Медіанна функція для груп");
         }
 
         //Рахуємо сподівані ранги
