@@ -61,7 +61,7 @@ namespace MultiStepMethods
         {
             var a = x;
 
-            for (int i = 0; i <= n; i++)
+            for (int i = 0; i < n; i++)
             {
                 x = a + i * h;
 
@@ -89,7 +89,7 @@ namespace MultiStepMethods
 
             var y0 = 2.57;
             var x0 = 1.0;
-            var a = 1.0;
+            var a = 2.5;
 
             var h = a / n;
 
