@@ -23,13 +23,25 @@ namespace SpamClassifier
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
+            Console.WriteLine("Байцар Ростислав Пма-31 В-1");
+
             StreamReader streamReader = new StreamReader(@"C:\Homework-University\MachineLearning\SpamClassifier\SpamClassifier\Spam.txt");
             string spamText = streamReader.ReadToEnd();
             var spamWords = spamText.Split(new char[] { ' ', ',', '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
 
+            Console.WriteLine("Слова що належать до спаму:");
+            foreach (var word in spamWords) Console.Write($"{word} ");
+            Console.WriteLine();
+
             streamReader = new StreamReader(@"C:\Homework-University\MachineLearning\SpamClassifier\SpamClassifier\NotSpam.txt");
             string notSpamText = streamReader.ReadToEnd();
             var notSpamWords = notSpamText.Split(new char[] { ' ', ',', '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
+
+            Console.WriteLine("Слова що НЕ належать до спаму:");
+            foreach (var word in notSpamWords) Console.Write($"{word} ");
+            Console.WriteLine();
 
             var myMessage = new string[]
             {
@@ -38,6 +50,10 @@ namespace SpamClassifier
                 //"надо", "купить", "сигареты"                                      //тест
                 //"Нова", "модель", "телефону", "виправдала", "сподівання"            //11
             };
+
+            Console.WriteLine("Слова у моєму повідомленні:");
+            foreach (var word in myMessage) Console.Write($"{word} ");
+            Console.WriteLine();
 
             //перевести всі слова в верхній регістр
             for (int i = 0; i < spamWords.Length; i++)
@@ -57,11 +73,15 @@ namespace SpamClassifier
             List<string> allWords = new List<string>(spamWords);
             allWords.AddRange(notSpamWords);
 
-            int V = allWords.Distinct().Count(); //кількість слів у словнику.
+            int V = allWords.Distinct().Count(); // кількість слів у словнику.
+            Console.WriteLine($"Кількість слів у словнику {V}");
 
-            int D = allWords.Where(w => myMessage.Any(mw => mw == w)).Count(); //як часто слова у моєму повідомленні зустрічаються в словнику
-            int Ds = spamWords.Where(w => myMessage.Any(mw => mw == w)).Count(); //як часто слова у моєму повідомленні зустрічаються в спамі
-            int Dns = notSpamWords.Where(w => myMessage.Any(mw => mw == w)).Count(); //як часто слова у моєму повідомленні зустрічаються не в спамі
+            int D = allWords.Where(w => myMessage.Any(mw => mw == w)).Count(); // як часто слова у моєму повідомленні зустрічаються в словнику
+            int Ds = spamWords.Where(w => myMessage.Any(mw => mw == w)).Count(); // як часто слова у моєму повідомленні зустрічаються в спамі
+            int Dns = notSpamWords.Where(w => myMessage.Any(mw => mw == w)).Count(); // як часто слова у моєму повідомленні зустрічаються не в спамі
+            Console.WriteLine($"як часто слова у моєму повідомленні зустрічаються в словнику {D}");
+            Console.WriteLine($"як часто слова у моєму повідомленні зустрічаються в спамі {Ds}");
+            Console.WriteLine($"як часто слова у моєму повідомленні зустрічаються не в спамі {Dns}");
 
             double Hs = Convert.ToDouble(Dns) / D;   // гіпотеза що повідомлення спам
             double Hns = Convert.ToDouble(Ds) / D; // гіпотеза що повідомлення не спам
