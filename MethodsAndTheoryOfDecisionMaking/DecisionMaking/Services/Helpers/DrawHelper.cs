@@ -1,14 +1,17 @@
 ﻿using System.Drawing;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace KieferWolfowitzAlgorithm
+namespace Services.Helpers
 {
-    class DrawHelper
+    public static class DrawHelper
     {
-        static public void DrawGraph(Chart chart, double[] y, double[] x, string seriesName, Color color)
+        static public void DrawGraph(Chart chart, double[] y, double[] x, string seriesName, Color color, bool clearChart = false)
         {
-            chart.Series.Clear();
-            chart.ResetAutoValues();
+            if (clearChart)
+            {
+                chart.Series.Clear();
+                chart.ResetAutoValues();
+            }
 
             var series = new Series
             {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KieferWolfowitzAlgorithm")]
+[assembly: AssemblyTitle("AdaptiveMethods")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KieferWolfowitzAlgorithm")]
+[assembly: AssemblyProduct("AdaptiveMethods")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("69161b62-63ef-4ebe-a4b4-a1cf76e5d65b")]
+[assembly: Guid("27fd853b-a94b-4c98-bedb-78a56e821455")]
 
 // Version information for an assembly consists of the following four values:
 //

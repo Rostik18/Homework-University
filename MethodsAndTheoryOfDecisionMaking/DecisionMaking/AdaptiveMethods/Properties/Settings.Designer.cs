@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KieferWolfowitzAlgorithm.Properties
+namespace AdaptiveMethods.Properties
 {
 
 
@@ -19,8 +19,10 @@ namespace KieferWolfowitzAlgorithm.Properties
 
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
 
-        public static Settings Default {
-            get {
+        public static Settings Default
+        {
+            get
+            {
                 return defaultInstance;
             }
         }

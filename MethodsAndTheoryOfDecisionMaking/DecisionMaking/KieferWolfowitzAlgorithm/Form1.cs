@@ -1,19 +1,16 @@
-﻿using KieferWolfowitzAlgorithm.Functions;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Services.Functions;
+using Services.Helpers;
 
 namespace KieferWolfowitzAlgorithm
 {
     public partial class Form1 : Form
     {
         private IFunction _selectedFunction;
+
         public Form1()
         {
             InitializeComponent();
@@ -52,7 +49,7 @@ namespace KieferWolfowitzAlgorithm
                 a += step;
             }
 
-            DrawHelper.DrawGraph(Chart, yAxis.ToArray(), xAxis.ToArray(), _selectedFunction.ToString(), Color.Red);
+            DrawHelper.DrawGraph(Chart, yAxis.ToArray(), xAxis.ToArray(), _selectedFunction.ToString(), Color.Red, true);
         }
 
         private void DrawFunction(object sender, EventArgs e)

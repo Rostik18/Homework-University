@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace KieferWolfowitzAlgorithm.Functions
+namespace Services.Functions
 {
-    class FCosine : IFunction
+    public class FCosine : IFunction
     {
         public double F(double x)
         {
