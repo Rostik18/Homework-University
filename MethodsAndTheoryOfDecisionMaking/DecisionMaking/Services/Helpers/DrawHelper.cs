@@ -29,5 +29,25 @@ namespace Services.Helpers
 
             chart.Series.Add(series);
         }
+
+        static public void AddPointToGraph(Chart chart, double x, double y, Color color, bool clearChart = false)
+        {
+            if (clearChart)
+            {
+                chart.Series.Clear();
+                chart.ResetAutoValues();
+            }
+
+            var series = new Series
+            {
+                Color = color,
+                IsVisibleInLegend = false,
+                ChartType = SeriesChartType.Point
+            };
+
+            series.Points.AddXY(x, y);
+
+            chart.Series.Add(series);
+        }
     }
 }

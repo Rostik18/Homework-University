@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveMethods", "AdaptiveMethods\AdaptiveMethods.csproj", "{27FD853B-A94B-4C98-BEDB-78A56E821455}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSearch", "AdaptiveMethods\SimpleSearch.csproj", "{27FD853B-A94B-4C98-BEDB-78A56E821455}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KieferWolfowitzAlgorithm", "KieferWolfowitzAlgorithm\KieferWolfowitzAlgorithm.csproj", "{903A5136-3132-4944-BC83-8EB56F4A92F8}"
 EndProject

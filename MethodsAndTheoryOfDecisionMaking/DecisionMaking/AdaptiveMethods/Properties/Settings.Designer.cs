@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AdaptiveMethods.Properties
+namespace SimpleSearch.Properties
 {
 
 
