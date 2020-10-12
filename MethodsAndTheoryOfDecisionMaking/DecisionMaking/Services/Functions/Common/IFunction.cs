@@ -1,5 +1,5 @@
 ﻿
-namespace Services.Functions
+namespace Services.Functions.Common
 {
     public interface IFunction
     {

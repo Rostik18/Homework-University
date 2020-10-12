@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Services.Functions;
+using Services.Functions.Common;
 using Services.Helpers;
 
 namespace SimpleSearch

@@ -1,4 +1,6 @@
 ﻿
+using Services.Functions.Common;
+
 namespace Services.Functions
 {
     public class FXParapola : IFunction
