@@ -10,18 +10,18 @@ namespace Services.Functions
             {
                 2 * x1,
                 2 * x2,
-                3 * x3 * x3
+                2 * x3
             };
         }
 
         public double F(double x1, double x2, double x3)
         {
-            return x1 * x1 + x2 * x2 + x3 * x3 * x3;
+            return x1 * x1 + x2 * x2 + x3 * x3;
         }
 
         public override string ToString()
         {
-            return "x1^2 + x2^2 + x3^3";
+            return "x1^2 + x2^2 + x3^2";
         }
     }
 }

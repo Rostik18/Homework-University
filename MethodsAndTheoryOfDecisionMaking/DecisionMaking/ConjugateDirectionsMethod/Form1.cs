@@ -1,5 +1,6 @@
 ﻿using Services.Functions;
 using Services.Functions.Common;
+using Services.MinimizingOneVariableFunction;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -46,7 +47,7 @@ namespace ConjugateDirectionsMethod
 
             var xNext = (double[])x.Clone();
 
-            for (int k = 0; ; k++)
+            for (int k = 0; k < 500; k++)
             {
                 //крок 2
                 var fD = _selectedFunction.D(x[0], x[1], x[2]);
@@ -55,7 +56,7 @@ namespace ConjugateDirectionsMethod
                 x = (double[])xNext.Clone();
 
                 //крок 3
-                if (fDNext[0] == 0 && fDNext[1] == 0 && fDNext[2] == 0)
+                if (Math.Round(fDNext[0], 5) == 0 && Math.Round(fDNext[1], 5) == 0 && Math.Round(fDNext[2], 5) == 0)
                 {
                     OutputRichTextBox.Text += $"x* = ({x[0]}; {x[1]}; {x[2]})";
                     return;
@@ -84,14 +85,14 @@ namespace ConjugateDirectionsMethod
                 h = NegMatrixMultiplication(MatrixTransposition(H, N), fDNext, N);
 
                 //крок 9
-                //порахувати кроковий множник.
-                //як?
-                //я взяв константу
+                Func<double, double> compressedFunk = arg => _selectedFunction.F(x[0] + arg * h[0], x[1] + arg * h[1], x[2] + arg * h[2]);
+                (var a, var b) = DCKMethod.FindSegment(compressedFunk);
+                p = DichotomyMethod.FindMinimumArgument(compressedFunk, a, b);
 
                 //крок 10
                 xNext = VectorSum(x, VectorMultiplicationOnScalar(h, p));
 
-                OutputRichTextBox.Text += $"k{k} = ({x[0]}; {x[1]}; {x[2]})\n";
+                OutputRichTextBox.Text += $"k{k} = ({x[0]:f5}; {x[1]:f5}; {x[2]:f5})\n";
             }
         }
 

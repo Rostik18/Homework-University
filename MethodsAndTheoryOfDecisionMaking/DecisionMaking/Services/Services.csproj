@@ -52,6 +52,8 @@
     <Compile Include="Functions\Common\IDerivative3to3.cs" />
     <Compile Include="Functions\Common\IFunction.cs" />
     <Compile Include="Helpers\DrawHelper.cs" />
+    <Compile Include="MinimizingOneVariableFunction\DCKMethod.cs" />
+    <Compile Include="MinimizingOneVariableFunction\DichotomyMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
