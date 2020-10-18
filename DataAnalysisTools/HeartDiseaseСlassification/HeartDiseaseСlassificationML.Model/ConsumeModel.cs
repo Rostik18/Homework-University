@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.ML;
 using HeartDiseaseСlassificationML.Model;
+using System.IO;
 
 namespace HeartDiseaseСlassificationML.Model
 {
@@ -27,7 +28,8 @@ namespace HeartDiseaseСlassificationML.Model
             MLContext mlContext = new MLContext();
 
             // Load model & create prediction engine
-            string modelPath = @"C:\Users\rosti\AppData\Local\Temp\MLVSTools\HeartDiseaseСlassificationML\HeartDiseaseСlassificationML.Model\MLModel.zip";
+            string modelPath = Path.Combine(Directory.GetCurrentDirectory(), "MLModel.zip");
+
             ITransformer mlModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
             var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
 

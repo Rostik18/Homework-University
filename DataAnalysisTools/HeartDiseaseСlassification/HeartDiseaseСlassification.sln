@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeartDiseaseСlassification
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeartDiseaseСlassificationML.ConsoleApp", "HeartDiseaseСlassificationML.ConsoleApp\HeartDiseaseСlassificationML.ConsoleApp.csproj", "{FA01561B-5E22-425E-B177-3BD4777B3643}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeartDiseaseСlassificationUI", "HeartDiseaseСlassificationUI\HeartDiseaseСlassificationUI.csproj", "{82D60314-6AB0-4933-9032-71D6260274B0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeartDiseaseСlassificationUI1", "..\..\..\HeartDiseaseСlassificationUI1\HeartDiseaseСlassificationUI1.csproj", "{439BE04C-1AA8-4781-A818-7E3029B172D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeartDiseaseСlassificationUI", "HeartDiseaseСlassificationUI\HeartDiseaseСlassificationUI.csproj", "{3434748A-4F14-4178-9EDA-9B85B28BA5D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +23,10 @@ Global
 		{FA01561B-5E22-425E-B177-3BD4777B3643}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA01561B-5E22-425E-B177-3BD4777B3643}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA01561B-5E22-425E-B177-3BD4777B3643}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82D60314-6AB0-4933-9032-71D6260274B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82D60314-6AB0-4933-9032-71D6260274B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82D60314-6AB0-4933-9032-71D6260274B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82D60314-6AB0-4933-9032-71D6260274B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{439BE04C-1AA8-4781-A818-7E3029B172D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{439BE04C-1AA8-4781-A818-7E3029B172D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{439BE04C-1AA8-4781-A818-7E3029B172D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{439BE04C-1AA8-4781-A818-7E3029B172D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3434748A-4F14-4178-9EDA-9B85B28BA5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3434748A-4F14-4178-9EDA-9B85B28BA5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3434748A-4F14-4178-9EDA-9B85B28BA5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3434748A-4F14-4178-9EDA-9B85B28BA5D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
