@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConjugateDirectionsMethod", "ConjugateDirectionsMethod\ConjugateDirectionsMethod.csproj", "{5302BDF7-EC72-4295-9EF9-E73FD9595006}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientTypeMethodWithStretchingSpace", "GradientTypeMethodWithStretchingSpace\GradientTypeMethodWithStretchingSpace.csproj", "{A377202A-7757-46DA-BB29-19E2B376F901}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5302BDF7-EC72-4295-9EF9-E73FD9595006}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5302BDF7-EC72-4295-9EF9-E73FD9595006}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5302BDF7-EC72-4295-9EF9-E73FD9595006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A377202A-7757-46DA-BB29-19E2B376F901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A377202A-7757-46DA-BB29-19E2B376F901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A377202A-7757-46DA-BB29-19E2B376F901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A377202A-7757-46DA-BB29-19E2B376F901}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
