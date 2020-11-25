@@ -1,0 +1,101 @@
+﻿@page "/algorithm"
+
+@using IrisClustering.Services;
+@using IrisClustering.Data
+
+<h3>Алгоритм кластеризації квітів ірису</h3>
+
+<p>Заповніть усі поля</p>
+
+<EditForm Model="@numberOfClusters" OnValidSubmit="@CreateModel">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <table>
+        <tr>
+            <td><label for="number">Введіть кількість кластерів:</label></td>
+            <td><InputNumber id="number" @bind-Value="numberOfClusters" /></td>
+        </tr>
+    </table>
+
+    <p>
+        <button class="btn btn-primary" @onclick="CreateModel">Створити модель</button>
+    </p>
+
+    Модель створено: @modelExist
+
+</EditForm>
+
+<EditForm Model="@modelInput" OnValidSubmit="@Calculate">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <table>
+        <tr>
+            <td><label for="SepalLength">довжина чашолистка в сантиметрах:</label></td>
+            <td><InputNumber id="SepalLength" @bind-Value="modelInput.SepalLength" /></td>
+        </tr>
+        <tr>
+            <td><label for="SepalWidth">ширина чашолистка в сантиметрах:</label></td>
+            <td><InputNumber id="SepalWidth" @bind-Value="modelInput.SepalWidth" /></td>
+        </tr>
+        <tr>
+            <td><label for="PetalLength">довжина пелюстки в сантиметрах:</label></td>
+            <td><InputNumber id="PetalLength" @bind-Value="modelInput.PetalLength" /></td>
+        </tr>
+        <tr>
+            <td><label for="PetalWidth">ширина пелюстки в сантиметрах:</label></td>
+            <td><InputNumber id="PetalWidth" @bind-Value="modelInput.PetalWidth" /></td>
+        </tr>
+    </table>
+
+    <p>
+        <button class="btn btn-primary" @onclick="Calculate">Визначити</button>
+    </p>
+
+    <p><label for="result">Результати:</label></p>
+    <p>кластер: @modelOutput?.PredictedClusterId</p>
+
+    @foreach (var dist in modelOutput.Distances)
+    {
+        <p> відстань від центру: @dist</p>;
+    }
+
+
+</EditForm>
+
+@code {
+
+    int numberOfClusters = 3;
+
+    public IrisClusteringService _irisClusteringService;
+
+    IrisData modelInput = new IrisData
+    {
+        PetalLength = 1.5f,
+        PetalWidth = 1.75f,
+        SepalLength = 2.25f,
+        SepalWidth = 2.5f
+    };
+
+    string modelExist = "ні";
+
+    ClusterPrediction modelOutput = new ClusterPrediction
+    {
+        Distances = new float[0]
+    };
+
+    private void CreateModel()
+    {
+        modelExist = "ні";
+
+        _irisClusteringService = new IrisClusteringService(numberOfClusters);
+
+        modelExist = "так";
+    }
+
+    private void Calculate()
+    {
+        modelOutput = _irisClusteringService.RunModel(modelInput);
+    }
+}
