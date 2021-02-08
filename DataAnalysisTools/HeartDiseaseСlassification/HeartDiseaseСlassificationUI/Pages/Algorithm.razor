@@ -1,0 +1,97 @@
+﻿@page "/algorithm"
+
+@using HeartDiseaseСlassificationML.Model
+
+<h3>Алгоритм визначення хвороби серця</h3>
+
+<p>Заповніть усі поля</p>
+
+<EditForm Model="@modelInput" OnValidSubmit="@Calculate">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <table>
+        <tr>
+            <td><label for="age">Вік:</label></td>
+            <td><InputNumber id="age" @bind-Value="modelInput.Age" /></td>
+            <td><label for="age"> (1 - 150)</label></td>
+        </tr>
+        <tr>
+            <td><label for="sex">Стать:</label></td>
+            <td><InputNumber id="sex" @bind-Value="modelInput.Sex" /></td>
+            <td><label for="sex"> (1 - чоловіча, 0 - жіноча)</label></td>
+        </tr>
+        <tr>
+            <td><label for="trestbps">Артеріальний тиск у спокої (у мм рт. ст.):</label></td>
+            <td><InputNumber id="trestbps" @bind-Value="modelInput.Trestbps" /></td>
+            <td><label for="trestbps"> (90 - 210)</label></td>
+        </tr>
+        <tr>
+            <td><label for="chol">Сироватковий холесторал в мг / дл:</label></td>
+            <td><InputNumber id="chol" @bind-Value="modelInput.Chol" /></td>
+            <td><label for="chol"> (100 - 600)</label></td>
+        </tr>
+        <tr>
+            <td><label for="fbs">Рівень цукру в крові натще > 120 мг / дл:</label></td>
+            <td><InputNumber id="fbs" @bind-Value="modelInput.Fbs" /></td>
+            <td><label for="fbs"> (1 - Так, 0 - Ні)</label></td>
+        </tr>
+        <tr>
+            <td><label for="restecg">Результати електрокардіографії в стані спокою:</label></td>
+            <td><InputNumber id="restecg" @bind-Value="modelInput.Restecg" /></td>
+            <td><label for="restecg"> (0 - Добре, 1 - Норм, 2 - Погано)</label></td>
+        </tr>
+        <tr>
+            <td><label for="thalach">Максимальний досягнутий пульс:</label></td>
+            <td><InputNumber id="thalach" @bind-Value="modelInput.Thalach" /></td>
+            <td><label for="thalach"> (60 - 210)</label></td>
+        </tr>
+        <tr>
+            <td><label for="exang">Стенокардія, спричинена фізичними вправами:</label></td>
+            <td><InputNumber id="exang" @bind-Value="modelInput.Exang" /></td>
+            <td><label for="exang"> (1 - Так, 0 - Ні)</label></td>
+        </tr>
+    </table>
+
+    <p>
+        <button class="btn btn-primary" @onclick="Calculate">Визначити</button>
+    </p>
+
+    <p><label for="result">Результати:</label></p>
+    <p>@Result0</p>
+    <p>@Result1</p>
+    <p>@Result2</p>
+    <p>@Result3</p>
+</EditForm>
+
+
+@code {
+    ModelInput modelInput = new ModelInput()
+    {
+        Age = 50,
+        Sex = 1,
+        Trestbps = 100,
+        Chol = 150,
+        Fbs = 1,
+        Restecg = 0,
+        Thalach = 150,
+        Exang = 1
+    };
+
+    ModelOutput modelOutput = new ModelOutput();
+
+    string Result0;
+    string Result1;
+    string Result2;
+    string Result3;
+
+    private void Calculate()
+    {
+        modelOutput = ConsumeModel.Predict(modelInput);
+
+        Result0 = $"Здоровий - {modelOutput.Score[0]:P2}";
+        Result1 = $"Трохи хворий - {modelOutput.Score[1]:P2}";
+        Result2 = $"Сильно хворий - {modelOutput.Score[2]:P2}";
+        Result3 = $"Присмерті - {modelOutput.Score[3]:P2}";
+    }
+}
