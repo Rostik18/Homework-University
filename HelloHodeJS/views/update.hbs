@@ -6,14 +6,14 @@
 </head>
 <body>
     <h1>Оновлення користувача</h1>
-     <form action="putUser"  method="POST">
+     <form action="/users/putUser" method="POST">
         <label>Ім'я</label>
-        <input name="name" /><br><br>
+        <input name="name" value="{{name}}" /><br><br>
         <label>Вік</label>
-        <input name="age" type="number" min="1" max="110" /><br><br>
+        <input name="age" value="{{age}}" type="number" min="1" max="110" /><br><br>
         <label>id</label>
         <input name="id" value="{{userId}}" /><br><br>
-        <input type="submit" value="Оновити" />
+        <input type="submit" value="Оновити"/>
      </form>
      <a href="/users">Повернутись до списку</a>
 </body>
