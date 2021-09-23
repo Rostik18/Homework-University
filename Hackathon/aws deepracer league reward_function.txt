@@ -1,0 +1,125 @@
+import math
+
+def reward_function(params):
+    '''
+    Example of rewarding the agent to follow center line
+    '''
+    # Read input parameters
+    on_track = int(params['all_wheels_on_track'])
+    distance_from_center = params['distance_from_center']
+    #keep_left = params['is_left_of_center']
+    #track_width = params['track_width']
+    steering = abs(params['steering_angle']) # Only need the absolute steering angle for calculations
+    speed = params['speed']
+    waypoints = params['waypoints']
+    closest_waypoints = params['closest_waypoints'] 
+    heading = params['heading']
+    #progress = params['progress']
+    carX = params['x']
+    carY = params['y']
+    # Calculate 3 markers that are at varying distances away from the center line
+    #The first element refers to the closest waypoint behind the agent and
+    #the second element refers the closest waypoint in front of the agent
+    next_point = waypoints[closest_waypoints[1]]
+    prev_point = waypoints[closest_waypoints[0]]
+    A = Vector2(prev_point[0], prev_point[1]) 
+    B = Vector2(next_point[0], next_point[1]) 
+    carPoint = Vector2(carX, carY)
+    print(f"Position of A is x:'{A.x}' and y:'{A.y}'")
+    print(f"Position of B is x:'{B.x}' and y:'{B.y}'")
+    print(f"Position of Car point is x:'{carPoint.x}' and y:'{carPoint.y}'")
+    AX = Vector2(B.x - A.x, B.y- A.y)
+    AB = Vector2(B.x - A.x, 0)
+    optimalCosAX_AB = cosBetweenVector2(AX, AB)
+    optimalVector = Vector6(
+        optimalCosAX_AB,
+        0,
+        0,
+        1,
+        5,
+        0)
+    currentVector = Vector6(
+        math.cos(heading * 0.0174532925),
+        distanceToLine(carPoint, A, B),
+        distance_from_center,
+        on_track,
+        speed,
+        steering)
+    return float(cosBetweenVector6(optimalVector, currentVector))
+    
+def distanceToLine(car,A, B):
+    if A.x == B.x: return 0
+    if A.y == B.y: return 0
+    return (car.x - A.x) / (B.x - A.x) - (car.y - A.y) / (B.y - A.y)
+    
+def cosBetweenVector2(AX, AB):
+    dob = AX.x * AB.x + AX.y * AB.y
+    OX_norm = ((AX.x * AX.x) + (AX.y * AX.y))**(1/2)
+    AB_norm = ((AB.x * AB.x) + (AB.y * AB.y))**(1/2)
+    return dob / (OX_norm*AB_norm)
+    
+def cosBetweenVector6(optimal, current):
+    dob = (optimal.cosAX_AB * current.cosAX_AB + 
+        optimal.equationLine * current.equationLine + 
+        optimal.distanceFromCenter * current.distanceFromCenter + 
+        optimal.all_wheels_on_track * current.all_wheels_on_track + 
+        optimal.speed * current.speed + 
+        optimal.steering_angle * current.steering_angle)
+    optimal_norm = pow(
+        (optimal.cosAX_AB * optimal.cosAX_AB) + 
+        (optimal.equationLine * optimal.equationLine) + 
+        (optimal.distanceFromCenter * optimal.distanceFromCenter) + 
+        (optimal.all_wheels_on_track * optimal.all_wheels_on_track) + 
+        (optimal.speed * optimal.speed) + 
+        (optimal.steering_angle * optimal.steering_angle), (1/2))
+    current_norm = pow(
+        (current.cosAX_AB * current.cosAX_AB) + 
+        (current.equationLine * current.equationLine) + 
+        (current.distanceFromCenter * current.distanceFromCenter) + 
+        (current.all_wheels_on_track * current.all_wheels_on_track) + 
+        (current.speed * current.speed) + 
+        (current.steering_angle * current.steering_angle), (1/2))
+    return dob / (optimal_norm*current_norm)
+    
+class Vector2:
+    x = 0
+    y = 0
+    def __init__(self, x,  y):  
+        self.x = x  
+        self.y = y 
+        
+class Vector6:
+    cosAX_AB = 0
+    equationLine = 0
+    distanceFromCenter = 0
+    all_wheels_on_track = 0
+    speed = 0
+    steering_angle = 0
+    def __init__(self, cosAX_AB, equationLine, distanceFromCenter, all_wheels_on_track,speed, steering_angle):  
+        self.cosAX_AB = cosAX_AB  
+        self.equationLine = equationLine  
+        self.distanceFromCenter = distanceFromCenter  
+        self.all_wheels_on_track = all_wheels_on_track  
+        self.speed = speed  
+        self.steering_angle = steering_angle
+        
+params = {
+  "track_width": 5,
+  "distance_from_center": 0,
+  "all_wheels_on_track": True,
+  "steering_angle": 0.1,
+  "speed": 10,
+  "closest_waypoints": [0,1],
+  "waypoints": [[4,2],[3,4]],
+  "heading": 90, #Estimated in degrees
+  "x": 4,
+  "y": 3
+}
+
+result = reward_function(params)
+print(result)
+    
+    
+  
+  
+
