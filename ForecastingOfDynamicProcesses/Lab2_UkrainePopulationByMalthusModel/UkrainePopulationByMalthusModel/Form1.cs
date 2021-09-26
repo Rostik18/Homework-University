@@ -171,11 +171,9 @@ namespace UkrainePopulationByMalthusModel
         {
             logTextBox.Text = string.Empty;
 
-            var year = int.Parse(startYearTextBox.Text);
-
-            if (year < _minYear || year > _maxYear)
+            if (!int.TryParse(startYearTextBox.Text, out var year) || year < _minYear || year > _maxYear)
             {
-                logTextBox.Text = "Недопустимий рік";
+                logTextBox.Text = "Відсудні дані в заданий проміжок";
                 return;
             }
 

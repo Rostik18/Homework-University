@@ -50,7 +50,7 @@ namespace UkrainePopulationByMalthusModel
             // 
             this.calculateButton.Location = new System.Drawing.Point(12, 146);
             this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(339, 46);
+            this.calculateButton.Size = new System.Drawing.Size(306, 46);
             this.calculateButton.TabIndex = 0;
             this.calculateButton.Text = "застосувати модель";
             this.calculateButton.UseVisualStyleBackColor = true;
@@ -65,13 +65,13 @@ namespace UkrainePopulationByMalthusModel
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(357, 11);
+            this.chart1.Location = new System.Drawing.Point(324, 11);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(613, 530);
+            this.chart1.Size = new System.Drawing.Size(646, 530);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
@@ -86,7 +86,7 @@ namespace UkrainePopulationByMalthusModel
             // 
             // startYearTextBox
             // 
-            this.startYearTextBox.Location = new System.Drawing.Point(251, 11);
+            this.startYearTextBox.Location = new System.Drawing.Point(218, 12);
             this.startYearTextBox.Name = "startYearTextBox";
             this.startYearTextBox.Size = new System.Drawing.Size(100, 22);
             this.startYearTextBox.TabIndex = 3;
@@ -95,11 +95,11 @@ namespace UkrainePopulationByMalthusModel
             // 
             // startYearTrackBar
             // 
-            this.startYearTrackBar.Location = new System.Drawing.Point(2, 39);
+            this.startYearTrackBar.Location = new System.Drawing.Point(15, 39);
             this.startYearTrackBar.Maximum = 2021;
             this.startYearTrackBar.Minimum = 1960;
             this.startYearTrackBar.Name = "startYearTrackBar";
-            this.startYearTrackBar.Size = new System.Drawing.Size(349, 56);
+            this.startYearTrackBar.Size = new System.Drawing.Size(303, 56);
             this.startYearTrackBar.TabIndex = 4;
             this.startYearTrackBar.Value = 1960;
             this.startYearTrackBar.Scroll += new System.EventHandler(this.startYearTrackBar_Scroll);
@@ -110,13 +110,13 @@ namespace UkrainePopulationByMalthusModel
             | System.Windows.Forms.AnchorStyles.Left)));
             this.logTextBox.Location = new System.Drawing.Point(12, 209);
             this.logTextBox.Name = "logTextBox";
-            this.logTextBox.Size = new System.Drawing.Size(339, 332);
+            this.logTextBox.Size = new System.Drawing.Size(306, 332);
             this.logTextBox.TabIndex = 5;
             this.logTextBox.Text = "";
             // 
             // takeYearsTextBox
             // 
-            this.takeYearsTextBox.Location = new System.Drawing.Point(251, 78);
+            this.takeYearsTextBox.Location = new System.Drawing.Point(218, 75);
             this.takeYearsTextBox.Name = "takeYearsTextBox";
             this.takeYearsTextBox.Size = new System.Drawing.Size(100, 22);
             this.takeYearsTextBox.TabIndex = 7;
@@ -133,7 +133,7 @@ namespace UkrainePopulationByMalthusModel
             // 
             // stepTextBox
             // 
-            this.stepTextBox.Location = new System.Drawing.Point(251, 109);
+            this.stepTextBox.Location = new System.Drawing.Point(218, 109);
             this.stepTextBox.Name = "stepTextBox";
             this.stepTextBox.Size = new System.Drawing.Size(100, 22);
             this.stepTextBox.TabIndex = 9;
