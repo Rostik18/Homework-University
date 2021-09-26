@@ -105,7 +105,7 @@ namespace Lab1_Game_Theory
         {
             var individualRational = CalculateIndividualRational(out var irPositions);
 
-            logTextBox.Text += "IR = { " + $"{string.Join(", ", individualRational)}" + " } позиції = { " + $"{string.Join(", ", irPositions)}" + " } - індивідуально раціональні стратегії\n";
+            logTextBox.Text += "IR = { " + $"{string.Join(", ", individualRational)}" + " } позиції = { " + $"{string.Join(", ", irPositions)}" + " } - індивідуально раціональні ситуації\n";
         }
 
         // П
