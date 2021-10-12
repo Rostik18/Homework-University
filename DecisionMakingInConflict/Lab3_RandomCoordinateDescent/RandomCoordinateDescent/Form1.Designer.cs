@@ -95,16 +95,16 @@ namespace RandomCoordinateDescent
             this.gammaTextBox.Name = "gammaTextBox";
             this.gammaTextBox.Size = new System.Drawing.Size(219, 22);
             this.gammaTextBox.TabIndex = 6;
-            this.gammaTextBox.Text = "1";
+            this.gammaTextBox.Text = "1000";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(10, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 17);
+            this.label3.Size = new System.Drawing.Size(222, 17);
             this.label3.TabIndex = 5;
-            this.label3.Text = "константа Ліпшиця (gamma > 0)";
+            this.label3.Text = "Константа Ліпшиця (gamma > 0)";
             // 
             // aLimitTextBox
             // 
@@ -112,7 +112,7 @@ namespace RandomCoordinateDescent
             this.aLimitTextBox.Name = "aLimitTextBox";
             this.aLimitTextBox.Size = new System.Drawing.Size(219, 22);
             this.aLimitTextBox.TabIndex = 8;
-            this.aLimitTextBox.Text = "-10 -10 -10";
+            this.aLimitTextBox.Text = "-2 -2 -2";
             // 
             // label4
             // 
@@ -129,7 +129,7 @@ namespace RandomCoordinateDescent
             this.bLimitTextBox.Name = "bLimitTextBox";
             this.bLimitTextBox.Size = new System.Drawing.Size(219, 22);
             this.bLimitTextBox.TabIndex = 10;
-            this.bLimitTextBox.Text = "10 10 10";
+            this.bLimitTextBox.Text = "2 2 2";
             // 
             // label5
             // 

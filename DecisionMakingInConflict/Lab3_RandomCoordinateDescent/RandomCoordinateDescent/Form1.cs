@@ -14,7 +14,7 @@ namespace RandomCoordinateDescent
         private static double F(Vector x) =>
             Math.Pow(x[0], 2) + Math.Pow(x[1], 4) + Math.Pow(x[2], 6);
 
-        private static double[] F_Derivative(Vector x) => new[]
+        private static double[] F_Gradient(Vector x) => new[]
             {
                 2 * x[0],
                 4 * x[1] * x[1] * x[1],
@@ -31,10 +31,10 @@ namespace RandomCoordinateDescent
         {
             logTextBox.Text = string.Empty;
 
-            if (!TrySetupGamma())
+            if (!TrySetupLimits(out var a, out var b))
                 return;
 
-            if (!TrySetupLimits(out var a, out var b))
+            if (!TrySetupGamma(a, b))
                 return;
 
             // step 1
@@ -58,7 +58,7 @@ namespace RandomCoordinateDescent
                 iRand = GetNewRandomIndex(iRand);
 
                 // step 5
-                var fDer = F_Derivative(x)[iRand];
+                var fDer = F_Gradient(x)[iRand];
 
                 // step 6
                 var ro = CalculateRo(fDer, x[iRand], a[iRand], b[iRand]);
@@ -68,9 +68,9 @@ namespace RandomCoordinateDescent
                 // step 7
                 var xNext = x - ro * eVectors[iRand];
 
-                if (Vector.DistanceBetween(xNext, x) < Epsilon || k > 200)
+                if (Vector.DistanceBetween(xNext, x) < Epsilon || k > 500)
                 {
-                    logTextBox.Text += $"іт {k++:D3}: F({xNext}) = {F(xNext):F4}  | інд {iRand + 1}\n";
+                    logTextBox.Text += $"іт {k++:D3}: F({xNext}) = {F(xNext):F5}  | інд {iRand + 1}\n";
                     break;
                 }
 
@@ -82,7 +82,7 @@ namespace RandomCoordinateDescent
         private double CalculateRo(double fDer, double x, double a, double b)
         {
             if (fDer >= 0)
-                return -Math.Min(x - a, fDer / _gamma);
+                return Math.Min(x - a, fDer / _gamma);
             else
                 return -Math.Min(b - x, Math.Abs(fDer) / _gamma);
         }
@@ -139,13 +139,19 @@ namespace RandomCoordinateDescent
             return newIndex;
         }
 
-        private bool TrySetupGamma()
+        private bool TrySetupGamma(Vector a, Vector b)
         {
-            if (double.TryParse(gammaTextBox.Text, out _gamma) || !(_gamma < 0))
-                return true;
+            var gradA = F_Gradient(a);
+            var gradB = F_Gradient(b);
 
-            logTextBox.Text = "Значення gamma не підходить";
-            return false;
+            var gradAVector = new Vector(gradA);
+            var gradBVector = new Vector(gradB);
+
+            _gamma = (gradAVector - gradBVector).Norm() / (a - b).Norm();
+
+            gammaTextBox.Text = $@"{_gamma:F2}";
+
+            return true;
         }
     }
 }

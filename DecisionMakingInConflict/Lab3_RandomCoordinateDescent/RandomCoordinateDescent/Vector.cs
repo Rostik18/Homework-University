@@ -118,6 +118,18 @@ namespace RandomCoordinateDescent
             return newVector;
         }
 
+        public double Norm()
+        {
+            double sum = 0;
+
+            for (var i = 0; i < _n; i++)
+            {
+                sum += _elements[i] * _elements[i];
+            }
+
+            return Math.Sqrt(sum);
+        }
+
         /// <summary> Compares two vectors with equal dimension by values. True - if all values of first vector equal to seconds. False - in other case </summary>
         /// <returns> True - if all values of first vector equal to seconds. False - in other case </returns>
         public static bool CompareByValue(Vector vector1, Vector vector2)
@@ -201,7 +213,7 @@ namespace RandomCoordinateDescent
         }
 
         /// <summary> Debug ToString representations </summary>
-        public override string ToString() => $"({string.Join(";", _elements)})";
+        public override string ToString() => $"({string.Join("; ", _elements)})";
 
         #endregion
 
