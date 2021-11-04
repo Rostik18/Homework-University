@@ -1,0 +1,22 @@
+1) run Docker Desktop
+2) run PowerShell in this folder
+3) enter command: docker-compose up
+
+
+// notes
+A Confluent enterprise license is stored in the _confluent-command topic. 
+This topic is created by default and contains the license that corresponds to the license key 
+supplied through the confluent.license property. 
+So when you're starting the Kafka server it tries to create it with replication-factor of 3 
+but there is only 1 broker available so it failed.
+Set confluent.topic.replication.factor property to 1 in /usr/local/etc/kafka/server.properties file.
+
+
+
+docker network create kafka
+
+docker run -d --network=kafka --name=zookeeper -e ZOOKEEPER_CLIENT_PORT=2181 -e ZOOKEEPER_TICK_TIME=2000 
+-p 2181:2181 confluentinc/cp-zookeeper
+
+docker run -d --network=kafka --name=kafka -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 
+-e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 confluentinc/cp-kafka
