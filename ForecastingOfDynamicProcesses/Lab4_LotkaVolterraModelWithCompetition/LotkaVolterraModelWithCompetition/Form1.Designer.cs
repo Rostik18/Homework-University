@@ -29,9 +29,9 @@ namespace LotkaVolterraModelWithCompetition
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.calculateButton = new System.Windows.Forms.Button();
             this.lTextBox = new System.Windows.Forms.TextBox();
@@ -75,7 +75,7 @@ namespace LotkaVolterraModelWithCompetition
             this.lTextBox.Name = "lTextBox";
             this.lTextBox.Size = new System.Drawing.Size(127, 22);
             this.lTextBox.TabIndex = 2;
-            this.lTextBox.Text = "1";
+            this.lTextBox.Text = "0,01";
             this.lTextBox.TextChanged += new System.EventHandler(this.OnParamsChange);
             // 
             // logRichTextBox
@@ -93,16 +93,16 @@ namespace LotkaVolterraModelWithCompetition
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
             this.chart1.Location = new System.Drawing.Point(218, 12);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chart1.Series.Add(series6);
             this.chart1.Size = new System.Drawing.Size(570, 426);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
@@ -113,7 +113,7 @@ namespace LotkaVolterraModelWithCompetition
             this.qTextBox.Name = "qTextBox";
             this.qTextBox.Size = new System.Drawing.Size(127, 22);
             this.qTextBox.TabIndex = 6;
-            this.qTextBox.Text = "1";
+            this.qTextBox.Text = "0,02";
             this.qTextBox.TextChanged += new System.EventHandler(this.OnParamsChange);
             // 
             // label2
@@ -167,7 +167,7 @@ namespace LotkaVolterraModelWithCompetition
             this.rTextBox.Name = "rTextBox";
             this.rTextBox.Size = new System.Drawing.Size(127, 22);
             this.rTextBox.TabIndex = 14;
-            this.rTextBox.Text = "1";
+            this.rTextBox.Text = "0,01";
             this.rTextBox.TextChanged += new System.EventHandler(this.OnParamsChange);
             // 
             // label5
@@ -185,7 +185,7 @@ namespace LotkaVolterraModelWithCompetition
             this.mTextBox.Name = "mTextBox";
             this.mTextBox.Size = new System.Drawing.Size(127, 22);
             this.mTextBox.TabIndex = 12;
-            this.mTextBox.Text = "2";
+            this.mTextBox.Text = "0,02";
             this.mTextBox.TextChanged += new System.EventHandler(this.OnParamsChange);
             // 
             // label6
