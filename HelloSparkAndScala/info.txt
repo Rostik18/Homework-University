@@ -1,0 +1,9 @@
+JDK 14 is required!!!
+
+WINDOWS ONLY: Create a C:\hadoop\bin directory, and copy the winutils.exe file 
+found inside your SparkScalaCourse folder into it. Create a new environment variable 
+(enter “environment variables” in the Windows search bar, click on “Add Environment Variables,” 
+and add a new system variable) named HADOOP_HOME with a value of C:\Hadoop. 
+Next select the PATH environment variable, and APPEND a new entry, 
+separated by a semi-colon, of %HADOOP_HOME%\bin Now, restart IntelliJ to make sure 
+the new environment variables are picked up.
