@@ -15,9 +15,6 @@ object DockerUtils {
     conf.set("spark.driver.host", Properties.envOrElse("SPARK_DRIVER_HOST", "SparkHost"))
     conf.set("spark.submit.deployMode", "client")
     conf.set("spark.driver.bindAddress", "0.0.0.0")
-    conf.set("spark.shuffle.service.enabled", "false")
-    conf.set("spark.dynamicAllocation.enabled", "false")
-
 
     conf.set("spark.app.name", appName)
 
