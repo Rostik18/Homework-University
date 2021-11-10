@@ -18,7 +18,7 @@ namespace StirlingMethod
         /// <param name="values">n provided values</param>
         public Vector3(params double[] values) : base(Vector3Dimension)
         {
-            if(values.Length != Vector3Dimension)
+            if (values.Length != Vector3Dimension)
                 throw new ArgumentException("Vector3 expert 3 values");
 
             Elements = values.Clone() as double[];
@@ -29,6 +29,34 @@ namespace StirlingMethod
         public Vector3(Vector3 vector) : base(Vector3Dimension)
         {
             Elements = vector.Elements.Clone() as double[];
+        }
+
+        public Vector3 Subtract(Vector3 vector)
+        {
+            var newVector = new Vector3();
+
+            for (var i = 0; i < N; i++)
+                newVector[i] = Elements[i] - vector.Elements[i];
+
+            return newVector;
+        }
+
+        public Vector3 Plus(Vector3 vector)
+        {
+            var newVector = new Vector3();
+
+            for (var i = 0; i < N; i++)
+                newVector[i] = Elements[i] + vector.Elements[i];
+
+            return newVector;
+        }
+
+        public double DistanceTo(Vector3 vector)
+        {
+            return Math.Sqrt(
+                (X - vector.X) * (X - vector.X) +
+                (Y - vector.Y) * (Y - vector.Y) +
+                (Z - vector.Z) * (Z - vector.Z));
         }
 
         #endregion
