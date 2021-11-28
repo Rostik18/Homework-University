@@ -5,6 +5,7 @@ namespace NewtonsMethodInPerturbationsPresence
 {
     public partial class Form1 : Form
     {
+        const double epselon = 0.000001;
         const int N = 3;
 
         public Form1()
@@ -29,18 +30,40 @@ namespace NewtonsMethodInPerturbationsPresence
             if (!TryReadStartPoint(out var x))
                 return;
 
-            double sigma = 0.01;
-
             for (int k = 0; k < 100; k++)
             {
-                var A = JacobiMatrixForF(x);
                 var h = GradientF(x);
+                var A = JacobiMatrixForF(x);
 
-                // var xNext = 
+                var xNext = x - h;
 
+                var dif = xNext - x;
+
+                var left = (A * dif) + h;
+                var right = dif / dif.Norm();
+
+                double sigma = 1.0 / (k + 1);
+
+                while (Vector.DistanceBetween(left, right) > sigma)
+                {
+                    h *= 0.5;
+                    xNext = x - h;
+
+                    dif = xNext - x;
+                    left = (A * dif) + h;
+                    right = dif / dif.Norm();
+                }
+
+                logTextBox.Text = $"{k:D2} f({x}) = {F(x)}\n";
+
+                if (Vector.DistanceBetween(xNext, x) < epselon)
+                {
+                    logTextBox.Text = $"{k + 1:D2} f({xNext}) = {F(xNext)}\n";
+                    break;
+                }
+
+                x = xNext;
             }
-
-
         }
 
         private bool TryReadStartPoint(out Vector startPoint)

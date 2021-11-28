@@ -135,6 +135,76 @@ namespace NewtonsMethodInPerturbationsPresence
             return newVector;
         }
 
+        /// <summary> Add provided vector to this vector. Expect vectors with similar dimension </summary>
+        /// <returns> New vector as sum of this and provided </returns>
+        public Vector Add(Vector vector) => Sum(this, vector);
+
+        /// <summary> Add vector2 to vector1. Expect vectors with similar dimension </summary>
+        /// <returns> New vector as sum of two provided </returns>
+        public static Vector operator +(Vector vector1, Vector vector2) => Sum(vector1, vector2);
+
+        /// <summary> Add vector2 to vector1. Expect vectors with similar dimension </summary>
+        /// <returns> New vector as sum of two provided </returns>
+        public static Vector Sum(Vector vector1, Vector vector2)
+        {
+            if (vector1.N != vector2.N)
+                throw new ArgumentException("Vectors have different dimensions");
+
+            var newVector = new Vector(vector1.N);
+
+            for (var i = 0; i < vector1.N; i++)
+                newVector[i] = vector1.Elements[i] + vector2.Elements[i];
+
+            return newVector;
+        }
+
+        /// <summary> Divide current vector by scalar. Expect scalar not zero </summary>
+        /// <returns> A new vector with elements as elements of provided vector divided by scalar </returns>
+        public Vector DivideBy(double scalar) => Divide(this, scalar);
+
+        /// <summary> Divide vector by scalar. Expect scalar not zero </summary>
+        /// <returns> A new vector with elements as elements of provided vector divided by scalar </returns>
+        public static Vector operator /(Vector vector, double scalar) => Divide(vector, scalar);
+
+        /// <summary> Divide vector by scalar. Expect scalar not zero </summary>
+        /// <returns> A new vector with elements as elements of provided vector divided by scalar </returns>
+        public static Vector Divide(Vector vector, double scalar)
+        {
+            if (scalar == 0)
+                throw new ArgumentException("Scalar should be different than zero");
+
+            var newVector = new Vector(vector.N);
+
+            for (var i = 0; i < vector.N; i++)
+                newVector[i] = vector.Elements[i] / scalar;
+
+            return newVector;
+        }
+
+        /// <summary> Multiply this vector by scalar  </summary>
+        /// <returns> A new vector with elements as elements of provided vector divided by scalar </returns>
+        public Vector MultiplyBy(double scalar) => Multiply(this, scalar);
+
+        /// <summary> Multiply vector by scalar </summary>
+        /// <returns> A new vector with elements as elements of provided vector multiplied by scalar </returns>
+        public static Vector operator *(Vector vector, double scalar) => Multiply(vector, scalar);
+
+        /// <summary> Multiply vector by scalar </summary>
+        /// <returns> A new vector with elements as elements of provided vector multiplied by scalar </returns>
+        public static Vector operator *(double scalar, Vector vector) => Multiply(vector, scalar);
+
+        /// <summary> Multiply vector by scalar </summary>
+        /// <returns> A new vector with elements as elements of provided vector multiplied by scalar </returns>
+        public static Vector Multiply(Vector vector, double scalar)
+        {
+            var newVector = new Vector(vector.N);
+
+            for (var i = 0; i < vector.N; i++)
+                newVector[i] = vector.Elements[i] * scalar;
+
+            return newVector;
+        }
+
         /// <summary> Calculate Euclidean Norm of provided vector </summary>
         /// <returns> Euclidean Norm of provided vector </returns>
         public static double Norm(Vector vector) => vector.Norm();
