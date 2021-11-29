@@ -240,6 +240,21 @@ namespace NewtonsMethodInPerturbationsPresence
             return Math.Sqrt(sum);
         }
 
+        /// <summary> Calculate distance between two vectors. Expect vectors with similar dimension </summary>
+        /// <returns> Distance between two vectors </returns>
+        public static double ScalarProduct(Vector vector1, Vector vector2)
+        {
+            if (vector1.N != vector2.N)
+                throw new ArgumentException("Vectors have different dimensions");
+
+            double sum = 0;
+
+            for (var i = 0; i < vector1.N; i++)
+                sum += vector1.Elements[i] * vector2.Elements[i];
+
+            return sum;
+        }
+
         /// <summary> Debug ToString representations </summary>
         public override string ToString() => $"({string.Join(";", Elements)})";
 

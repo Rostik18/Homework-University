@@ -15,7 +15,10 @@ namespace NewtonsMethodInPerturbationsPresence
 
         private double F(Vector x) => x[0] * x[0] + x[1] * x[1] * x[1] * x[1] + x[2] * x[2] - 4;
 
-        private Vector GradientF(Vector x) => new Vector(2 * x[0], 4 * x[1] * x[1] * x[1], 2 * x[2]);
+        private Vector GradientF(Vector x) => new Vector(
+            2 * x[0],  
+            4 * x[1] * x[1] * x[1], 
+            2 * x[2]);
 
         private Matrix JacobiMatrixForF(Vector x) => new Matrix(
             new Vector(2, 0, 0),
@@ -30,7 +33,7 @@ namespace NewtonsMethodInPerturbationsPresence
             if (!TryReadStartPoint(out var x))
                 return;
 
-            for (int k = 0; k < 100; k++)
+            for (int k = 0; k < 500; k++)
             {
                 var h = GradientF(x);
                 var A = JacobiMatrixForF(x);
@@ -39,26 +42,33 @@ namespace NewtonsMethodInPerturbationsPresence
 
                 var dif = xNext - x;
 
+                if (dif.Norm() == 0)
+                    continue;
+
                 var left = (A * dif) + h;
                 var right = dif / dif.Norm();
 
                 double sigma = 1.0 / (k + 1);
 
-                while (Vector.DistanceBetween(left, right) > sigma)
+                while (Vector.ScalarProduct(left, right) > sigma)
                 {
                     h *= 0.5;
                     xNext = x - h;
 
                     dif = xNext - x;
+
+                    if (dif.Norm() == 0)
+                        break;
+
                     left = (A * dif) + h;
                     right = dif / dif.Norm();
                 }
 
-                logTextBox.Text = $"{k:D2} f({x}) = {F(x)}\n";
+                logTextBox.Text += $"{k:D2} f({x}) = {F(x)}\n";
 
                 if (Vector.DistanceBetween(xNext, x) < epselon)
                 {
-                    logTextBox.Text = $"{k + 1:D2} f({xNext}) = {F(xNext)}\n";
+                    logTextBox.Text += $"{k + 1:D2} f({xNext}) = {F(xNext)}\n";
                     break;
                 }
 
