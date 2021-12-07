@@ -14,6 +14,7 @@ namespace LorentzModel
     public partial class Form1 : Form
     {
         private int N = 100;
+        private readonly Random _random;
 
         private double _sigma = 10;
         private double _r = 10;
@@ -29,6 +30,8 @@ namespace LorentzModel
             splitContainer1.Panel2.Controls.Add(splitContainer2);
             splitContainer2.Panel1.Controls.Add(chart2);
             splitContainer2.Panel2.Controls.Add(chart3);
+
+            _random = new Random();
         }
 
         private void calculateButton_Click(object sender, EventArgs e)
@@ -48,11 +51,14 @@ namespace LorentzModel
 
             for (int i = 0; i < N; i++)
             {
+                if (_random.NextDouble() < 0.2)
+                    _r = _r + (_random.NextDouble() * 4) - 2;
+
                 var (xNext, yNext, zNext) = LorenzStep(xAxis[i], yAxis[i], zAxis[i]);
 
-                xAxis[i + 1] = Math.Round(xAxis[i] + xNext * _dt, 1);
-                yAxis[i + 1] = Math.Round(yAxis[i] + yNext * _dt, 1);
-                zAxis[i + 1] = Math.Round(zAxis[i] + zNext * _dt, 1);
+                xAxis[i + 1] = Math.Round(xAxis[i] + xNext * _dt, 2);
+                yAxis[i + 1] = Math.Round(yAxis[i] + yNext * _dt, 2);
+                zAxis[i + 1] = Math.Round(zAxis[i] + zNext * _dt, 2);
             }
 
             DrawLine(xAxis, yAxis, Color.Blue, chart1);
