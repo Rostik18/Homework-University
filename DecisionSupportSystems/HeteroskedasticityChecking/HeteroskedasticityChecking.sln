@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeteroskedasticityChecking", "HeteroskedasticityChecking\HeteroskedasticityChecking.csproj", "{047475EF-73A3-498E-82E7-4274DA13C5FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{047475EF-73A3-498E-82E7-4274DA13C5FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047475EF-73A3-498E-82E7-4274DA13C5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047475EF-73A3-498E-82E7-4274DA13C5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{047475EF-73A3-498E-82E7-4274DA13C5FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2D0C1DA-3F88-4A0D-8CDB-E09672735E0A}
+	EndGlobalSection
+EndGlobal
