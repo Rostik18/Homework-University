@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Statistics {\n  static mean(data) {\n    let sum = 0;\n    data.forEach(el => sum += el.y);\n    return sum / data.length;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
